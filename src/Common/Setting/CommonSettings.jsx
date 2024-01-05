@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
-import { setThemeColor } from "../../Redux/actions/themeActions";
-import { setLayout } from "../../Redux/actions/layoutActions";
-import { setBorderStroke } from "../../Redux/actions/stokeActions";
-import { setBorderLayout } from "../../Redux/actions/borderLayoutActions";
-import { setBorderRadius, setBoxLayout, setIconColor, setMonoChrome } from "../../Redux/actions/moreSettingsActions";
+import { setThemeColor } from "../../store/defaultStates/actions/themeActions";
+import { setLayout } from "../../store/defaultStates/actions/layoutActions";
+import { setBorderStroke } from "../../store/defaultStates/actions/stokeActions";
+import { setBorderLayout } from "../../store/defaultStates/actions/borderLayoutActions";
+import { setBorderRadius, setBoxLayout, setIconColor, setMonoChrome } from "../../store/defaultStates/actions/moreSettingsActions";
 
 const CommonSettings = () => {
    

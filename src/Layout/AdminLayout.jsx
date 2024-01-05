@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { screenMapping } from './Components/ScreenMapping';
-import { setScreenWidth } from '../Redux/actions/moreSettingsActions';
+import { setScreenWidth } from '../store/defaultStates/actions/moreSettingsActions';
 import CommonBrand from '../Common/CommonBrand/CommonBrand';
 import CommonHeader from '../Common/CommonHeader/CommonHeader';
 import CommonSidebar from '../Common/CommonSidebar/CommonSidebar';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { setSelectedMod } from '../../Redux/actions/moreSettingsActions';
+import { setSelectedMod } from '../../store/defaultStates/actions/moreSettingsActions';
 
 import FullScreenModal from './Components/FullScreenModal'
 import Setting from '../Setting/CommonSettings';
