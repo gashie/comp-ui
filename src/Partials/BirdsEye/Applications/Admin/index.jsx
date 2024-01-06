@@ -11,6 +11,7 @@ import {
 import DataTable from "../../../../Common/DataTable/DataTable";
 import ApplicationCard from "../ApplicationCard";
 // import "./index.css";
+import img from "../../../../assets/images/img.png";
 
 const Index = () => {
   const [isRight, setIsRight] = useState(false);
@@ -142,20 +143,26 @@ const Index = () => {
         >
           <div className="card-body">
             <div className="row g-4 li_animate">
-              <div className="col-xl-12 col-lg-12">
-                {/* <span className="small">Welcome back!</span> */}
+              <div className="col-xl-8 col-lg-8">
                 <h2 className="fw-bold mb-xl-2">Setup Applications</h2>
                 <p
                   className="fw-lighter text-light w-100"
                   style={{ fontSize: "0.8em" }}
                 >
-                  Agent policies are used to manage settings acroos a group of
-                  agents You can dd integrations to your agent policy to sepcify
-                  what your agents collect. When you edit an agent policy, you
-                  can use Fleet to deploy updates to be a specified group of
-                  agents.
+                  Agent policies are used to manage settings across a group of
+                  agents. You can add integrations to your agent policy to
+                  specify what your agents collect. When you edit an agent
+                  policy, you can use Fleet to deploy updates to a specified
+                  group of agents.
                 </p>
-
+              </div>
+              <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
+                <img
+                  src={img}
+                  alt="Your Image"
+                  className="img-fluid"
+                  width="300"
+                />
               </div>
             </div>
           </div>

@@ -10,6 +10,7 @@ import {
 } from "reactstrap";
 import DataTable from "../../../Common/DataTable/DataTable";
 import "./index.css";
+import img from "../../../assets/images/img.png";
 
 const Index = () => {
   const [isRight, setIsRight] = useState(false);
@@ -133,53 +134,71 @@ const Index = () => {
       <div
         className="card mb-3"
         style={{
-          background:
-            "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
+          background: "c",
           color: "white",
         }}
       >
-        <div className="card-body text-light">
+        <div
+          className="card-body text-light"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
+            color: "white",
+          }}
+        >
           <div className="row g-4 li_animate">
             <div className="col-xl-12 col-lg-12 col-md-12 col">
-              {/* <span className="small">Welcome back!</span> */}
-              <h2 className="fw-bold mb-xl-2">Roles and Permissions</h2>
-              <p
-                className="fw-lighter  w-100 text-light"
-                style={{ fontSize: "0.8em" }}
-              >
-                Agent policies are used to manage settings acroos a group of
-                agents You can dd integrations to your agent policy to sepcify
-                what your agents collect. When you edit an agent policy, you can
-                use Fleet to deploy updates to be a specified group of agents.
-              </p>
+              <div className="row g-4 li_animate">
+                <div className="col-xl-8 col-lg-8">
+                  <h2 className="fw-bold mb-xl-2">Roles & Permissions</h2>
+                  <p
+                    className="fw-lighter text-light w-100"
+                    style={{ fontSize: "0.8em" }}
+                  >
+                    Agent policies are used to manage settings across a group of
+                    agents. You can add integrations to your agent policy to
+                    specify what your agents collect. When you edit an agent
+                    policy, you can use Fleet to deploy updates to a specified
+                    group of agents.
+                  </p>
 
-              <Button
-                style={{
-                  border: "1px solid transparent",
-                  fontSize: "0.8rem",
-                  backgroundColor: "white",
-                  color: "#Ed8b00",
-                }}
-                onClick={() => {
-                  setIsRight(true);
-                }}
-              >
-                <i className="bi-plus"></i>Add Role
-              </Button>
-              <Button
-                style={{
-                  border: "1px solid transparent",
-                  fontSize: "0.8rem",
-                  backgroundColor: "white",
-                  color: "#Ed8b00",
-                }}
-                onClick={() => {
-                  setIsRight(true);
-                }}
-                className="mx-2"
-              >
-                <i className="bi-plus"></i>Add Permission
-              </Button>
+                  <Button
+                    style={{
+                      border: "1px solid transparent",
+                      fontSize: "0.8rem",
+                      backgroundColor: "white",
+                      color: "#Ed8b00",
+                    }}
+                    onClick={() => {
+                      setIsRight(true);
+                    }}
+                  >
+                    <i className="bi-plus"></i>Add Role
+                  </Button>
+                  <Button
+                    style={{
+                      border: "1px solid transparent",
+                      fontSize: "0.8rem",
+                      backgroundColor: "white",
+                      color: "#Ed8b00",
+                    }}
+                    onClick={() => {
+                      setIsPermission(true);
+                    }}
+                    className="mx-2"
+                  >
+                    <i className="bi-plus"></i>Add Permission
+                  </Button>
+                </div>
+                <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
+                  <img
+                    src={img}
+                    alt="Your Image"
+                    className="img-fluid"
+                    width="300"
+                  />
+                </div>
+              </div>
 
               <Offcanvas
                 isOpen={isRight}
@@ -241,9 +260,10 @@ const Index = () => {
 
                         <div className="col-12">
                           <button
-                            className="me-1 btn btn-dark"
+                            
                             type="button"
-                            style={{ backgroundColor: "black" }}
+                            className="me-1 btn text-light"
+                    style={{ background: "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)", border: 'none' }}
                           >
                             <i className="bi-plus"></i> Add
                           </button>
@@ -330,9 +350,10 @@ const Index = () => {
 
                 <div className="col-12">
                   <button
-                    className="me-1 btn btn-dark"
+                   
                     type="button"
-                    style={{ backgroundColor: "black" }}
+                    className="me-1 btn text-light"
+                    style={{ background: "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)", border: 'none' }}
                   >
                     <i className="bi-plus"></i> Add
                   </button>
