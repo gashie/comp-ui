@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from 'react-redux';
-import { setThemeColor } from "../../store/defaultStates/actions/themeActions";
-import { setLayout } from "../../store/defaultStates/actions/layoutActions";
-import { setBorderStroke } from "../../store/defaultStates/actions/stokeActions";
-import { setBorderLayout } from "../../store/defaultStates/actions/borderLayoutActions";
-import { setBorderRadius, setBoxLayout, setIconColor, setMonoChrome } from "../../store/defaultStates/actions/moreSettingsActions";
-
+import { setThemeColor } from '../../store/actions';
+import { setLayout } from '../../store/actions';
+import { setBorderStroke } from '../../store/actions';
+import { setBorderLayout } from '../../store/actions';
+import { setBorderRadius, setBoxLayout, setIconColor, setMonoChrome } from '../../store/actions';
 const CommonSettings = () => {
    
     const dispatch = useDispatch();

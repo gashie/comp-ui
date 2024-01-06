@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { screenMapping } from './Components/ScreenMapping';
-import { setScreenWidth } from '../store/defaultStates/actions/moreSettingsActions';
+import { setScreenWidth } from '../store/actions';
 import CommonBrand from '../Common/CommonBrand/CommonBrand';
 import CommonHeader from '../Common/CommonHeader/CommonHeader';
 import CommonSidebar from '../Common/CommonSidebar/CommonSidebar';
@@ -65,22 +65,22 @@ const AdminLayout = ( {menuTitle, themeColor, layout, borderStroke, borderLayout
   };
  
   return (
-    <body data-bvite={`theme-${themeColor}`} data-bs-theme={themeMode} className={`docs ${borderRadius} ${monochrome} ${boxLayout} ${borderLayout} ${borderStroke} ${layout} ${sidebarHidden && 'sidebar-hide'} ${rightbarHidden ? 'rightbar-hide' : ''}`}>
-    {/* <div data-bvite="theme-AppleGreen" className="layout-border svgstroke-a layout-default"> */}
-      <main className={`${boxLayout == 'box-layout rightbar-hide' ? 'container' : 'container-fluid'} px-0`}>
+    <body data-bvite={`theme-${themeColor}`} data-bs-theme={themeMode} className={`docs ${borderRadius} ${monochrome} ${boxLayout} ${borderLayout} ${borderStroke} ${layout} ${sidebarHidden && 'sidebar-hide'} ${rightbarHidden ? 'rightbar-hide' : ''} `}>
+   
+      {/* <main className={`${boxLayout == 'box-layout rightbar-hide' ? 'container' : 'container-fluid'} px-0 w-100`} > */}
       {/* <main className='container-fluid px-0'> */}
-        <CommonBrand />
+        {/* <CommonBrand /> */}
         
         <CommonHeader />
-        <CommonSidebar iconColor={iconColor} />
-        <CommonRightbar />
-        <CommonBreadcrumb toggleSidebar={toggleSidebar} toggleRightbar={toggleRightbar}/>
+        {/* <CommonSidebar iconColor={iconColor} /> */}
+        {/* <CommonRightbar /> */}
+        {/* <CommonBreadcrumb toggleSidebar={toggleSidebar} toggleRightbar={toggleRightbar}/> */}
       
         <Routes />
        
-        <CommonFooter />
-        <CommonSettings />
-      </main>
+        {/* <CommonFooter />
+        <CommonSettings /> */}
+      {/* </main> */}
     {/* </div> */}
     </body>
   )

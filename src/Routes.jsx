@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Route, Routes as ReactRoutes } from "react-router-dom";
 
 import Signin from "./Partials/Pages/Authentication/Signin/Signin";
@@ -10,7 +10,7 @@ import Maintenance from "./Partials/Pages/Authentication/Maintenance/Maintenance
 import NoPageFound from "./Partials/Pages/Authentication/NoPageFound/NoPageFound";
 
 import MyProfile from "./Partials/Apps/Users/MyProfile/MyProfile";
-import Calendar from "./Partials/Apps/MyCalendar/Calendar";
+// import Calendar from "./Partials/Apps/MyCalendar/Calendar";
 import Index from "./Partials/Workspace/Dashboard/Index";
 import MyWallet from "./Partials/Workspace/MyWallet/MyWallet";
 import AccountSetting from "./Partials/Apps/Users/AccountSetting/AccountSetting";
@@ -23,62 +23,65 @@ import NewProject from "./Partials/Apps/MyProjects/NewProject/NewProject";
 import ProjectList from "./Partials/Apps/MyProjects/ProjectList/ProjectList";
 import ProjectGrid from "./Partials/Apps/MyProjects/ProjectGrid/ProjectGrid";
 import ProjectDetails from "./Partials/Apps/MyProjects/ProjectDetails/ProjectDetails";
-import ClientsList from "./Partials/Apps/MyProjects/ClientsList/ClientsList";
-import Inbox from "./Partials/Apps/Inbox/Inbox";
-import Chat from "./Partials/Apps/Chat/Chat";
-import Blog from "./Partials/Apps/Blog/Blog";
-import FileManager from "./Partials/Apps/FileManager/FileManager";
-import Accordion from "./Partials/Plugins/BootstrapUI/Accordion/Accordion";
-import Alerts from "./Partials/Plugins/BootstrapUI/Alerts/Alerts";
-import UserAvatar from "./Partials/Plugins/BootstrapUI/UserAvatar/UserAvatar";
-import Badges from "./Partials/Plugins/BootstrapUI/Badges/Badges";
-import Breadcrumb from "./Partials/Plugins/BootstrapUI/Breadcrumb/Breadcrumb";
-import Buttons from "./Partials/Plugins/BootstrapUI/Buttons/Buttons";
-import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
-import Carousel from "./Partials/Plugins/BootstrapUI/Carousel/Carousel";
-import Collapse from "./Partials/Plugins/BootstrapUI/Collapse/Collapse";
-import Dropdowns from "./Partials/Plugins/BootstrapUI/Dropdowns/Dropdowns";
-import Listgroup from "./Partials/Plugins/BootstrapUI/Listgroup/Listgroup";
-import Modal from "./Partials/Plugins/BootstrapUI/Modal/Modal";
-import Navbar from "./Partials/Plugins/BootstrapUI/Navbar/Navbar";
-import Navstabs from "./Partials/Plugins/BootstrapUI/Navstabs/Navstabs";
-import Offcanvas from "./Partials/Plugins/BootstrapUI/Offcanvas/Offcanvas";
-import Pagination from "./Partials/Plugins/BootstrapUI/Pagination/Pagination";
-import Placeholders from "./Partials/Plugins/BootstrapUI/Placeholders/Placeholders";
-import PopoversContent from "./Partials/Plugins/BootstrapUI/Popovers/PopoversContent";
-import Progressbar from "./Partials/Plugins/BootstrapUI/Progressbar/Progressbar";
-import Spinners from "./Partials/Plugins/BootstrapUI/Spinners/Spinners";
-import Toasts from "./Partials/Plugins/BootstrapUI/Toasts/Toasts";
+// import ClientsList from "./Partials/Apps/MyProjects/ClientsList/ClientsList";
+// import Inbox from "./Partials/Apps/Inbox/Inbox";
+// import Chat from "./Partials/Apps/Chat/Chat";
+// import Blog from "./Partials/Apps/Blog/Blog";
+// import FileManager from "./Partials/Apps/FileManager/FileManager";
+// import Accordion from "./Partials/Plugins/BootstrapUI/Accordion/Accordion";
+// import Alerts from "./Partials/Plugins/BootstrapUI/Alerts/Alerts";
+// import UserAvatar from "./Partials/Plugins/BootstrapUI/UserAvatar/UserAvatar";
+// import Badges from "./Partials/Plugins/BootstrapUI/Badges/Badges";
+// import Breadcrumb from "./Partials/Plugins/BootstrapUI/Breadcrumb/Breadcrumb";
+// import Buttons from "./Partials/Plugins/BootstrapUI/Buttons/Buttons";
+// import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
+// import Carousel from "./Partials/Plugins/BootstrapUI/Carousel/Carousel";
+// import Collapse from "./Partials/Plugins/BootstrapUI/Collapse/Collapse";
+// import Dropdowns from "./Partials/Plugins/BootstrapUI/Dropdowns/Dropdowns";
+// import Listgroup from "./Partials/Plugins/BootstrapUI/Listgroup/Listgroup";
+// import Modal from "./Partials/Plugins/BootstrapUI/Modal/Modal";
+// import Navbar from "./Partials/Plugins/BootstrapUI/Navbar/Navbar";
+// import Navstabs from "./Partials/Plugins/BootstrapUI/Navstabs/Navstabs";
+// import Offcanvas from "./Partials/Plugins/BootstrapUI/Offcanvas/Offcanvas";
+// import Pagination from "./Partials/Plugins/BootstrapUI/Pagination/Pagination";
+// import Placeholders from "./Partials/Plugins/BootstrapUI/Placeholders/Placeholders";
+// import PopoversContent from "./Partials/Plugins/BootstrapUI/Popovers/PopoversContent";
+// import Progressbar from "./Partials/Plugins/BootstrapUI/Progressbar/Progressbar";
+// import Spinners from "./Partials/Plugins/BootstrapUI/Spinners/Spinners";
+// import Toasts from "./Partials/Plugins/BootstrapUI/Toasts/Toasts";
 import BootstrapIcon from "./Partials/Plugins/FontIcon/BootstrapIcon/BootstrapIcon";
 import CountryFlagsIcon from "./Partials/Plugins/FontIcon/CountryFlagsIcon/CountryFlagsIcon";
 import FontawesomeIcon from "./Partials/Plugins/FontIcon/FontawesomeIcon/FontawesomeIcon";
 import LinearIcon from "./Partials/Plugins/FontIcon/LinearIcon/LinearIcon";
 import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
-import ApexCharts from "./Partials/Plugins/Charts/ApexCharts/ApexCharts";
-import PeityCharts from "./Partials/Plugins/Charts/PeityCharts/PeityCharts";
-import Bootstrap5Tags from "./Partials/Plugins/Bootstrap5Tags/Bootstrap5Tags";
-import Datatables from "./Partials/Plugins/Datatables/Datatables";
-import Flatpickr from "./Partials/Plugins/Flatpickr/Flatpickr";
-import InputmaskPlugin from "./Partials/Plugins/Inputmask/InputmaskPlugin";
-import Jsvectormap from "./Partials/Plugins/Jsvectormap/Jsvectormap";
-import SortableJS from "./Partials/Plugins/SortableJS/SortableJS";
-import Sweetalert2 from "./Partials/Plugins/Sweetalert2/Sweetalert2";
-import Tagify from "./Partials/Plugins/Tagify/Tagify";
-import Tinyslider from "./Partials/Plugins/Tinyslider/Tinyslider";
-import ToastUICalendar from "./Partials/Plugins/ToastUICalendar/ToastUICalendar";
-import ToastUIEditor from "./Partials/Plugins/ToastUIEditor/ToastUIEditor";
-import BasicCard from "./Partials/Pages/Widgets/BasicCard/BasicCard";
-import CardTiles from "./Partials/Pages/Widgets/CardTiles/CardTiles";
-import CardTab from "./Partials/Pages/Widgets/CardTab/CardTab";
-import Tables from "./Partials/Pages/Tables/Tables";
-import Forms from "./Partials/Pages/Forms/Forms";
-import PricingTable from "./Partials/Pages/PricingTable/PricingTable";
-import ImageGallery from "./Partials/Pages/ImageGallery/ImageGallery";
-import SearchPage from "./Partials/Pages/SearchPage/SearchPage";
-import Changelog from "./Partials/Pages/Changelog/Changelog";
-import Documentation from "./Partials/Pages/Documentation/Documentation";
-import AppIndex from "./Partials/Apps/AppIndex/AppIndex";
-import PageIndex from "./Partials/Pages/PageIndex/PageIndex";
+// import ApexCharts from "./Partials/Plugins/Charts/ApexCharts/ApexCharts";
+// import PeityCharts from "./Partials/Plugins/Charts/PeityCharts/PeityCharts";
+// import Bootstrap5Tags from "./Partials/Plugins/Bootstrap5Tags/Bootstrap5Tags";
+ import Datatables from "./Partials/Plugins/Datatables/Datatables";
+// import Flatpickr from "./Partials/Plugins/Flatpickr/Flatpickr";
+// import InputmaskPlugin from "./Partials/Plugins/Inputmask/InputmaskPlugin";
+// import Jsvectormap from "./Partials/Plugins/Jsvectormap/Jsvectormap";
+// import SortableJS from "./Partials/Plugins/SortableJS/SortableJS";
+// import Sweetalert2 from "./Partials/Plugins/Sweetalert2/Sweetalert2";
+// import Tagify from "./Partials/Plugins/Tagify/Tagify";
+// import Tinyslider from "./Partials/Plugins/Tinyslider/Tinyslider";
+// import ToastUICalendar from "./Partials/Plugins/ToastUICalendar/ToastUICalendar";
+// import ToastUIEditor from "./Partials/Plugins/ToastUIEditor/ToastUIEditor";
+// import BasicCard from "./Partials/Pages/Widgets/BasicCard/BasicCard";
+// import CardTiles from "./Partials/Pages/Widgets/CardTiles/CardTiles";
+// import CardTab from "./Partials/Pages/Widgets/CardTab/CardTab";
+// import Tables from "./Partials/Pages/Tables/Tables";
+ import Forms from "./Partials/Pages/Forms/Forms";
+// import PricingTable from "./Partials/Pages/PricingTable/PricingTable";
+// import ImageGallery from "./Partials/Pages/ImageGallery/ImageGallery";
+// import SearchPage from "./Partials/Pages/SearchPage/SearchPage";
+// import Changelog from "./Partials/Pages/Changelog/Changelog";
+// import Documentation from "./Partials/Pages/Documentation/Documentation";
+// import AppIndex from "./Partials/Apps/AppIndex/AppIndex";
+// import PageIndex from "./Partials/Pages/PageIndex/PageIndex";
+
+
+import Roles from './Partials/BirdsEye/RolesPermissions'
 
 const Routes = () => {
   return (
@@ -94,7 +97,7 @@ const Routes = () => {
       <Route exact path="/" element={<Index/>} />
       <Route exact path="/index" element={<Index/>} />
       <Route exact path="/my-wallet" element={<MyWallet/>} />
-      <Route exact path="/app" element={<AppIndex/>} />
+      {/* <Route exact path="/app" element={<AppIndex/>} /> */}
       <Route exact path="/app/my-profile" element={<MyProfile/>} />
       <Route exact path="/app/account-settings" element={<AccountSetting/>} />
       <Route exact path="/app/invoice" element={<Invoices/>} />
@@ -106,7 +109,7 @@ const Routes = () => {
       <Route exact path="/app/project-list" element={<ProjectList/>} />
       <Route exact path="/app/project-grid" element={<ProjectGrid/>} />
       <Route exact path="/app/project-details" element={<ProjectDetails/>} />
-      <Route exact path="/app/clients-list" element={<ClientsList/>} />
+      {/* <Route exact path="/app/clients-list" element={<ClientsList/>} />
       <Route exact path="/app/calendar" element={<Calendar/>} />
       <Route exact path="/app/inbox" element={<Inbox/>} />
       <Route exact path="/app/chat" element={<Chat/>} />
@@ -133,11 +136,7 @@ const Routes = () => {
       <Route exact path="/docs/progress" element={<Progressbar/>} />
       <Route exact path="/docs/spinners" element={<Spinners/>} />
       <Route exact path="/docs/toasts" element={<Toasts/>} />
-      <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
-      <Route exact path="/docs/flag-icon" element={<CountryFlagsIcon/>} />
-      <Route exact path="/docs/fontawesome-icon" element={<FontawesomeIcon/>} />
-      <Route exact path="/docs/linear-icon" element={<LinearIcon/>} />
-      <Route exact path="/docs/weather-icon" element={<WeatherIcon/>} />
+    
       <Route exact path="/docs/apex" element={<ApexCharts/>} />
       <Route exact path="/docs/peity" element={<PeityCharts/>} />
       <Route exact path="/docs/bootstrap5-tags" element={<Bootstrap5Tags/>} />
@@ -156,13 +155,26 @@ const Routes = () => {
       <Route exact path="/docs/widgets-card-tab" element={<CardTab/>} />
       <Route exact path="/pages" element={<PageIndex/>} />
       <Route exact path="/pages/table" element={<Tables/>} />
-      <Route exact path="/pages/form" element={<Forms/>} />
+     
       <Route exact path="/pages/pricing" element={<PricingTable/>} />
       <Route exact path="/pages/gallery" element={<ImageGallery/>} />
       <Route exact path="/pages/search" element={<SearchPage/>} />
       <Route exact path="/docs/changelog" element={<Changelog/>} />
       <Route exact path="/docs/index" element={<Documentation/>} />
-      <Route exact path="/docs" element={<Documentation/>} />
+      <Route exact path="/docs" element={<Documentation/>} /> */}
+
+
+      {/* New ROutes */}
+      <Route exact path="/roles" element={<Roles/>} />
+      <Route exact path="/pages/form" element={<Forms/>} />
+
+      <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
+      <Route exact path="/docs/flag-icon" element={<CountryFlagsIcon/>} />
+      <Route exact path="/docs/fontawesome-icon" element={<FontawesomeIcon/>} />
+      <Route exact path="/docs/linear-icon" element={<LinearIcon/>} />
+      <Route exact path="/docs/weather-icon" element={<WeatherIcon/>} />
+
+      <Route exact path="/docs/datatables" element={<Datatables/>} />
     </ReactRoutes>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import Inputmask from 'inputmask';
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.css";

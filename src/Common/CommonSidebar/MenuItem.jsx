@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { setMenuTitle } from '../../store/defaultStates/actions/menuActions';
+import { setMenuTitle } from '../../store/actions';
 
 const MenuItem = ({ title, icon, menuItems, link }) => {
 
