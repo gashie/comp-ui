@@ -65,22 +65,22 @@ const AdminLayout = ( {menuTitle, themeColor, layout, borderStroke, borderLayout
   };
  
   return (
-    <body data-bvite={`theme-${themeColor}`} data-bs-theme={themeMode} className={`docs ${borderRadius} ${monochrome} ${boxLayout} ${borderLayout} ${borderStroke} ${layout} ${sidebarHidden && 'sidebar-hide'} ${rightbarHidden ? 'rightbar-hide' : ''} `}>
-   
-      {/* <main className={`${boxLayout == 'box-layout rightbar-hide' ? 'container' : 'container-fluid'} px-0 w-100`} > */}
+    <body data-bvite={`theme-${themeColor}`} data-bs-theme={themeMode} className={`docs ${borderRadius} ${monochrome} ${boxLayout} ${borderLayout} ${borderStroke} ${layout} ${sidebarHidden && 'sidebar-hide'} ${rightbarHidden ? 'rightbar-hide' : ''}`}>
+    {/* <div data-bvite="theme-AppleGreen" className="layout-border svgstroke-a layout-default"> */}
+      <main className={`${boxLayout == 'box-layout rightbar-hide' ? 'container' : 'container-fluid'} px-0`}>
       {/* <main className='container-fluid px-0'> */}
-        {/* <CommonBrand /> */}
+        <CommonBrand />
         
         <CommonHeader />
-        {/* <CommonSidebar iconColor={iconColor} /> */}
-        {/* <CommonRightbar /> */}
-        {/* <CommonBreadcrumb toggleSidebar={toggleSidebar} toggleRightbar={toggleRightbar}/> */}
+        <CommonSidebar iconColor={iconColor} />
+        <CommonRightbar />
+        <CommonBreadcrumb toggleSidebar={toggleSidebar} toggleRightbar={toggleRightbar}/>
       
         <Routes />
        
-        {/* <CommonFooter />
-        <CommonSettings /> */}
-      {/* </main> */}
+        <CommonFooter />
+        <CommonSettings />
+      </main>
     {/* </div> */}
     </body>
   )

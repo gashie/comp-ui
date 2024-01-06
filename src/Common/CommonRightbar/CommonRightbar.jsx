@@ -27,7 +27,7 @@ const CommonRightbar = () => {
                 </div>
                 <div className="offcanvas-body flex-column custom_scroll" style={{"background": "var(--body-color)"}}>
                     <Nav className="nav nav-tabs tab-card justify-content-between px-0" role="tablist">
-                        <Nav.Item  className="nav-item" role="presentation"><Nav.Link className={`nav-link pt-0 ${activeTab === 'pills_today' ? 'active' : ''}`} onClick={() => handleTabSelect('pills_today')} role="tab">Today</Nav.Link></Nav.Item>
+                        {/* <Nav.Item  className="nav-item" role="presentation"><Nav.Link className={`nav-link pt-0 ${activeTab === 'pills_today' ? 'active' : ''}`} onClick={() => handleTabSelect('pills_today')} role="tab">Today</Nav.Link></Nav.Item> */}
                         <Nav.Item  className="nav-item" role="presentation"><Nav.Link className={`nav-link pt-0 ${activeTab === 'pills_wallet' ? 'active' : ''}`} onClick={() => handleTabSelect('pills_wallet')} role="tab">Wallet</Nav.Link></Nav.Item>
                         <Nav.Item  className="nav-item" role="presentation"> <Nav.Link className={`nav-link pt-0 ${activeTab === 'pills_tasks' ? 'active' : ''}`} onClick={() => handleTabSelect('pills_tasks')} role="tab">Tasks</Nav.Link></Nav.Item>
                         <Nav.Item  className="nav-item" role="presentation"><Nav.Link className={`nav-link pt-0 ${activeTab === 'pills_emails' ? 'active' : ''}`} onClick={() => handleTabSelect('pills_emails')} role="tab">Emails</Nav.Link></Nav.Item>

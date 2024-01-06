@@ -18,7 +18,7 @@ const FullScreenModal = () => {
                 </div>
                 <div className="modal-body custom_scroll">
                     <div className="container-xxl">
-                        <h5 className="text-dark fw-light">Menu</h5>
+                        <h5 className="text-dark fw-light mb-5">Menu</h5>
                         <ul className="row g-2 list-unstyled li_animate row-cols-lg-5 row-cols-md-3 row-cols-sm-3 row-cols-2 row-deck mb-lg-5 mb-4">
                             <li className="col">
                                 <Link as='a' className="card hr-arrow p-4" to="/app/inbox" title="Roles And Permissions" style={{"--dynamic-color": "var(--theme-color1)"}} onClick={handleClickLink}>
@@ -27,7 +27,7 @@ const FullScreenModal = () => {
                                         <path opacity="0.2" d="M0.294097 11.0446C0.229438 11.0739 0.171762 11.1167 0.124907 11.17V11.169C0.0780298 11.2222 0.0429981 11.2847 0.0221368 11.3525C0.00127556 11.4202 -0.00493837 11.4917 0.00390735 11.562L0.393907 14.686C0.439256 15.0489 0.615615 15.3827 0.889823 15.6247C1.16403 15.8667 1.5172 16.0001 1.88291 16H14.1169C14.4826 16.0001 14.8358 15.8667 15.11 15.6247C15.3842 15.3827 15.5606 15.0489 15.6059 14.686L15.9959 11.562C16.0047 11.4917 15.9984 11.4203 15.9775 11.3525C15.9566 11.2848 15.9216 11.2223 15.8746 11.1691C15.8277 11.116 15.7701 11.0734 15.7055 11.0443C15.6409 11.0151 15.5708 11 15.4999 11H9.99991C9.8673 11 9.74012 11.0527 9.64635 11.1464C9.55259 11.2402 9.49991 11.3674 9.49991 11.5C9.49991 11.8978 9.34187 12.2794 9.06057 12.5607C8.77926 12.842 8.39773 13 7.99991 13C7.60208 13 7.22055 12.842 6.93925 12.5607C6.65794 12.2794 6.49991 11.8978 6.49991 11.5C6.49991 11.3674 6.44723 11.2402 6.35346 11.1464C6.25969 11.0527 6.13252 11 5.99991 11H0.499907C0.428915 11.0001 0.358755 11.0153 0.294097 11.0446Z"/>
                                     </svg>
                                     <h6 className="title mb-1">Roles And Perissions <span className="badge rounded-pill bg-warning">11</span></h6>
-                                    <p className="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
+                                    <p className="small text-muted mb-0 d-none d-xl-inline-flex">Configure system roles and permissions</p>
                                     <div className="go-corner">
                                         <div className="go-arrow">→</div>
                                     </div>
@@ -35,12 +35,9 @@ const FullScreenModal = () => {
                             </li>
                             <li className="col">
                                 <Link as='a' className="card hr-arrow p-4" to="/app/chat" title="Chat App" style={{"--dynamic-color": "var(--theme-color2)"}} onClick={handleClickLink}>
-                                    <svg className="mb-3" width="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity="0.4" d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                        <path opacity="0.9" d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-                                    </svg>
+                                   <i className='bi-layout-wtf fs-4'></i>
                                     <h6 className="title mb-1">Application Catalog Management</h6>
-                                    <p className="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
+                                    <p className="small text-muted mb-0 d-none d-xl-inline-flex"> Setup system applications</p>
                                     <div className="go-corner">
                                         <div className="go-arrow">→</div>
                                     </div>
@@ -48,10 +45,7 @@ const FullScreenModal = () => {
                             </li>
                             <li className="col">
                                 <Link className="card hr-arrow p-4" to="/app/calendar" title="My Calendar" style={{"--dynamic-color": "var(--theme-color3)"}} onClick={handleClickLink}>
-                                    <svg className="mb-3" width="20" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path opacity="0.8" d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
-                                        <path opacity="0.4" d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
-                                    </svg>
+                                  <i className='bi-gear fs-4'></i>
                                     <h6 className="title mb-1">Global Settings</h6>
                                     <p className="small text-muted mb-0 d-none d-xl-inline-flex">Description text here...</p>
                                     <div className="go-corner">

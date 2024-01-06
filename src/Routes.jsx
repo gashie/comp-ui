@@ -34,7 +34,7 @@ import ProjectDetails from "./Partials/Apps/MyProjects/ProjectDetails/ProjectDet
 // import Badges from "./Partials/Plugins/BootstrapUI/Badges/Badges";
 // import Breadcrumb from "./Partials/Plugins/BootstrapUI/Breadcrumb/Breadcrumb";
 // import Buttons from "./Partials/Plugins/BootstrapUI/Buttons/Buttons";
-// import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
+ import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
 // import Carousel from "./Partials/Plugins/BootstrapUI/Carousel/Carousel";
 // import Collapse from "./Partials/Plugins/BootstrapUI/Collapse/Collapse";
 // import Dropdowns from "./Partials/Plugins/BootstrapUI/Dropdowns/Dropdowns";
@@ -82,6 +82,7 @@ import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 
 
 import Roles from './Partials/BirdsEye/RolesPermissions'
+import Applications from './Partials/BirdsEye/Applications/Admin'
 
 const Routes = () => {
   return (
@@ -174,7 +175,10 @@ const Routes = () => {
       <Route exact path="/docs/linear-icon" element={<LinearIcon/>} />
       <Route exact path="/docs/weather-icon" element={<WeatherIcon/>} />
 
+      <Route exact path="/docs/cards" element={<Cards/>} />
+
       <Route exact path="/docs/datatables" element={<Datatables/>} />
+      <Route exact path="/app/configure-applications" element={<Applications/>} />
     </ReactRoutes>
   );
 };

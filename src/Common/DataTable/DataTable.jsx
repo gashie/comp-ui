@@ -1,4 +1,4 @@
-import React, { useState , Fragment} from "react";
+import React, { useState, Fragment } from "react";
 import {
   useTable,
   useFilters,
@@ -45,7 +45,10 @@ const DataTable = ({ columns, data }) => {
 
   return (
     <>
-      <div className="table-responsive" style={{ color: "black" }}>
+      <div
+        className="table-responsive"
+        style={{ color: "black", backgroundColor: "transparent" }}
+      >
         <Input
           type="text"
           value={searchText}
@@ -55,7 +58,7 @@ const DataTable = ({ columns, data }) => {
           }}
           placeholder="Search..."
           className="mb-4"
-          style={{ border: "1px solid black", color: 'black' }}
+          style={{color: "black" }}
         />
         <table
           {...getTableProps()}
@@ -89,7 +92,11 @@ const DataTable = ({ columns, data }) => {
                   <tr>
                     {row.cells.map((cell) => {
                       return (
-                        <td key={cell.id} {...cell.getCellProps()} className="p-3">
+                        <td
+                          key={cell.id}
+                          {...cell.getCellProps()}
+                          className="p-3"
+                        >
                           {cell.render("Cell")}
                         </td>
                       );

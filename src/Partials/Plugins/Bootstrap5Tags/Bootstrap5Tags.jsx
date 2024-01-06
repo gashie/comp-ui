@@ -93,7 +93,7 @@ const Bootstrap5Tags = () => {
 									<option value="8">Chokeberry</option>
 									<option value="9">Elderberry</option>
 									<option value="10">Gooseberry</option>
-									<option value="11">Blackberry</option>
+									<option value="11">blackberry</option>
 									<option value="12">Raspberry</option>
 									<option value="13">Goji berry</option>
 									<option value="14">Salmon berry</option>

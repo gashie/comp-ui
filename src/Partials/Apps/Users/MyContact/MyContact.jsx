@@ -88,7 +88,7 @@ const MyContact = () => {
 					<a className="flex-grow-1" href="#c_details" data-bs-toggle="offcanvas" role="button">
 						<img className="rounded-circle avatar border" src={avatar5} alt="avatar"/>
 						<div className="ms-3">
-							<h6 className="mb-0">Best Blackburn</h6>
+							<h6 className="mb-0">Best blackburn</h6>
 							<span className="text-muted small">+91 1212 258 369</span>
 						</div>
 					</a>

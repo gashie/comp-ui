@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { setSelectedMod } from '../../store/actions';
 
@@ -42,7 +42,7 @@ const CommonHeader = () => {
 
     return (
     <>
-    <header className="px-4 w-100" id='headerbarDark' data-bs-theme="none" style={{backgroundColor: 'white'}} >
+    <header className="px-4" id='headerbarDark' data-bs-theme="none">
         <div className="d-flex justify-content-between align-items-center py-2 w-100">
             <button type="button" className="btn text-accent btn-link p-0 me-3 d-none d-md-inline-flex" data-bs-toggle="modal" data-bs-target="#FullscreenMenu">
                 <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -120,7 +120,6 @@ const CommonHeader = () => {
                             <img className="avatar rounded-circle border border-3 me-2" src={avatar1} alt="avatar" />
                             Kevin Gill
                         </a>
-                        
                         <a href="#" className="d-flex align-items-center mb-2 me-2">
                             <img className="avatar rounded-circle border border-3 me-2" src={avatar2} alt="avatar" />
                             Michelle Glover
@@ -228,11 +227,11 @@ const CommonHeader = () => {
                         </div>
                     </div>
                 </li>
-                {/* <li className="nav-item py-2 py-md-1 col-auto">
+                <li className="nav-item py-2 py-md-1 col-auto">
                     <div className="vr d-none d-sm-flex h-100 mx-sm-2"></div>
-                </li> */}
+                </li>
                 {/* <!--[ Start:: language ]--> */}
-                {/* <li className="nav-item dropdown px-md-1 d-none d-md-inline-flex">
+                <li className="nav-item dropdown px-md-1 d-none d-md-inline-flex">
                     <a className="dropdown-toggle gray-6" href="#" data-bs-toggle="dropdown" role="button" title="language">
                         <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -250,9 +249,9 @@ const CommonHeader = () => {
                         <li className="mb-1"><a className="dropdown-item rounded-pill" href="#" title="language">Arabic</a></li>
                         <li className="mb-1"><a className="dropdown-item rounded-pill" href="#" title="language">French</a></li>
                     </ul>
-                </li> */}
+                </li>
                 {/* <!--[ Start:: theme light/dark ]--> */}
-                {/* <li className="nav-item dropdown px-md-1">
+                <li className="nav-item dropdown px-md-1">
                     <a className="dropdown-toggle gray-6" href="#" id="bd-theme" data-bs-toggle="dropdown" aria-expanded="false">
                         <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" className="theme-icon-active"><use href={`#${iconId}`}></use></svg>
                     </a>
@@ -273,7 +272,7 @@ const CommonHeader = () => {
                             <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
                         </symbol>
                     </svg>
-                </li> */}
+                </li>
                 {/* <!--[ Start:: theme setting ]--> */}
                 <div className="nav-item dropdown px-md-1">
                     <a className="dropdown-toggle gray-6" href="#offcanvas_setting" data-bs-toggle="offcanvas" aria-expanded="false" title="template setting">
@@ -284,9 +283,9 @@ const CommonHeader = () => {
                         </svg>
                     </a>
                 </div>
-                {/* <li className="nav-item py-2 py-md-1 col-auto">
+                <li className="nav-item py-2 py-md-1 col-auto">
                     <div className="vr d-none d-sm-flex h-100 mx-sm-2"></div>
-                </li> */}
+                </li>
                 {/* <!--[ Start:: user detail ]--> */}
                 <li className="nav-item user ms-3">
                     <a className="dropdown-toggle gray-6 d-flex text-decoration-none align-items-center lh-sm p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="User" data-bs-auto-close="outside">
