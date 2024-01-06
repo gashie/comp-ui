@@ -34,28 +34,28 @@ export const YearData = [
 
 export const CardData = [
     {
-        title:'Total Income',
-        currency:'$',
+        title:'Current month costs',
+        currency:'GHS',
         value:'6200',
         year:'This year',
         per:'22%'
     },
     {
-        title:'Total Expense',
-        currency:'$',
+        title:'Forecasted month end costs',
+        currency:'GHS',
         value:'2100',
         year:'This year',
         per:'17%'
     },
     {
-        title:'Meetings',
-        currency:'',
+        title:'Last month costs',
+        currency:'GHS',
         value:'58',
         year:'This year',
         per:'34%'
     },
     {
-        title:'Number of Events',
+        title:'Average month costs',
         currency:'',
         value:'267',
         year:'This year',
@@ -65,50 +65,42 @@ export const CardData = [
 
 export const SalesRevenueData = [
     {
-        country:'USA',
+        country:'central-polls-94r7ckum8-username.be360.app/',
         width:'78%',
-        revenue:'$6425'
+        revenue:'6425 Requests'
     },
     {
-        country:'Poland',
+        country:'awsec2-polls-94r7ckum8-testuser.be360.app/',
         width:'62%',
-        revenue:'$5582'
+        revenue:'5582 Requests'
     },
     {
-        country:'Germany',
+        country:'Linode-polls-94r7ckum8-bright023.be360.app/',
         width:'48%',
-        revenue:'$4587'
+        revenue:'$4587 Requests'
     },
     {
-        country:'Russia',
+        country:'jenkins-polls-94r7ckum8-prine23.be360.app/',
         width:'35%',
-        revenue:'$2520'
+        revenue:'2520 Requests'
     },
     {
-        country:'Australia',
+        country:'redis-pipeline-94r7ckum8-cluster.be360.app/',
         width:'30%',
-        revenue:'$1899'
+        revenue:'1899 Requests'
     },
     {
-        country:'Great Britain',
+        country:'elastic-94r7ckum8-dev.be360.app/',
         width:'22%',
-        revenue:'$1056'
+        revenue:'1056 Requests'
     },
     {
-        country:'Poland',
+        country:'cloud-cluster-94r7ckum8-4tify.be360.app/',
         width:'62%',
-        revenue:'$5582'
+        revenue:'5582 Requests'
     },
-    {
-        country:'Germany',
-        width:'48%',
-        revenue:'$4587'
-    },
-    {
-        country:'Russia',
-        width:'35%',
-        revenue:'$2520'
-    }
+   
+  
 ]
 
 export const RecentSellers = [

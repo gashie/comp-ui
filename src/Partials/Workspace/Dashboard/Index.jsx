@@ -276,7 +276,7 @@ const Index = () => {
         <div className="col-xxl-8 col-xl-7 col-lg-12">
           <div className="card">
             <div className="card-header">
-              <h6 className="card-title">Sales Analytics</h6>
+              <h6 className="card-title">Git Deployment Monitor</h6>
               <div className="dropdown card-action">
                 <CardAction />
               </div>
@@ -297,7 +297,7 @@ const Index = () => {
         <div className="col-xxl-4 col-xl-5 col-lg-6 col-md-6">
           <div className="card">
             <div className="card-header">
-              <h6 className="card-title mb-0">Sales Revenue</h6>
+              <h6 className="card-title mb-0">Usage (Request)</h6>
               <div className="dropdown card-action">
                 <CardAction />
               </div>
@@ -311,7 +311,7 @@ const Index = () => {
                   {SalesRevenueData.map((data, index) => {
                     return (
                       <tr key={index}>
-                        <td>
+                        <td style={{ fontSize: "0.8rem" }}>
                           {data.country}
                           <div
                             className="progress mt-1"
@@ -323,7 +323,7 @@ const Index = () => {
                             ></div>
                           </div>
                         </td>
-                        <td className="text-end">
+                        <td className="text-end" style={{ fontSize: "0.9rem" }}>
                           <span className="text-muted">{data.revenue}</span>
                         </td>
                       </tr>
@@ -334,7 +334,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
+        {/* <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
           <div className="card">
             <div className="card-header">
               <h6 className="card-title mb-0">Customer rating</h6>
@@ -395,11 +395,11 @@ const Index = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
+        </div> */}
+        <div className="col-xxl-8 col-xl-8 col-lg-8 col-md-8">
           <div className="card">
             <div className="card-header">
-              <h6 className="card-title mb-0">Employee Salary</h6>
+              <h6 className="card-title mb-0">Active Monitors</h6>
               <div className="dropdown card-action">
                 <CardAction />
               </div>
@@ -425,7 +425,7 @@ const Index = () => {
         <div className="col-xxl-4 col-xl-4 col-lg-6 col-md-6">
           <div className="card">
             <div className="card-header">
-              <h6 className="card-title mb-0">Recent Sellers</h6>
+              <h6 className="card-title mb-0">Invited Users</h6>
               <div className="dropdown card-action">
                 <CardAction />
               </div>
@@ -457,8 +457,14 @@ const Index = () => {
                           <h6 className="d-flex justify-content-between mb-0">
                             <span>{data.name}</span>
                           </h6>
-                          <span className="text-muted small">
-                            {data.cust_id}
+                          <span
+                            className="text-light small badge p-1"
+                            style={{ backgroundColor: "gold" }}
+                          >
+                            Pending
+                          </span>
+                          <span className="text-dark mx-2 small badge p-1">
+                            test-email@gmail.com
                           </span>
                         </div>
                       </a>
