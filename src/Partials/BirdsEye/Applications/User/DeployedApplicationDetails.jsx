@@ -69,6 +69,8 @@ const Index = () => {
                 </Button>
               </div>
 
+              <div></div>
+
               <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
                 <img
                   src={img}
@@ -80,6 +82,7 @@ const Index = () => {
             </div>
           </div>
         </div>
+
         <div className="card mb-3">
           <div className="card-body">
             <div className="row g-4 li_animate">
@@ -242,10 +245,15 @@ const Index = () => {
               </p>
             </div>
 
-            <i data-feather="circle"></i>w
-
-            <div style={{ backgroundColor: "black", borderRadius: '10px', color: 'white' }} className="p-4">
-              <code className="text-primary" style={{color: 'green'}}>
+            <div
+              style={{
+                backgroundColor: "black",
+                borderRadius: "10px",
+                color: "white",
+              }}
+              className="p-4"
+            >
+              <code className="text-primary" style={{ color: "green" }}>
                 <div>
                   [11:42:09.698] Running build in Washington, D.C., USA (East) –
                   iad1 (Hive)

@@ -8,7 +8,7 @@ import {
 } from "react-table";
 import { Input } from "reactstrap";
 
-const DataTable = ({ columns, data }) => {
+const DataTable = ({ columns, data, colHight }) => {
   const [searchText, setSearchText] = useState("");
 
   const tableInstance = useTable(
@@ -95,7 +95,8 @@ const DataTable = ({ columns, data }) => {
                         <td
                           key={cell.id}
                           {...cell.getCellProps()}
-                          className="p-3"
+                          style={{ padding: `0.9rem ${colHight || '2rem'}` }}
+
                         >
                           {cell.render("Cell")}
                         </td>
