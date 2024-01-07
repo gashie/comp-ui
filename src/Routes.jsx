@@ -85,6 +85,8 @@ import Roles from './Partials/BirdsEye/RolesPermissions'
 import Applications from './Partials/BirdsEye/Applications/Admin'
 
 import Monitoring from './Partials/BirdsEye/Monitoring/Home/index'
+import DeployedApplications from './Partials/BirdsEye/Applications/User/'
+import DeployedApplicationDetails from './Partials/BirdsEye/Applications/User/DeployedApplicationDetails'
 
 const Routes = () => {
   return (
@@ -183,6 +185,8 @@ const Routes = () => {
       <Route exact path="/app/configure-applications" element={<Applications/>} />
       {/* monitoring module */}
       <Route exact path="/app/monitor" element={<Monitoring/>} />
+      <Route exact path="/app/deployed-application" element={<DeployedApplications/>} />
+      <Route exact path="/app/application-details" element={<DeployedApplicationDetails/>} />
     </ReactRoutes>
   );
 };
