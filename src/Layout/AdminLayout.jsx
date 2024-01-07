@@ -15,7 +15,7 @@ import Routes from '../Routes';
 const themeColorMappings = {
   ValenciaRed: '#D63B38',
   SunOrange: '#F7A614',
-  AppleGreen: '#5BC43A',
+  Applegreen: '#5BC43A',
   CeruleanBlue: '#00B8D6',
   Mariner: '#0066FE',
   PurpleHeart: '#6238B3',
@@ -66,7 +66,7 @@ const AdminLayout = ( {menuTitle, themeColor, layout, borderStroke, borderLayout
  
   return (
     <body data-bvite={`theme-${themeColor}`} data-bs-theme={themeMode} className={`docs ${borderRadius} ${monochrome} ${boxLayout} ${borderLayout} ${borderStroke} ${layout} ${sidebarHidden && 'sidebar-hide'} ${rightbarHidden ? 'rightbar-hide' : ''}`}>
-    {/* <div data-bvite="theme-AppleGreen" className="layout-border svgstroke-a layout-default"> */}
+    {/* <div data-bvite="theme-Applegreen" className="layout-border svgstroke-a layout-default"> */}
       <main className={`${boxLayout == 'box-layout rightbar-hide' ? 'container' : 'container-fluid'} px-0`}>
       {/* <main className='container-fluid px-0'> */}
         <CommonBrand />

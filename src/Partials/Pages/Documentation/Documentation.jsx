@@ -93,7 +93,7 @@ import '../src/assets/scss/styles.scss';
 
     --primary-gradient: linear-gradient(-45deg, var(--primary-color), var(--secondary-color));
 }
-[data-bvite="theme-AppleGreen"] {
+[data-bvite="theme-Applegreen"] {
 
     --primary-color: 		#5BC43A;
     --accent-color: 		#006b5f;

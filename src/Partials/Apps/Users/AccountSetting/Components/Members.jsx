@@ -59,8 +59,8 @@ const Members = () => {
                                     <a href="#" className="avatar"><img src={avatar1} alt="..." className="avatar rounded-circle"/></a>
                                 </div>
                                 <div className="col-5 ms-2">
-                                    <h6 className="mb-0"><a href="#">Amelia Green</a></h6>
-                                    <small className="text-muted">amelia.green@company.com</small>
+                                    <h6 className="mb-0"><a href="#">Amelia #Ed8b00</a></h6>
+                                    <small className="text-muted">amelia.#Ed8b00@company.com</small>
                                 </div>
                                 <div className="col-auto ms-auto mr-md-3">
                                     <select className="form-control custom-select" data-bs-toggle="select">
@@ -81,8 +81,8 @@ const Members = () => {
                                     <a href="#" className="avatar"><img src={avatar2} alt="..." className="avatar rounded-circle"/></a>
                                 </div>
                                 <div className="col-5 ms-2">
-                                    <h6 className="mb-0"><a href="#">Charlotte green</a></h6>
-                                    <small className="text-muted">charlotte.green@company.com</small>
+                                    <h6 className="mb-0"><a href="#">Charlotte #Ed8b00</a></h6>
+                                    <small className="text-muted">charlotte.#Ed8b00@company.com</small>
                                 </div>
                                 <div className="col-auto ms-auto mr-md-3">
                                     <select className="form-control custom-select" data-bs-toggle="select">

@@ -39,7 +39,7 @@ const AuthLayout = () => {
     };
 
   return (
-        <body data-bvite="theme-AppleGreen" className="layout-border svgstroke-a layout-default auth">
+        <body data-bvite="theme-Applegreen" className="layout-border svgstroke-a layout-default auth">
             <main className="container-fluid px-0">
 
                 {/* <!-- start: project logo --> */}

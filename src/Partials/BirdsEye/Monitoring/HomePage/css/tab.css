@@ -1,0 +1,40 @@
+/* Style for all tab links */
+.nav-tabs .nav-item .nav-link {
+   
+    border-radius: 0; 
+   
+   width: max-content;
+    text-align: center;
+    color: gray;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+  }
+  
+  .nav-tabs .nav-item .nav-link:hover {
+   
+    cursor: pointer;
+    
+  }
+  
+  /* Style for the active tab's link */
+  .nav-tabs .nav-item .nav-link.active {
+    background-color: #007bff; /* Change to your desired background color for the active tab */
+  border: none;
+  border-top: 2px solid #Ed8b00;
+  background-color:transparent ;
+    color: gray; /* Change to your desired text color for the active tab */
+    /* Add other styles as needed for the active tab */
+    border-bottom: 1px solid black;
+  }
+  
+  /* Style for the active tab's content */
+  .tab-content .tab-pane.active {
+    background-color: transparent /* Change to your desired content background color for the active tab */
+    /* Add other styles as needed for the active tab's content */
+    border-bottom: 1px solid black;
+  }
+  
+  
+  /* styles.css */
+  
+  

@@ -14,15 +14,15 @@ import MyProfile from "./Partials/Apps/Users/MyProfile/MyProfile";
 import Index from "./Partials/Workspace/Dashboard/Index";
 import MyWallet from "./Partials/Workspace/MyWallet/MyWallet";
 import AccountSetting from "./Partials/Apps/Users/AccountSetting/AccountSetting";
-import Invoices from "./Partials/Apps/Users/Invoices/Invoices";
-import UserActivity from "./Partials/Apps/Users/UserActivity/UserActivity";
-import MyTasks from "./Partials/Apps/Users/MyTasks/MyTasks";
-import MyContact from "./Partials/Apps/Users/MyContact/MyContact";
-import Analytics from "./Partials/Apps/MyProjects/Analytics/Analytics";
-import NewProject from "./Partials/Apps/MyProjects/NewProject/NewProject";
-import ProjectList from "./Partials/Apps/MyProjects/ProjectList/ProjectList";
-import ProjectGrid from "./Partials/Apps/MyProjects/ProjectGrid/ProjectGrid";
-import ProjectDetails from "./Partials/Apps/MyProjects/ProjectDetails/ProjectDetails";
+// import Invoices from "./Partials/Apps/Users/Invoices/Invoices";
+// import UserActivity from "./Partials/Apps/Users/UserActivity/UserActivity";
+// import MyTasks from "./Partials/Apps/Users/MyTasks/MyTasks";
+// import MyContact from "./Partials/Apps/Users/MyContact/MyContact";
+// import Analytics from "./Partials/Apps/MyProjects/Analytics/Analytics";
+// import NewProject from "./Partials/Apps/MyProjects/NewProject/NewProject";
+// import ProjectList from "./Partials/Apps/MyProjects/ProjectList/ProjectList";
+// import ProjectGrid from "./Partials/Apps/MyProjects/ProjectGrid/ProjectGrid";
+// import ProjectDetails from "./Partials/Apps/MyProjects/ProjectDetails/ProjectDetails";
 // import ClientsList from "./Partials/Apps/MyProjects/ClientsList/ClientsList";
 // import Inbox from "./Partials/Apps/Inbox/Inbox";
 // import Chat from "./Partials/Apps/Chat/Chat";
@@ -84,6 +84,8 @@ import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 import Roles from './Partials/BirdsEye/RolesPermissions'
 import Applications from './Partials/BirdsEye/Applications/Admin'
 
+import Monitoring from './Partials/BirdsEye/Monitoring/Home/index'
+
 const Routes = () => {
   return (
     <ReactRoutes>
@@ -101,7 +103,7 @@ const Routes = () => {
       {/* <Route exact path="/app" element={<AppIndex/>} /> */}
       <Route exact path="/app/my-profile" element={<MyProfile/>} />
       <Route exact path="/app/account-settings" element={<AccountSetting/>} />
-      <Route exact path="/app/invoice" element={<Invoices/>} />
+      {/* <Route exact path="/app/invoice" element={<Invoices/>} />
       <Route exact path="/app/user-activity" element={<UserActivity/>} />
       <Route exact path="/app/my-task" element={<MyTasks/>} />
       <Route exact path="/app/my-contact" element={<MyContact/>} />
@@ -109,7 +111,7 @@ const Routes = () => {
       <Route exact path="/app/new-project" element={<NewProject/>} />
       <Route exact path="/app/project-list" element={<ProjectList/>} />
       <Route exact path="/app/project-grid" element={<ProjectGrid/>} />
-      <Route exact path="/app/project-details" element={<ProjectDetails/>} />
+      <Route exact path="/app/project-details" element={<ProjectDetails/>} /> */}
       {/* <Route exact path="/app/clients-list" element={<ClientsList/>} />
       <Route exact path="/app/calendar" element={<Calendar/>} />
       <Route exact path="/app/inbox" element={<Inbox/>} />
@@ -179,6 +181,8 @@ const Routes = () => {
 
       <Route exact path="/docs/datatables" element={<Datatables/>} />
       <Route exact path="/app/configure-applications" element={<Applications/>} />
+      {/* monitoring module */}
+      <Route exact path="/app/monitor" element={<Monitoring/>} />
     </ReactRoutes>
   );
 };

@@ -1,0 +1,85 @@
+html {
+    background: #fafafa;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .App {
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    line-height: 1.42857;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* MyDataTable.css */
+
+/* Remove the border and rounded corners */
+.rdt_Table {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+    color: black !important;
+  }
+  
+ 
+  
+  /* Optional: Remove border and rounded corners for the header */
+  .rdt_TableHeader .rdt_TableFooter {
+    border:  1px solid #f9f9f9 !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Optional: Remove border and rounded corners for the footer */
+  .rdt_TableFooter {
+    border:  1px solid #f9f9f9 !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Optional: Add a boxy feel to the rows */
+  .rdt_TableRow {
+    margin-bottom: 0px;
+    border:  1px solid #f9f9f9 !important;
+  }
+
+  .rdt_TableRow:hover {
+    background-color: #eceaeb !important; 
+    cursor: pointer;
+  }
+  
+  /* Optional: Remove border and rounded corners for sortable columns */
+  .rdt_TableCol_Sortable {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Optional: Remove border and rounded corners for table cells */
+  .rdt_TableCell {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Optional: Remove border and rounded corners for header rows */
+  .rdt_TableHeadRow {
+    border:  1px solid #f9f9f9 !important;
+    border-radius: 0 !important;
+  }
+  
+  /* Optional: Add alternating row colors */
+  .rdt_TableRow:nth-child(even) {
+    background-color: white;
+    border:  1px solid white;
+  }
+  
+  .rdt_TableRow:nth-child(odd) {
+    background-color: white;
+    border:  1px solid white
+  }
+
+  
+  
+  

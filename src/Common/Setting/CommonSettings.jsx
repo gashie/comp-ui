@@ -23,7 +23,7 @@ const CommonSettings = () => {
 
   const ValenciaRed = theme === "ValenciaRed";
   const SunOrange = theme === "SunOrange";
-  const AppleGreen = theme === "AppleGreen";
+  const Applegreen = theme === "Applegreen";
   const CeruleanBlue = theme === "CeruleanBlue";
   const Mariner = theme === "Mariner";
   const PurpleHeart = theme === "PurpleHeart";
@@ -189,9 +189,9 @@ const CommonSettings = () => {
               <div style={{ "--bvite-theme-color": "#F7A614" }}></div>
             </li>
             <li
-              className={`${AppleGreen ? "active" : ""}`}
-              onClick={() => setTheme("AppleGreen")}
-              data-theme="AppleGreen"
+              className={`${Applegreen ? "active" : ""}`}
+              onClick={() => setTheme("Applegreen")}
+              data-theme="Applegreen"
             >
               <div style={{ "--bvite-theme-color": "#5BC43A" }}></div>
             </li>

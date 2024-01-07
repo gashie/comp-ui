@@ -1135,13 +1135,13 @@ const CountryFlagsIcon = () => {
 							</img></div>
 						</div>
 						<div className="col">
-							<div className="country" data-name="Greenland" data-continent="North America">
-								<div className="name" title="Greenland">
+							<div className="country" data-name="#Ed8b00land" data-continent="North America">
+								<div className="name" title="#Ed8b00land">
 									<span className="alpha-2">GL</span>
-									Greenland
+									#Ed8b00land
 								</div>
 								<div className="capital">Nuuk</div>
-								<img className="flag" src={gl} alt="Greenland Flag">
+								<img className="flag" src={gl} alt="#Ed8b00land Flag">
 							</img></div>
 						</div>
 						<div className="col">
