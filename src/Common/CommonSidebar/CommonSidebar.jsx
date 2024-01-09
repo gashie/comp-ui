@@ -22,7 +22,7 @@ const CommonSidebar = ( {iconColor} ) => {
                                 <path fill="var(--primary-color)" d="M22.9634 11.0029L18.4147 11.8178C18.3784 11.8243 18.3455 11.8417 18.3211 11.8672C18.2967 11.8927 18.2823 11.9248 18.2801 11.9586L18.0003 16.2791C17.9937 16.3808 18.0959 16.4598 18.2046 16.4369L19.471 16.1697C19.5895 16.1447 19.6966 16.2401 19.6722 16.3491L19.2959 18.0335C19.2706 18.1468 19.387 18.2438 19.5081 18.2101L20.2903 17.9929C20.4116 17.9592 20.5281 18.0564 20.5025 18.1699L19.9045 20.8157C19.8671 20.9812 20.1079 21.0715 20.2083 20.9296L20.2754 20.8348L23.9819 14.0722C24.044 13.959 23.937 13.8299 23.8009 13.8539L22.4974 14.0839C22.3749 14.1055 22.2706 14.0012 22.3052 13.8916L23.156 11.1951C23.1906 11.0854 23.086 10.981 22.9634 11.0029Z"/>
                             </svg>
                         </Link>
-                        <span className="fs-5">BVITE</span>
+                        <span className="fs-5">BE60</span>
                     </div>
                     <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
@@ -41,7 +41,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M10 12h4v4h-4z"></path>
                         </svg>} 
                         menuItems={[]} />
-                        <MenuItem 
+                        {/* <MenuItem 
                         title="My Wallet" 
                         link="/my-wallet"           
                         icon={
@@ -50,14 +50,14 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12"></path>
                             <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
                         </svg>}
-                        menuItems={[]} />
+                        menuItems={[]} /> */}
                     </ul>
                     {/* <!-- start: Application --> */}
-                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color2)"}}>Apps</h6>
+                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color2)"}}>Roles and Permissions</h6>
                     <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
                         <MenuItem 
-                        title="Users" 
-                        link="#"
+                        title="Setup Roles & Permissions" 
+                        link="/roles"
                         icon={
                         <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -65,9 +65,11 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
                             <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
                         </svg>} 
-                        menuItems={usersMenuItems} />
+                        // menuItems={usersMenuItems}
+                        menuItems={[]}
+                         />
                         <MenuItem 
-                        title="My Project's" 
+                        title="Assign Roles to Permissions" 
                         link="#"
                         icon={
                         <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -76,8 +78,10 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M6 5.3a9 9 0 0 1 0 13.4"></path>
                             <path d="M18 5.3a9 9 0 0 0 0 13.4"></path>
                         </svg>} 
-                        menuItems={projectMenuItems} />
-                        <MenuItem 
+                        // menuItems={projectMenuItems}
+                        menuItems={[]}
+                         />
+                        {/* <MenuItem 
                         title="My Calendar" 
                         link="/app/calendar"
                         icon={
@@ -89,8 +93,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 11l16 0"></path>
                             <path d="M8 15h2v2h-2z"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Inbox"
                         link="/app/inbox" 
                         icon={
@@ -99,8 +103,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                             <path d="M4 13h3l3 3h4l3 -3h3"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Chat" 
                         link="/app/chat"
                         icon={
@@ -108,8 +112,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                             <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Blog Article" 
                         link="/app/blog"
                         icon={
@@ -119,8 +123,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M7 7m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h3a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-3a1.5 1.5 0 0 1 -1.5 -1.5z"></path>
                             <path d="M7 14m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h7a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-7a1.5 1.5 0 0 1 -1.5 -1.5z"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="File Manager" 
                         link="/app/filemanager"
                         icon={
@@ -129,13 +133,13 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M9 4h3l2 2h5a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path>
                             <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2"></path>
                         </svg>} 
-                        menuItems={[]} />
+                        menuItems={[]} /> */}
                     </ul>
                     {/* <!-- start: Plugin --> */}
-                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color3)"}}>Plugins</h6>
+                    {/* <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color3)"}}>Monitoring</h6> */}
                     <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
-                        <MenuItem 
-                        title="Bootstrap UI" 
+                        {/* <MenuItem 
+                        title="Monitoring Panel" 
                         link="#"
                         icon={
                         <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -144,8 +148,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2"></path>
                             <path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z"></path>
                         </svg>} 
-                        menuItems={bootstrapMenuItems} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Font Icon" 
                         link="#"
                         icon={
@@ -162,8 +166,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M10 10h4"></path>
                             <path d="M12 14v-4"></path>
                         </svg>} 
-                        menuItems={fontIconMenuItems} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Charts" 
                         link="#"
                         icon={
@@ -174,8 +178,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
                             <path d="M4 20l14 0"></path>
                         </svg>} 
-                        menuItems={chartMenuItems} />
-                        <MenuItem 
+                        menuItems={chartMenuItems} /> */}
+                        {/* <MenuItem 
                         title="Bootstrap5 tags" 
                         link="/docs/bootstrap5-tags"
                         icon={
@@ -185,8 +189,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2"></path>
                             <path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z"></path>
                         </svg>} 
-                        menuItems={[]} />
-                       <MenuItem 
+                        menuItems={[]} /> */}
+                       {/* <MenuItem 
                         title="Datatables" 
                         link="/docs/datatables"
                         icon={
@@ -196,8 +200,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 12l16 0"></path>
                             <path d="M12 4l0 16"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Flatpickr" 
                         link="/docs/flatpickr"
                         icon={
@@ -262,8 +266,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M10 10v.01"></path>
                             <path d="M20 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Tagify" 
                         link="/docs/tagify"
                         icon={
@@ -272,8 +276,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <circle cx="8.5" cy="8.5" r="1" fill="currentColor"></circle>
                             <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Tiny slider" 
                         link="/docs/tiny-slider"
                         icon={
@@ -289,8 +293,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 18l11 0"></path>
                             <path d="M19 18l1 0"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Toast Calendar" 
                         link="/docs/toast-calendar"
                         icon={
@@ -303,8 +307,8 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M20 21l2 -2l-2 -2"></path>
                             <path d="M17 17l-2 2l2 2"></path>
                         </svg>} 
-                        menuItems={[]} />
-                        <MenuItem 
+                        menuItems={[]} /> */}
+                        {/* <MenuItem 
                         title="Toast editor" 
                         link="/docs/toast-editor"
                         icon={
@@ -314,11 +318,11 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z"></path>
                             <path d="M16 5l3 3"></path>
                         </svg>} 
-                        menuItems={[]} />
+                        menuItems={[]} /> */}
                     </ul>
                     {/* <!-- start: More Pages --> */}
-                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color4)"}}>Pages</h6>
-                    <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                    {/* <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color4)"}}>Pages</h6> */}
+                    {/* <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
                         <MenuItem 
                         title="Widgets" 
                         link="#"
@@ -417,11 +421,11 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M7.05 11.038v-3.988"></path>
                         </svg>} 
                         menuItems={[]} />
-                    </ul>
-                    <div className="bg-gradient rounded-3 p-4 text-white mt-4 promo">
+                    </ul> */}
+                    {/* <div className="bg-gradient rounded-3 p-4 text-white mt-4 promo">
                         <p className="lh-sm fw-light">Start using our team and project management tools.</p>
                         <button className="btn btn-sm w-100 btn-light text-uppercase" type="button">View Details</button>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </nav>

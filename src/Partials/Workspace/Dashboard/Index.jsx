@@ -19,7 +19,10 @@ import avatar6 from "../../../assets/images/xs/avatar6.jpg";
 import avatar1 from "../../../assets/images/xs/avatar1.jpg";
 import avatar4 from "../../../assets/images/xs/avatar4.jpg";
 import CardAction from "../../Widgets/CardAction/CardAction";
-import img from '../../../assets/images/img.png'
+import img from "../../../assets/images/img.png";
+
+import { Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const screenWidth = useSelector((state) => state.screenWidth.screenWidth);
@@ -68,19 +71,36 @@ const Index = () => {
           color: "white",
         }}
       >
-       <div className="card-body">
-      <div className="row g-4 li_animate">
-        <div className="col-xl-8 col-lg-8">
-          <h2 className="fw-bold mb-xl-2">Workspace</h2>
-          <p className="fw-lighter text-light w-100" style={{ fontSize: "0.8em" }}>
-            Agent policies are used to manage settings across a group of agents. You can add integrations to your agent policy to specify what your agents collect. When you edit an agent policy, you can use Fleet to deploy updates to a specified group of agents.
-          </p>
+        <div className="card-body">
+          <div className="row g-4 li_animate">
+            <div className="col-xl-8 col-lg-8">
+              <h2 className="fw-bold mb-xl-2">Workspace</h2>
+              <p
+                className="fw-lighter text-light w-100"
+                style={{ fontSize: "0.8em" }}
+              >
+                Agent policies are used to manage settings across a group of
+                agents. You can add integrations to your agent policy to specify
+                what your agents collect. When you edit an agent policy, you can
+                use Fleet to deploy updates to a specified group of agents.
+              </p>
+              <Link to='/app/configure-applications'>
+              <Button style={{backgroundColor: 'white', color: 'orange', border: 'none'}} className="btn btn-light">
+                <i className="bi-plus"></i> Add Application
+              </Button>
+              </Link>
+              
+            </div>
+            <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
+              <img
+                src={img}
+                alt="Your Image"
+                className="img-fluid"
+                width="300"
+              />
+            </div>
+          </div>
         </div>
-        <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
-          <img src={img} alt="Your Image"  className="img-fluid" width='300' />
-        </div>
-      </div>
-    </div>
       </div>
       <div className="card mb-3">
         <div className="card-body">

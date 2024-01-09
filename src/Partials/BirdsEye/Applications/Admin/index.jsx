@@ -177,35 +177,30 @@ const Index = () => {
                 >
                   <div>
                     {" "}
-                    <ApplicationCard />
+                    <ApplicationCard
+                      name="DB Setup"
+                      src="fa-database"
+                      des="Easy and fast database setups and deploymens"
+                      link="app"
+                    />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard />
+                    <ApplicationCard
+                      name="BE360 Monitoring"
+                      src="fa-dashboard"
+                      des="Easy and fast and extensive monitoring dsahboard"
+                      link="app/monitor"
+                    />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard />
-                  </div>
-                  <div>
-                    {" "}
-                    <ApplicationCard />
-                  </div>
-                  <div>
-                    {" "}
-                    <ApplicationCard />
-                  </div>
-                  <div>
-                    {" "}
-                    <ApplicationCard />
-                  </div>
-                  <div>
-                    {" "}
-                    <ApplicationCard />
-                  </div>
-                  <div>
-                    {" "}
-                    <ApplicationCard />
+                    <ApplicationCard
+                      name="Application Deployments"
+                      src="fa-cubes"
+                      des="Easy and fast applications deploymenrs"
+                      link='app/'
+                    />
                   </div>
                 </div>
               </div>
