@@ -198,7 +198,7 @@ function Agents() {
             backgroundColor: "white",
           }}
         >
-          <div className="text-dark">Search Component</div>
+          <div className="text-dark"></div>
         </div>
         <div
           className="d-flex p-2"

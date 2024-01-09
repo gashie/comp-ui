@@ -1,47 +1,100 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import MenuItem from './MenuItem';
-import menuItem from './menuItem.json';
+import MenuItem from "./MenuItem";
+import menuItem from "./menuItem.json";
 
-const CommonSidebar = ( {iconColor} ) => {
+const CommonSidebar = ({ iconColor }) => {
+  const {
+    usersMenuItems,
+    projectMenuItems,
+    bootstrapMenuItems,
+    fontIconMenuItems,
+    chartMenuItems,
+    widgetsMenuItems,
+    authenticationMenuItems,
+  } = menuItem;
 
-    const { usersMenuItems, projectMenuItems, bootstrapMenuItems, fontIconMenuItems, chartMenuItems, widgetsMenuItems, authenticationMenuItems } = menuItem;
-    
-    return (
+  return (
     <>
-    <aside className="ps-4 pe-3 py-3 sidebar" id='sidebar' data-bs-theme="none">
+      <aside
+        className="ps-4 pe-3 py-3 sidebar"
+        id="sidebar"
+        data-bs-theme="none"
+      >
         <nav className="navbar navbar-expand-xl py-0">
-            <div className="offcanvas offcanvas-start" data-bs-scroll="true" tabIndex="-1" id="offcanvas_Navbar">
-                <div className="offcanvas-header">
-                    <div className="d-flex">
-                        <Link to="/" className="brand-icon me-2">
-                            <svg height="26" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="var(--primary-color)" fillRule="evenodd" clipRule="evenodd" d="M8.30814 0C6.02576 0 4.33695 1.99763 4.41254 4.16407C4.48508 6.24542 4.39085 8.94102 3.7122 11.1393C3.03153 13.3441 1.88034 14.7407 0 14.92V16.9444C1.88034 17.1237 3.03153 18.5203 3.7122 20.7251C4.39085 22.9234 4.48508 25.619 4.41254 27.7003C4.33695 29.8664 6.02576 31.8644 8.30847 31.8644H31.6949C33.9773 31.8644 35.6658 29.8668 35.5902 27.7003C35.5176 25.619 35.6119 22.9234 36.2905 20.7251C36.9715 18.5203 38.1197 17.1237 40 16.9444V14.92C38.1197 14.7407 36.9715 13.3441 36.2905 11.1393C35.6119 8.94136 35.5176 6.24542 35.5902 4.16407C35.6658 1.99797 33.9773 0 31.6949 0H8.30814Z"/>
-                                <path fill="white" d="M30.0474 8.81267L20.0721 26.7214C19.8661 27.0911 19.337 27.0933 19.128 26.7253L8.95492 8.81436C8.72711 8.41342 9.06866 7.92768 9.52124 8.009L19.5072 9.80102C19.5709 9.81245 19.6361 9.81234 19.6998 9.80069L29.4769 8.01156C29.928 7.92899 30.2711 8.41086 30.0474 8.81267Z"/>
-                                <path fill="var(--primary-color)" d="M22.9634 11.0029L18.4147 11.8178C18.3784 11.8243 18.3455 11.8417 18.3211 11.8672C18.2967 11.8927 18.2823 11.9248 18.2801 11.9586L18.0003 16.2791C17.9937 16.3808 18.0959 16.4598 18.2046 16.4369L19.471 16.1697C19.5895 16.1447 19.6966 16.2401 19.6722 16.3491L19.2959 18.0335C19.2706 18.1468 19.387 18.2438 19.5081 18.2101L20.2903 17.9929C20.4116 17.9592 20.5281 18.0564 20.5025 18.1699L19.9045 20.8157C19.8671 20.9812 20.1079 21.0715 20.2083 20.9296L20.2754 20.8348L23.9819 14.0722C24.044 13.959 23.937 13.8299 23.8009 13.8539L22.4974 14.0839C22.3749 14.1055 22.2706 14.0012 22.3052 13.8916L23.156 11.1951C23.1906 11.0854 23.086 10.981 22.9634 11.0029Z"/>
-                            </svg>
-                        </Link>
-                        <span className="fs-5">BE60</span>
-                    </div>
-                    <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div className="offcanvas-body flex-column custom_scroll ps-4 ps-xl-0">
-                    {/* <!-- start: Workspace --> */}
-                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted"  style={{"--text-color": "var(--theme-color1)"}}>Workspace</h6>
-                    <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
-                        <MenuItem 
-                        title="Dashboard" 
-                        link="/index"
-                        icon={
-                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
-                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
-                            <path d="M10 12h4v4h-4z"></path>
-                        </svg>} 
-                        menuItems={[]} />
-                        {/* <MenuItem 
+          <div
+            className="offcanvas offcanvas-start"
+            data-bs-scroll="true"
+            tabIndex="-1"
+            id="offcanvas_Navbar"
+          >
+            <div className="offcanvas-header">
+              <div className="d-flex">
+                <Link to="/" className="brand-icon me-2">
+                  <svg
+                    height="26"
+                    viewBox="0 0 40 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill="var(--primary-color)"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M8.30814 0C6.02576 0 4.33695 1.99763 4.41254 4.16407C4.48508 6.24542 4.39085 8.94102 3.7122 11.1393C3.03153 13.3441 1.88034 14.7407 0 14.92V16.9444C1.88034 17.1237 3.03153 18.5203 3.7122 20.7251C4.39085 22.9234 4.48508 25.619 4.41254 27.7003C4.33695 29.8664 6.02576 31.8644 8.30847 31.8644H31.6949C33.9773 31.8644 35.6658 29.8668 35.5902 27.7003C35.5176 25.619 35.6119 22.9234 36.2905 20.7251C36.9715 18.5203 38.1197 17.1237 40 16.9444V14.92C38.1197 14.7407 36.9715 13.3441 36.2905 11.1393C35.6119 8.94136 35.5176 6.24542 35.5902 4.16407C35.6658 1.99797 33.9773 0 31.6949 0H8.30814Z"
+                    />
+                    <path
+                      fill="white"
+                      d="M30.0474 8.81267L20.0721 26.7214C19.8661 27.0911 19.337 27.0933 19.128 26.7253L8.95492 8.81436C8.72711 8.41342 9.06866 7.92768 9.52124 8.009L19.5072 9.80102C19.5709 9.81245 19.6361 9.81234 19.6998 9.80069L29.4769 8.01156C29.928 7.92899 30.2711 8.41086 30.0474 8.81267Z"
+                    />
+                    <path
+                      fill="var(--primary-color)"
+                      d="M22.9634 11.0029L18.4147 11.8178C18.3784 11.8243 18.3455 11.8417 18.3211 11.8672C18.2967 11.8927 18.2823 11.9248 18.2801 11.9586L18.0003 16.2791C17.9937 16.3808 18.0959 16.4598 18.2046 16.4369L19.471 16.1697C19.5895 16.1447 19.6966 16.2401 19.6722 16.3491L19.2959 18.0335C19.2706 18.1468 19.387 18.2438 19.5081 18.2101L20.2903 17.9929C20.4116 17.9592 20.5281 18.0564 20.5025 18.1699L19.9045 20.8157C19.8671 20.9812 20.1079 21.0715 20.2083 20.9296L20.2754 20.8348L23.9819 14.0722C24.044 13.959 23.937 13.8299 23.8009 13.8539L22.4974 14.0839C22.3749 14.1055 22.2706 14.0012 22.3052 13.8916L23.156 11.1951C23.1906 11.0854 23.086 10.981 22.9634 11.0029Z"
+                    />
+                  </svg>
+                </Link>
+                <span className="fs-5">BE60</span>
+              </div>
+              <button
+                type="button"
+                className="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="offcanvas-body flex-column custom_scroll ps-4 ps-xl-0">
+              {/* <!-- start: Workspace --> */}
+              <h6
+                className="fl-title title-font ps-2 small text-uppercase text-muted"
+                style={{ "--text-color": "var(--theme-color1)" }}
+              >
+                Workspace
+              </h6>
+              <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                <MenuItem
+                  title="Dashboard"
+                  link="/index"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M5 12l-2 0l9 -9l9 9l-2 0"></path>
+                      <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+                      <path d="M10 12h4v4h-4z"></path>
+                    </svg>
+                  }
+                  menuItems={[]}
+                />
+                {/* <MenuItem 
                         title="My Wallet" 
                         link="/my-wallet"           
                         icon={
@@ -51,37 +104,62 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4"></path>
                         </svg>}
                         menuItems={[]} /> */}
-                    </ul>
-                    {/* <!-- start: Application --> */}
-                    <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color2)"}}>Roles and Permissions</h6>
-                    <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
-                        <MenuItem 
-                        title="Setup Roles & Permissions" 
-                        link="/roles"
-                        icon={
-                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                            <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
-                            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
-                        </svg>} 
-                        // menuItems={usersMenuItems}
-                        menuItems={[]}
-                         />
-                        <MenuItem 
-                        title="Assign Roles to Permissions" 
-                        link="#"
-                        icon={
-                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-                            <path d="M6 5.3a9 9 0 0 1 0 13.4"></path>
-                            <path d="M18 5.3a9 9 0 0 0 0 13.4"></path>
-                        </svg>} 
-                        // menuItems={projectMenuItems}
-                        menuItems={[]}
-                         />
-                        {/* <MenuItem 
+              </ul>
+              {/* <!-- start: Application --> */}
+              <h6
+                className="fl-title title-font ps-2 small text-uppercase text-muted"
+                style={{ "--text-color": "var(--theme-color2)" }}
+              >
+                Roles and Permissions
+              </h6>
+              <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                <MenuItem
+                  title="Setup Roles & Permissions"
+                  link="/roles"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                      <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                      <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+                    </svg>
+                  }
+                  // menuItems={usersMenuItems}
+                  menuItems={[]}
+                />
+                <MenuItem
+                  title="Assign Roles to Permissions"
+                  link="#"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                      <path d="M6 5.3a9 9 0 0 1 0 13.4"></path>
+                      <path d="M18 5.3a9 9 0 0 0 0 13.4"></path>
+                    </svg>
+                  }
+                  // menuItems={projectMenuItems}
+                  menuItems={[]}
+                />
+                {/* <MenuItem 
                         title="My Calendar" 
                         link="/app/calendar"
                         icon={
@@ -94,7 +172,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M8 15h2v2h-2z"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Inbox"
                         link="/app/inbox" 
                         icon={
@@ -104,7 +182,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 13h3l3 3h4l3 -3h3"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Chat" 
                         link="/app/chat"
                         icon={
@@ -113,7 +191,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Blog Article" 
                         link="/app/blog"
                         icon={
@@ -124,7 +202,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M7 14m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h7a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-7a1.5 1.5 0 0 1 -1.5 -1.5z"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="File Manager" 
                         link="/app/filemanager"
                         icon={
@@ -134,22 +212,68 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                    </ul>
-                    {/* <!-- start: Plugin --> */}
-                    {/* <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color3)"}}>Monitoring</h6> */}
-                    <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
-                        {/* <MenuItem 
-                        title="Monitoring Panel" 
-                        link="#"
-                        icon={
-                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                            <path d="M2 12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2"></path>
-                            <path d="M2 12a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-4a2 2 0 0 1 2 -2"></path>
-                            <path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z"></path>
-                        </svg>} 
-                        menuItems={[]} /> */}
-                        {/* <MenuItem 
+              </ul>
+              {/* <!-- start: Plugin --> */}
+              <h6
+                className="fl-title title-font ps-2 small text-uppercase text-muted"
+                style={{ "--text-color": "var(--theme-color3)" }}
+              >
+                Monitoring
+              </h6>
+              <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                <MenuItem
+                  title="Monitoring Panel"
+                  link="/app/monitor"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M5 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                      <path d="M19 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                      <path d="M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                      <path d="M19 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path>
+                      <path d="M5 7v10"></path>
+                      <path d="M7 5h10"></path>
+                      <path d="M7 19h10"></path>
+                      <path d="M19 7v10"></path>
+                      <path d="M10 10h4"></path>
+                      <path d="M12 14v-4"></path>
+                    </svg>
+                  }
+                  menuItems={[]}
+                />
+                <MenuItem
+                  title="Host Uptime"
+                  link="/app/monitor/hostuptime"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M5 5m0 .5a.5 .5 0 0 1 .5 -.5h4a.5 .5 0 0 1 .5 .5v4a.5 .5 0 0 1 -.5 .5h-4a.5 .5 0 0 1 -.5 -.5z"></path>
+                      <path d="M5 14m0 .5a.5 .5 0 0 1 .5 -.5h4a.5 .5 0 0 1 .5 .5v4a.5 .5 0 0 1 -.5 .5h-4a.5 .5 0 0 1 -.5 -.5z"></path>
+                      <path d="M14 15l3 3l3 -3"></path>
+                      <path d="M17 18v-12"></path>
+                    </svg>
+                  }
+                  menuItems={[]}
+                />
+                {/* <MenuItem 
                         title="Font Icon" 
                         link="#"
                         icon={
@@ -167,7 +291,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M12 14v-4"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Charts" 
                         link="#"
                         icon={
@@ -179,7 +303,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 20l14 0"></path>
                         </svg>} 
                         menuItems={chartMenuItems} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Bootstrap5 tags" 
                         link="/docs/bootstrap5-tags"
                         icon={
@@ -190,7 +314,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M9 16v-8h3.5a2 2 0 1 1 0 4h-3.5h4a2 2 0 1 1 0 4h-4z"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                       {/* <MenuItem 
+                {/* <MenuItem 
                         title="Datatables" 
                         link="/docs/datatables"
                         icon={
@@ -201,7 +325,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M12 4l0 16"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Flatpickr" 
                         link="/docs/flatpickr"
                         icon={
@@ -267,7 +391,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M20 8m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Tagify" 
                         link="/docs/tagify"
                         icon={
@@ -277,7 +401,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M4 7v3.859c0 .537 .213 1.052 .593 1.432l8.116 8.116a2.025 2.025 0 0 0 2.864 0l4.834 -4.834a2.025 2.025 0 0 0 0 -2.864l-8.117 -8.116a2.025 2.025 0 0 0 -1.431 -.593h-3.859a3 3 0 0 0 -3 3z"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Tiny slider" 
                         link="/docs/tiny-slider"
                         icon={
@@ -294,7 +418,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M19 18l1 0"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Toast Calendar" 
                         link="/docs/toast-calendar"
                         icon={
@@ -308,7 +432,7 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M17 17l-2 2l2 2"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                        {/* <MenuItem 
+                {/* <MenuItem 
                         title="Toast editor" 
                         link="/docs/toast-editor"
                         icon={
@@ -319,10 +443,37 @@ const CommonSidebar = ( {iconColor} ) => {
                             <path d="M16 5l3 3"></path>
                         </svg>} 
                         menuItems={[]} /> */}
-                    </ul>
-                    {/* <!-- start: More Pages --> */}
-                    {/* <h6 className="fl-title title-font ps-2 small text-uppercase text-muted" style={{"--text-color": "var(--theme-color4)"}}>Pages</h6> */}
-                    {/* <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+              </ul>
+              {/* <!-- start: More Pages --> */}
+              <h6
+                className="fl-title title-font ps-2 small text-uppercase text-muted"
+                style={{ "--text-color": "var(--theme-color4)" }}
+              >
+                Applications
+              </h6>
+              <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                <MenuItem
+                  title="Deployed Applications"
+                  link="/app/deployed-application"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
+                    </svg>
+                  }
+                  menuItems={[]}
+                />
+              </ul>
+              {/* <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
                         <MenuItem 
                         title="Widgets" 
                         link="#"
@@ -422,16 +573,16 @@ const CommonSidebar = ( {iconColor} ) => {
                         </svg>} 
                         menuItems={[]} />
                     </ul> */}
-                    {/* <div className="bg-gradient rounded-3 p-4 text-white mt-4 promo">
+              {/* <div className="bg-gradient rounded-3 p-4 text-white mt-4 promo">
                         <p className="lh-sm fw-light">Start using our team and project management tools.</p>
                         <button className="btn btn-sm w-100 btn-light text-uppercase" type="button">View Details</button>
                     </div> */}
-                </div>
             </div>
+          </div>
         </nav>
-    </aside>
+      </aside>
     </>
-    )
-}
-  
-  export default CommonSidebar
+  );
+};
+
+export default CommonSidebar;

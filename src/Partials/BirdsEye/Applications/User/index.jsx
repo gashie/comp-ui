@@ -12,6 +12,7 @@ import DataTable from "../../../../Common/DataTable/DataTable";
 import ApplicationCard2 from "../ApplicationCard2";
 // import "./index.css";
 import img from "../../../../assets/images/img.png";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [isRight, setIsRight] = useState(false);
@@ -155,7 +156,21 @@ const Index = () => {
                   policy, you can use Fleet to deploy updates to a specified
                   group of agents.
                 </p>
+
+                <Link to="/app/deploy-process">
+                  <Button
+                    style={{
+                      border: "1px solid transparent",
+                      fontSize: "0.8rem",
+                      backgroundColor: "white",
+                      color: "#Ed8b00",
+                    }}
+                  >
+                    <i className="bi-plus"></i>Add Deployment
+                  </Button>
+                </Link>
               </div>
+
               <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
                 <img
                   src={img}
@@ -177,26 +192,24 @@ const Index = () => {
                 >
                   <div>
                     {" "}
-                    <ApplicationCard2 name='Central Polls' />
+                    <ApplicationCard2 name="Central Polls" />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard2 name='Business Application' />
+                    <ApplicationCard2 name="Business Application" />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard2 name='Monitoring Dashboard' />
+                    <ApplicationCard2 name="Monitoring Dashboard" />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard2 name='SMS Portal Application' />
+                    <ApplicationCard2 name="SMS Portal Application" />
                   </div>
                   <div>
                     {" "}
-                    <ApplicationCard2 name='Dev Tools Applications' />
+                    <ApplicationCard2 name="Dev Tools Applications" />
                   </div>
-                  
-                  
                 </div>
               </div>
             </div>

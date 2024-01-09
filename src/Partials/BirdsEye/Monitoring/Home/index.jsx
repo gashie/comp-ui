@@ -95,7 +95,7 @@ function Index() {
                             Home
                           </NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "tab2",
@@ -105,8 +105,8 @@ function Index() {
                             <i className="bx bx-network-chart mx-1"></i>
                             Overview
                           </NavLink>
-                        </NavItem>
-                        <NavItem>
+                        </NavItem> */}
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "tab3",
@@ -127,8 +127,8 @@ function Index() {
                             <i className="bx bxl-kubernetes mx-1"></i>
                             Kubernetes
                           </NavLink>
-                        </NavItem>
-                        <NavItem>
+                        </NavItem> */}
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "tab5",
@@ -149,8 +149,8 @@ function Index() {
                             <i className="bx bx-bell mx-1"></i>
                             Alerts
                           </NavLink>
-                        </NavItem>
-                        <NavItem>
+                        </NavItem> */}
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "tab7",
@@ -160,7 +160,7 @@ function Index() {
                             <i className="bx bx-search-alt mx-1"></i>
                             Anomalies
                           </NavLink>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                           <NavLink
                             className={classnames({
@@ -172,7 +172,7 @@ function Index() {
                             Functions
                           </NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                           <NavLink
                             className={classnames({
                               active: activeTab === "tab9",
@@ -182,7 +182,7 @@ function Index() {
                             <i className="bx bx-message-square-detail mx-1"></i>
                             Events
                           </NavLink>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                           <NavLink
                             className={classnames({
@@ -199,6 +199,7 @@ function Index() {
                         <TabPane tabId="tab1">
                           <Row>
                             <Col>
+                            
                               <HomePage />
                             </Col>
                           </Row>

@@ -40,7 +40,7 @@ function Index() {
             <div className="mt-1">{row.cpu}</div>
             <div>
               {" "}
-              <CustomProgressBar value={row.cpu} color="#Ffd100" bg="#080a0a" />
+              <CustomProgressBar value={row.cpu} color="#00d084" bg="#080a0a" />
               <p style={{ color: "transparent" }}>vvvvvvvvvvvvv</p>
             </div>
           </div>
@@ -63,7 +63,7 @@ function Index() {
               {" "}
               <CustomProgressBar
                 value={row.memory}
-                color="#Ffd100"
+                color="#00d084"
                 bg="#080a0a"
               />
               <p style={{ color: "transparent" }}>vvvvvvvvvvvvv</p>
@@ -88,7 +88,7 @@ function Index() {
               {" "}
               <CustomProgressBar
                 value={row.resident}
-                color="#Ffd100"
+                color="#00d084"
                 bg="#080a0a"
               />
               <p style={{ color: "transparent" }}>vvvvvvvvvvvvv</p>
@@ -113,7 +113,7 @@ function Index() {
               {" "}
               <CustomProgressBar
                 value={row.shared}
-                color="#Ffd100"
+                color="#00d084"
                 bg="#080a0a"
               />
               <p style={{ color: "transparent" }}>vvvvvvvvvvvvv</p>
@@ -234,6 +234,7 @@ function Index() {
         style={{ height: "100vh", width: "100%", backgroundColor: "white" }}
         className="p-5"
       >
+        
         {" "}
         {/* <div className="mb-5">
           <h4 style={{ color: "gray" }}>

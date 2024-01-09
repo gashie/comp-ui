@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import img from "./contours.png";
 import { Button } from "reactstrap";
 import { Tooltip } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function ApplicationCard2({ name }) {
   const cardStyle = {
@@ -109,6 +110,7 @@ function ApplicationCard2({ name }) {
                     View Deployment
                   </Tooltip>
                 </Button> */}
+                <Link to="/app/application-details">
                 <Button
                   className="btn btn-dark m-1"
                   style={{ fontSize: "0.5rem" }}
@@ -126,8 +128,9 @@ function ApplicationCard2({ name }) {
                   >
                     View Deployment
                   </Tooltip>
-                </Button>
-                <Button
+                </Button></Link>
+             
+                {/* <Button
                   className="btn btn-dark m-1"
                   style={{ fontSize: "0.5rem" }}
                   id="settingbutton"
@@ -144,7 +147,7 @@ function ApplicationCard2({ name }) {
                   >
                     Manage Deployment Settings
                   </Tooltip>
-                </Button>
+                </Button> */}
               </p>
             </div>
           </div>
