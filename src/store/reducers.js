@@ -16,6 +16,10 @@ import {
   themeModeReducer,
 } from "./defaultStates/reducers/moreSettingsReducer";
 
+import RoutesReducer from './routes/reducer'
+import RolesReducer from './role/reducer'
+import PermissionsReducer from './permissions/reducer'
+
 const rootReducer = combineReducers({
   // public
 
@@ -31,6 +35,9 @@ const rootReducer = combineReducers({
   iconColor: iconColorReducer,
   themeMode: themeModeReducer,
   screenWidth: screenWidthReducer,
+  RoutesReducer,
+  RolesReducer,
+  PermissionsReducer
 });
 
 export default rootReducer;

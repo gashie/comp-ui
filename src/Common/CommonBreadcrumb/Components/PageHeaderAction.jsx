@@ -6,7 +6,7 @@ const PageHeaderAction = ({ toggleRightbar }) => {
     <>
         <Dropdown className="dropdown">
           <Dropdown.Toggle as="a" to="#" className='hide-toggle' type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+              <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" color='white'>
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
                   <path d="M9 12l6 0"></path>
@@ -26,7 +26,7 @@ const PageHeaderAction = ({ toggleRightbar }) => {
         </Dropdown>
         <Dropdown className="dropdown mx-3">
               <Dropdown.Toggle as='a' to="#" className='hide-toggle' type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                  <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                  <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="22" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round" color='white'>
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                       <path d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227z"></path>
                   </svg>

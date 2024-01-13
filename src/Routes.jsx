@@ -82,6 +82,8 @@ import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 
 
 import Roles from './Partials/BirdsEye/RolesPermissions'
+import Permissions from './Partials/BirdsEye/RolesPermissions/Permissions'
+import RolePermissions from './Partials/BirdsEye/RolesPermissions/RolesPermissions'
 import Applications from './Partials/BirdsEye/Applications/Admin'
 
 import Monitoring from './Partials/BirdsEye/Monitoring/Home/index'
@@ -89,6 +91,7 @@ import DeployedApplications from './Partials/BirdsEye/Applications/User/'
 import DeployedApplicationDetails from './Partials/BirdsEye/Applications/User/DeployedApplicationDetails'
 import HostUptime from './Partials/BirdsEye/Monitoring/Dashboard'
 import DeployProcess from './Partials/BirdsEye/Applications/User/DeployProcess'
+import CreateRoutes from './Partials/BirdsEye/Routes/'
 
 const Routes = () => {
   return (
@@ -96,17 +99,17 @@ const Routes = () => {
       <Route exact path="/signin" element={<Signin/>} />
       <Route exact path="/signup" element={<Signup/>} />
       <Route exact path="/password-reset" element={<PasswordReset/>} />
-      <Route exact path="/two-step" element={<TwoStep/>} />
+      {/* <Route exact path="/two-step" element={<TwoStep/>} />
       <Route exact path="/lockscreen" element={<Lockscreen/>} />
       <Route exact path="/maintenance" element={<Maintenance/>} />
-      <Route exact path="/404" element={<NoPageFound/>} />
+      <Route exact path="/404" element={<NoPageFound/>} /> */}
 
       <Route exact path="/" element={<Index/>} />
-      <Route exact path="/index" element={<Index/>} />
-      <Route exact path="/my-wallet" element={<MyWallet/>} />
+      {/* <Route exact path="/index" element={<Index/>} />
+      <Route exact path="/my-wallet" element={<MyWallet/>} /> */}
       {/* <Route exact path="/app" element={<AppIndex/>} /> */}
-      <Route exact path="/app/my-profile" element={<MyProfile/>} />
-      <Route exact path="/app/account-settings" element={<AccountSetting/>} />
+      {/* <Route exact path="/app/my-profile" element={<MyProfile/>} />
+      <Route exact path="/app/account-settings" element={<AccountSetting/>} /> */}
       {/* <Route exact path="/app/invoice" element={<Invoices/>} />
       <Route exact path="/app/user-activity" element={<UserActivity/>} />
       <Route exact path="/app/my-task" element={<MyTasks/>} />
@@ -173,6 +176,8 @@ const Routes = () => {
 
       {/* New ROutes */}
       <Route exact path="/roles" element={<Roles/>} />
+      <Route exact path="/permissions" element={<Permissions/>} />
+      <Route exact path="/role-permissions" element={<RolePermissions/>} />
       <Route exact path="/pages/form" element={<Forms/>} />
 
       <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
@@ -191,6 +196,7 @@ const Routes = () => {
       <Route exact path="/app/application-details" element={<DeployedApplicationDetails/>} />
       <Route exact path="/app/monitor/hostuptime" element={<HostUptime/>} />
       <Route exact path="/app/deploy-process" element={<DeployProcess/>} />
+      <Route exact path="/app/create-routes" element={<CreateRoutes/>} />
     </ReactRoutes>
   );
 };

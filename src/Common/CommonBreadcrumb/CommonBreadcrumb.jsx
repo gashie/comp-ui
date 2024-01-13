@@ -10,7 +10,7 @@ import PageHeaderAction from './Components/PageHeaderAction'
     const singleTitle = singleTitleMapping[pathname];
 
     return (
-        <div className="px-4 py-2 page-header" id='breadcrumb' data-bs-theme="none">
+        <div className="px-4 py-2 page-header" id='breadcrumb' data-bs-theme="none" >
             <div className="d-flex align-items-center">
                 <button className="btn d-none d-xl-inline-flex me-3 px-0 sidebar-toggle" type="button" onClick={toggleSidebar}>
                     <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -21,17 +21,17 @@ import PageHeaderAction from './Components/PageHeaderAction'
                     </svg>
                 </button>
             <ol className="breadcrumb mb-0 bg-transparent">
-                <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+                <li className="breadcrumb-item"><Link to="/" style={{color: 'white'}}>Home</Link></li>
                 {pathSegments.map((segment, index) => {
                     const path = `/${pathSegments.slice(0, index + 1).join('/')}`;
                     const breadcrumbTitle = segment === 'app' ? 'App' : segment === 'docs' ? 'Docs' : segment === 'pages' ? 'Pages' : null
                     return (
-                    <li key={index} className="breadcrumb-item active"><Link to={path}>{breadcrumbTitle}</Link><span>{index === pathSegments.length - 1 ? singleTitle : ''}</span></li>
+                    <li key={index} className="breadcrumb-item active text-light" style={{color: "white"}}><Link to={path} style={{color: 'white'}}>{breadcrumbTitle}</Link><span style={{color: 'white'}}>{index === pathSegments.length - 1 ? singleTitle : ''}</span></li>
                     );
                 })}
             </ol>
             </div>
-            <ul className="list-unstyled action d-flex align-items-center mb-0">
+            <ul className="list-unstyled action d-flex align-items-center mb-0 text-light">
               <PageHeaderAction toggleRightbar={toggleRightbar} />
             </ul>
         </div>

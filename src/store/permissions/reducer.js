@@ -29,6 +29,7 @@ const PermissionsReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         loading: true,
+        permissions: [],
       };
     }
     case GET_PERMISSIONS_SUCCESS:
@@ -70,6 +71,7 @@ const PermissionsReducer = (state = INIT_STATE, action) => {
         ...state,
         saveloadding: true,
         loading: true,
+        permissions: [],
       };
     case ADD_PERMISSIONS_RESET:
       return {
@@ -82,6 +84,7 @@ const PermissionsReducer = (state = INIT_STATE, action) => {
         updateloadding: true,
         saveloadding: false,
         loading: true,
+        permissions: [],
       };
     case UPDATE_PERMISSIONS_SUCCESS:
       // console.log(state.applist.map(app =>

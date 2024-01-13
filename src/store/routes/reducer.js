@@ -1,92 +1,89 @@
 import {
-  GET_ROLES_FAIL,
-  GET_ROLES_REQUEST,
-  GET_ROLES_SUCCESS,
-  ADD_ROLES_FAIL,
-  ADD_ROLES_REQUEST,
-  ADD_ROLES_SUCCESS,
-  UPDATE_ROLES,
-  UPDATE_ROLES_FAIL,
-  UPDATE_ROLES_SUCCESS,
-  ADD_ROLES_RESET,
+  GET_ROUTES_FAIL,
+  GET_ROUTES_REQUEST,
+  GET_ROUTES_SUCCESS,
+  ADD_ROUTES_FAIL,
+  ADD_ROUTES_REQUEST,
+  ADD_ROUTES_SUCCESS,
+  UPDATE_ROUTES,
+  UPDATE_ROUTES_FAIL,
+  UPDATE_ROUTES_SUCCESS,
+  ADD_ROUTES_RESET,
 } from "./actionType";
 
 const INIT_STATE = {
-  roles: [],
-  loadingroles: false,
-  roleserror: null,
+  getRoutesActionResponseSuccess: [],
+  loadinggetRoutesActionResponseSuccess: false,
+  getRoutesActionResponseSuccesserror: null,
   saveloadding: false,
   saveerror: null,
-  isRolesCreated: false,
+  isRoutesCreated: false,
   updateloadding: false,
   updateerror: null,
-  isRolesUpdated: false,
+  isRoutesUpdated: false,
 };
 
-const RolesReducer = (state = INIT_STATE, action) => {
+const RoutesReducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case GET_ROLES_REQUEST: {
+    case GET_ROUTES_REQUEST: {
       return {
         ...state,
         loading: true,
-        roles: [],
       };
     }
-    case GET_ROLES_SUCCESS:
+    case GET_ROUTES_SUCCESS:
       return {
         ...state,
         loading: false,
-        roles: action.payload,
+        getRoutesActionResponseSuccess: action.payload,
         updateloadding: false,
         saveloadding: false,
       };
-    case GET_ROLES_FAIL:
+    case GET_ROUTES_FAIL:
       return {
         ...state,
         loading: false,
         error: action.payload,
-        roles: [],
+        getRoutesActionResponseSuccess: [],
       };
 
-    case ADD_ROLES_SUCCESS:
+    case ADD_ROUTES_SUCCESS:
       return {
         ...state,
-        isRolesCreated: true,
+        isRoutesCreated: true,
         saveloadding: false,
         updateloadding: false,
         loading: false,
-        roles: action.payload,
+        getRoutesActionResponseSuccess: action.payload,
       };
 
-    case ADD_ROLES_FAIL:
+    case ADD_ROUTES_FAIL:
       return {
         ...state,
         saveloadding: false,
-        isRolesCreated: false,
+        isRoutesCreated: false,
         error: action.payload,
         loading: false,
       };
-    case ADD_ROLES_REQUEST:
+    case ADD_ROUTES_REQUEST:
       return {
         ...state,
         saveloadding: true,
         loading: true,
-        roles: [],
       };
-    case ADD_ROLES_RESET:
+    case ADD_ROUTES_RESET:
       return {
         ...state,
-        isRolesCreated: false,
+        isRoutesCreated: false,
       };
-    case UPDATE_ROLES:
+    case UPDATE_ROUTES:
       return {
         ...state,
         updateloadding: true,
         saveloadding: false,
         loading: true,
-        roles: [],
       };
-    case UPDATE_ROLES_SUCCESS:
+    case UPDATE_ROUTES_SUCCESS:
       // console.log(state.applist.map(app =>
       //   app.id === action.payload.id
       //     ? { ...app, ...action.payload }
@@ -94,21 +91,21 @@ const RolesReducer = (state = INIT_STATE, action) => {
       // ));
       return {
         ...state,
-        // roles: state.roles.map(item =>
+        // getRoutesActionResponseSuccess: state.getRoutesActionResponseSuccess.map(item =>
         //   item.category_id === action.payload.category_id
         //     ? { ...item, ...action.payload }
         //     : item
         // ),
-        roles: action.payload,
-        isRolesUpdated: true,
+        getRoutesActionResponseSuccess: action.payload,
+        isRoutesUpdated: true,
         updateloadding: false,
         loading: false,
       };
-    case UPDATE_ROLES_FAIL:
+    case UPDATE_ROUTES_FAIL:
       return {
         ...state,
         updateerror: action.payload,
-        isRolesUpdated: false,
+        isRoutesUpdated: false,
         loading: false,
       };
     default:
@@ -116,4 +113,4 @@ const RolesReducer = (state = INIT_STATE, action) => {
   }
 };
 
-export default RolesReducer;
+export default RoutesReducer;

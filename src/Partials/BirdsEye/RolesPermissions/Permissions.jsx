@@ -17,7 +17,16 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewRoles, getRolesAction } from "../../../store/actions";
+import {
+  addNewPermissions,
+  addNewRoles,
+  getPermissionsAction,
+  getRolesAction,
+} from "../../../store/actions";
+import {
+  handleValidDate,
+  handleValidTime,
+} from "../../../Common/Hooks/ValidDateTime";
 
 const Index = () => {
   const [isRight, setIsRight] = useState(false);
@@ -33,19 +42,23 @@ const Index = () => {
 
   const [isEdit, setIsEdit] = useState(false);
 
+  const transformPermissionName = (input) => {
+    // Replace spaces with underscores and convert to lowercase
+    return input.replace(/\s+/g, "_").toLowerCase();
+  };
+
   const validation = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
     enableReinitialize: true,
 
     initialValues: {
       // img: (contact && contact.img) || '',
-      role_name: "",
+      permission_name: "",
       description: "",
-      is_system: "",
     },
     validationSchema: Yup.object({
-      role_name: Yup.string().required(
-        "Please provide route name eg. System Adminstrator"
+        permission_name: Yup.string().required(
+        "Please provide route name eg. Add New Users to Workspace"
       ),
 
       //description: Yup.string().required("Please provide description"),
@@ -55,7 +68,12 @@ const Index = () => {
         validation.resetForm();
       } else {
         // save new Contact
-        dispatch(addNewRoles(values));
+        dispatch(
+          addNewPermissions({
+            ...values,
+            permission_name: transformPermissionName(values.permission_name),
+          })
+        );
         validation.resetForm();
       }
       toggleRightCanvas();
@@ -63,23 +81,22 @@ const Index = () => {
   });
 
   useEffect(() => {
-    dispatch(getRolesAction());
+    dispatch(getPermissionsAction());
   }, [dispatch]);
 
-  const { loading, error, roles } = useSelector((state) => ({
-    loading: state.RolesReducer.loading,
-    error: state.RolesReducer.roleserror,
-    roles: state.RolesReducer.roles,
+  const { loading, error, permissions } = useSelector((state) => ({
+    loading: state.PermissionsReducer.loading,
+    error: state.PermissionsReducer.permissionserror,
+    permissions: state.PermissionsReducer.permissions,
   }));
 
   const columns = [
     {
-      Header: "Role",
-      accessor: "role_name", // Replace with the actual accessor for your data
-      
+      Header: "Permission",
+      accessor: "permission_name", // Replace with the actual accessor for your data
     },
     {
-      Header: "Role Description",
+      Header: "Permission Description",
       accessor: "description",
     },
 
@@ -99,6 +116,18 @@ const Index = () => {
             {value ? <div>Active</div> : <div>Inactive</div>}
           </div>
         </div>
+      ),
+    },
+
+    {
+      Header: "CreatedAt",
+      Cell: (contact) => (
+        <>
+          {handleValidDate(contact.row.original.created_at)},{" "}
+          <small className="text-muted">
+            {handleValidTime(contact.row.original.created_at)}
+          </small>
+        </>
       ),
     },
 
@@ -165,7 +194,7 @@ const Index = () => {
             <div className="col-xl-12 col-lg-12 col-md-12 col">
               <div className="row g-4 li_animate">
                 <div className="col-xl-8 col-lg-8">
-                  <h2 className="fw-bold mb-xl-2">System Roles</h2>
+                  <h2 className="fw-bold mb-xl-2">System Permissions</h2>
                   <p
                     className="fw-lighter text-light w-100"
                     style={{ fontSize: "0.8em" }}
@@ -188,7 +217,7 @@ const Index = () => {
                       setIsRight(true);
                     }}
                   >
-                    <i className="bi-plus"></i>Add Role
+                    <i className="bi-plus"></i>Add Permission
                   </Button>
                   {/* <Button
                     style={{
@@ -227,7 +256,7 @@ const Index = () => {
                   toggle={toggleRightCanvas}
                   id="offcanvasRightLabel"
                 >
-                  <h3>Create Role</h3>
+                  <h3>Create Permission</h3>
                 </OffcanvasHeader>
                 <OffcanvasBody>
                   <div>
@@ -252,31 +281,33 @@ const Index = () => {
                     >
                       <div className="row">
                         <div className="mb-3 col-md-12 col-12">
-                          <label className="col-form-label">Role Name</label>
+                          <label className="col-form-label">
+                            Permission Name
+                          </label>
                           <fieldset className="form-icon-group left-icon position-relative">
                             <Input
                               type="text"
-                              name="role_name"
-                              id="role_name"
+                              name="permission_name"
+                              id="permission_name"
                               className="form-control p-3"
-                              placeholder="eg. System Administrator"
+                              placeholder="eg.  Add New Users to Workspace"
                               validate={{
                                 required: { value: true },
                               }}
                               onChange={validation.handleChange}
                               onBlur={validation.handleBlur}
-                              value={validation.values.role_name || ""}
+                              value={validation.values.permission_name || ""}
                               invalid={
-                                validation.touched.role_name &&
-                                validation.errors.role_name
+                                validation.touched.permission_name &&
+                                validation.errors.permission_name
                                   ? true
                                   : false
                               }
                             />
-                            {validation.touched.role_name &&
-                            validation.errors.role_name ? (
+                            {validation.touched.permission_name &&
+                            validation.errors.permission_name ? (
                               <FormFeedback type="invalid">
-                                {validation.errors.role_name}
+                                {validation.errors.permission_name}
                               </FormFeedback>
                             ) : null}
                           </fieldset>
@@ -311,7 +342,7 @@ const Index = () => {
                             ) : null}
                           </fieldset>
                         </div>
-
+                        {/* 
                         <div className="mb-3 col-md-12 col-12">
                           <label className="col-form-label">
                             Is this role for a general adminstrator?
@@ -338,7 +369,7 @@ const Index = () => {
                               </FormFeedback>
                             ) : null}
                           </fieldset>
-                        </div>
+                        </div> */}
                         {/* <div className="mb-3 col-md-12 col-12">
                           <label className="col-form-label">Description</label>
                           <fieldset className="form-icon-group left-icon position-relative">
@@ -386,7 +417,7 @@ const Index = () => {
             <div className="col-xl-12 col-lg-12">
               <DataTable
                 columns={columns}
-                data={roles}
+                data={permissions}
                 useGlobalFilter={true}
                 loading={loading}
               />

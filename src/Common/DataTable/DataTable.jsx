@@ -7,8 +7,9 @@ import {
   useSortBy,
 } from "react-table";
 import { Input } from "reactstrap";
+import SidebarLoader from "../SkeletonLoader";
 
-const DataTable = ({ columns, data, colHight }) => {
+const DataTable = ({ columns, data, colHight, length, loading }) => {
   const [searchText, setSearchText] = useState("");
 
   const tableInstance = useTable(
@@ -58,7 +59,7 @@ const DataTable = ({ columns, data, colHight }) => {
           }}
           placeholder="Search..."
           className="mb-4"
-          style={{color: "black" }}
+          style={{ color: "black" }}
         />
         <table
           {...getTableProps()}
@@ -72,7 +73,7 @@ const DataTable = ({ columns, data, colHight }) => {
                 className="small text-muted text-uppercase"
               >
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  <th {...column.getHeaderProps(column.getSortByToggleProps())} className="text-center">
                     {column.render("Header")}
                     <span>
                       {" "}
@@ -95,10 +96,12 @@ const DataTable = ({ columns, data, colHight }) => {
                         <td
                           key={cell.id}
                           {...cell.getCellProps()}
-                          style={{ padding: `0.9rem ${colHight || '2rem'}` }}
-
+                          style={{ padding: `0.9rem ${colHight || "2rem"}` }}
+                          className="text-center"
                         >
+                         <div className="text-center">
                           {cell.render("Cell")}
+                         </div>
                         </td>
                       );
                     })}
@@ -108,6 +111,18 @@ const DataTable = ({ columns, data, colHight }) => {
             })}
           </tbody>
         </table>
+        {length === 0 ? (
+          <div className="d-flex justify-content-center mt-5">No Data</div>
+        ) : (
+          ""
+        )}
+        {loading === true ? (
+          <div className="d-flex justify-content-center">
+            <SidebarLoader />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

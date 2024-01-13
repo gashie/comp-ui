@@ -33,3 +33,14 @@ export const updateUserProfileURL = (data) =>
 
 export const changePasswordURL = (data) =>
   api.create(url.CHANGE_PASSWORD, data);
+
+export const addRoutesAPICALL = (data) => api.create(url.CREATE_ROUTES, data);
+
+//roles
+export const addrolesPICALL = (data) => api.create(url.CREATE_ROLES, data);
+export const updaterolesPICALL = (data) => api.create(url.UPDATE_ROLES, data);
+export const getrolesPICALL = (data) => api.create(url.VIEW_ROLES, data);
+
+export const addpermissionsPICALL = (data) => api.create(url.CREATE_PERMISSION, data);
+export const updatepermissionsPICALL = (data) => api.create(url.UPDATE_PERMISSION, data);
+export const getpermissionsPICALL = (data) => api.create(url.VIEW_PERMISSION, data);
