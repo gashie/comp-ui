@@ -4,6 +4,7 @@ import { Button, FormFeedback, Input } from "reactstrap";
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { registerUser } from "../../../../store/actions";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -38,13 +39,44 @@ const Signup = () => {
       //description: Yup.string().required("Please provide description"),
     }),
     onSubmit: (values) => {
+      const {
+        username,
+        password,
+        email,
+        first_name,
+        last_name,
+        date_of_birth,
+        phone_number,
+      } = values;
+
+      dispatch(
+        registerUser({
+          account: {
+            username,
+            password,
+            email,
+            first_name,
+            last_name,
+            date_of_birth,
+            phone_number,
+          },
+        })
+      );
       validation.resetForm();
     },
   });
 
+  console.log(validation.errors, "errors");
+
   return (
     <div className="px-xl-5 px-4 auth-body">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          validation.handleSubmit();
+          return false;
+        }}
+      >
         <ul className="row g-3 list-unstyled li_animate">
           <li className="col-12">
             <h1 className="h2 title-font">
@@ -105,7 +137,33 @@ const Signup = () => {
             ) : null}
           </li>
           <li className="col-12">
-            <label className="form-label">Email address</label>
+            <label className="form-label">Username</label>
+            <Input
+              type="text"
+              name="username"
+              id="username"
+              className="form-control p-3"
+              placeholder="Eg. johndoe"
+              validate={{
+                required: { value: true },
+              }}
+              onChange={validation.handleChange}
+              onBlur={validation.handleBlur}
+              value={validation.values.username || ""}
+              invalid={
+                validation.touched.username && validation.errors.username
+                  ? true
+                  : false
+              }
+            />
+            {validation.touched.username && validation.errors.username ? (
+              <FormFeedback type="invalid">
+                {validation.errors.username}
+              </FormFeedback>
+            ) : null}
+          </li>
+          <li className="col-12">
+            <label className="form-label">username address</label>
             <Input
               type="text"
               name="email"

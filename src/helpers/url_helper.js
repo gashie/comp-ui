@@ -16,6 +16,7 @@ export const SOCIAL_LOGIN = "/social-login";
 //auth
 export const LOGIN_URL =`${version_one}${dynamo}adminsignin`;
 export const JWT_LOGIN_URL = `${version_one}${dynamo}auth`;
+export const CREATE_USER_URL = `${version_one}${dynamo}addsystemuser`;
 export const LOGOUT_URL = `${version_one}${dynamo}logout`;
 
 //creating routes
@@ -30,4 +31,4 @@ export const CREATE_PERMISSION = `${version_one}${dormant}create_permission`;
 export const UPDATE_PERMISSION = `${version_one}${dormant}create_permission`;
 export const VIEW_PERMISSION = `${version_one}${dormant}view_permission`;
 
-//dynamic routes
+

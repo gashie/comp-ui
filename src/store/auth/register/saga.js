@@ -10,26 +10,19 @@ import {
   updateUserProfileError,
 } from "./actions";
 
-//Include Both Helper File with needed methods
-import { getFirebaseBackend } from "../../../helpers/firebase_helper";
-import {
-  createTenantURL,
-  postFakeRegister,
-  postJwtRegister,
-  updateUserAPICALL,
-} from "../../../helpers/fakebackend_helper";
+import { createUserAPICALL } from "../../../helpers/fakebackend_helper";
 
 // initialize relavant method of both Auth
 
 
 import toast from 'react-hot-toast'
-import "react-toastify/dist/ReactToastify.css";
+
 
 // Is user register successfull then direct plot user in redux.
 function* registerUser({ payload: { user, history } }) {
   try {
  
-    const response = yield call(createTenantURL, user);
+    const response = yield call(createUserAPICALL, user);
     if (response.data.status === 1 && response) {
       yield put(registerUserSuccessful(response.data.data));
       yield put(resetRegisterFlag());
@@ -37,7 +30,7 @@ function* registerUser({ payload: { user, history } }) {
       toast.success(`${response?.data.message}`, {
         autoClose: 3000,
       });
-      window.location.href = '/welcome';
+      window.location.href = '/signin';
     } else {
       yield put(registerUserFailed(response.data.data));
       toast.error(`${response?.data.message}`, {
@@ -55,34 +48,34 @@ function* registerUser({ payload: { user, history } }) {
   }
 }
 
-function* updateProfile({ payload: data }) {
-  try {
-    const response = yield call(updateUserAPICALL, data);
+// function* updateProfile({ payload: data }) {
+//   try {
+//     const response = yield call(updateUserAPICALL, data);
 
-    if (response && response?.data.status === 1) {
-      //  yield put(updateRatecardURL());
-      yield put(updateUserProfileSuccess());
-      // yield put(rateCardAction({ viewAction: "" }));
-      toast.success(`Profile Updated Succesfully`, {
-        autoClose: 6000,
-      });
-    } else {
-      yield put(updateUserProfileError(response));
-      toast.warn(`${response?.data.message}`, {
-        autoClose: 3000,
-      });
-      // yield put(rateCardAction({ viewAction: "" }));
-    }
-  } catch (error) {
-    console.log(error);
-    yield put(updateUserProfileError(error));
-    // yield put(rateCardAction({ viewAction: "" }));
-  }
-}
+//     if (response && response?.data.status === 1) {
+//       //  yield put(updateRatecardURL());
+//       yield put(updateUserProfileSuccess());
+//       // yield put(rateCardAction({ viewAction: "" }));
+//       toast.success(`Profile Updated Succesfully`, {
+//         autoClose: 6000,
+//       });
+//     } else {
+//       yield put(updateUserProfileError(response));
+//       toast.warn(`${response?.data.message}`, {
+//         autoClose: 3000,
+//       });
+//       // yield put(rateCardAction({ viewAction: "" }));
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     yield put(updateUserProfileError(error));
+//     // yield put(rateCardAction({ viewAction: "" }));
+//   }
+// }
 
 export function* watchUserRegister() {
   yield takeEvery(REGISTER_USER, registerUser);
-  yield takeEvery(UPDATE_PROILE, updateProfile);
+  // yield takeEvery(UPDATE_PROILE, updateProfile);
 }
 
 function* accountSaga() {

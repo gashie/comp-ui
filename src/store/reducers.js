@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
 
 import Login from "./auth/login/reducer";
+import Register from './auth/register/reducer'
 
 import menuReducer from "./defaultStates/reducers/menuReducer";
 import themeReducer from "./defaultStates/reducers/themeReducer";
@@ -24,6 +25,7 @@ const rootReducer = combineReducers({
   // public
 
   Login,
+  Account: Register,
   menu: menuReducer,
   theme: themeReducer,
   layout: layoutReducer,

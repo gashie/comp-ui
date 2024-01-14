@@ -44,3 +44,6 @@ export const getrolesPICALL = (data) => api.create(url.VIEW_ROLES, data);
 export const addpermissionsPICALL = (data) => api.create(url.CREATE_PERMISSION, data);
 export const updatepermissionsPICALL = (data) => api.create(url.UPDATE_PERMISSION, data);
 export const getpermissionsPICALL = (data) => api.create(url.VIEW_PERMISSION, data);
+
+
+export const createUserAPICALL = (data) => api.create(url.CREATE_USER_URL, data);

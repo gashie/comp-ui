@@ -4,16 +4,16 @@ import { Route, Routes as ReactRoutes } from "react-router-dom";
 import Signin from "./Partials/Pages/Authentication/Signin/Signin";
 import Signup from "./Partials/Pages/Authentication/Signup/Signup";
 import PasswordReset from "./Partials/Pages/Authentication/PasswordReset/PasswordReset";
-import TwoStep from "./Partials/Pages/Authentication/TwoStep/TwoStep";
-import Lockscreen from "./Partials/Pages/Authentication/Lockscreen/Lockscreen";
-import Maintenance from "./Partials/Pages/Authentication/Maintenance/Maintenance";
-import NoPageFound from "./Partials/Pages/Authentication/NoPageFound/NoPageFound";
+// import TwoStep from "./Partials/Pages/Authentication/TwoStep/TwoStep";
+// import Lockscreen from "./Partials/Pages/Authentication/Lockscreen/Lockscreen";
+// import Maintenance from "./Partials/Pages/Authentication/Maintenance/Maintenance";
+// import NoPageFound from "./Partials/Pages/Authentication/NoPageFound/NoPageFound";
 
-import MyProfile from "./Partials/Apps/Users/MyProfile/MyProfile";
+// import MyProfile from "./Partials/Apps/Users/MyProfile/MyProfile";
 // import Calendar from "./Partials/Apps/MyCalendar/Calendar";
 import Index from "./Partials/Workspace/Dashboard/Index";
-import MyWallet from "./Partials/Workspace/MyWallet/MyWallet";
-import AccountSetting from "./Partials/Apps/Users/AccountSetting/AccountSetting";
+// import MyWallet from "./Partials/Workspace/MyWallet/MyWallet";
+// import AccountSetting from "./Partials/Apps/Users/AccountSetting/AccountSetting";
 // import Invoices from "./Partials/Apps/Users/Invoices/Invoices";
 // import UserActivity from "./Partials/Apps/Users/UserActivity/UserActivity";
 // import MyTasks from "./Partials/Apps/Users/MyTasks/MyTasks";
@@ -33,8 +33,8 @@ import AccountSetting from "./Partials/Apps/Users/AccountSetting/AccountSetting"
 // import UserAvatar from "./Partials/Plugins/BootstrapUI/UserAvatar/UserAvatar";
 // import Badges from "./Partials/Plugins/BootstrapUI/Badges/Badges";
 // import Breadcrumb from "./Partials/Plugins/BootstrapUI/Breadcrumb/Breadcrumb";
-// import Buttons from "./Partials/Plugins/BootstrapUI/Buttons/Buttons";
- import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
+// // import Buttons from "./Partials/Plugins/BootstrapUI/Buttons/Buttons";
+//  import Cards from "./Partials/Plugins/BootstrapUI/Cards/Cards";
 // import Carousel from "./Partials/Plugins/BootstrapUI/Carousel/Carousel";
 // import Collapse from "./Partials/Plugins/BootstrapUI/Collapse/Collapse";
 // import Dropdowns from "./Partials/Plugins/BootstrapUI/Dropdowns/Dropdowns";
@@ -57,7 +57,7 @@ import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 // import ApexCharts from "./Partials/Plugins/Charts/ApexCharts/ApexCharts";
 // import PeityCharts from "./Partials/Plugins/Charts/PeityCharts/PeityCharts";
 // import Bootstrap5Tags from "./Partials/Plugins/Bootstrap5Tags/Bootstrap5Tags";
- import Datatables from "./Partials/Plugins/Datatables/Datatables";
+//  import Datatables from "./Partials/Plugins/Datatables/Datatables";
 // import Flatpickr from "./Partials/Plugins/Flatpickr/Flatpickr";
 // import InputmaskPlugin from "./Partials/Plugins/Inputmask/InputmaskPlugin";
 // import Jsvectormap from "./Partials/Plugins/Jsvectormap/Jsvectormap";
@@ -71,7 +71,7 @@ import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 // import CardTiles from "./Partials/Pages/Widgets/CardTiles/CardTiles";
 // import CardTab from "./Partials/Pages/Widgets/CardTab/CardTab";
 // import Tables from "./Partials/Pages/Tables/Tables";
- import Forms from "./Partials/Pages/Forms/Forms";
+//  import Forms from "./Partials/Pages/Forms/Forms";
 // import PricingTable from "./Partials/Pages/PricingTable/PricingTable";
 // import ImageGallery from "./Partials/Pages/ImageGallery/ImageGallery";
 // import SearchPage from "./Partials/Pages/SearchPage/SearchPage";
@@ -178,7 +178,7 @@ const Routes = () => {
       <Route exact path="/roles" element={<Roles/>} />
       <Route exact path="/permissions" element={<Permissions/>} />
       <Route exact path="/role-permissions" element={<RolePermissions/>} />
-      <Route exact path="/pages/form" element={<Forms/>} />
+      {/* <Route exact path="/pages/form" element={<Forms/>} /> */}
 
       <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
       <Route exact path="/docs/flag-icon" element={<CountryFlagsIcon/>} />
@@ -186,9 +186,9 @@ const Routes = () => {
       <Route exact path="/docs/linear-icon" element={<LinearIcon/>} />
       <Route exact path="/docs/weather-icon" element={<WeatherIcon/>} />
 
-      <Route exact path="/docs/cards" element={<Cards/>} />
+      {/* <Route exact path="/docs/cards" element={<Cards/>} />
 
-      <Route exact path="/docs/datatables" element={<Datatables/>} />
+      <Route exact path="/docs/datatables" element={<Datatables/>} /> */}
       <Route exact path="/app/configure-applications" element={<Applications/>} />
       {/* monitoring module */}
       <Route exact path="/app/monitor" element={<Monitoring/>} />

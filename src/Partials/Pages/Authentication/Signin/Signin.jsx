@@ -2,11 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { useDispatch } from "react-redux";
-import { Input, FormFeedback, Button } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { Input, FormFeedback, Button, Spinner } from "reactstrap";
 import { loginUser } from "../../../../store/actions";
 
 const Signin = () => {
+  const { error, loading } = useSelector((state) => ({
+    error: state.Login.error,
+    loading: state.Login.loading,
+  }));
+
   const dispatch = useDispatch();
 
   const validation = useFormik({
@@ -25,9 +30,7 @@ const Signin = () => {
       //description: Yup.string().required("Please provide description"),
     }),
     onSubmit: (values) => {
-      dispatch(
-        loginUser(values)
-      );
+      dispatch(loginUser(values));
       validation.resetForm();
     },
   });
@@ -129,7 +132,14 @@ const Signin = () => {
               className="btn btn-lg w-100 btn-primary text-uppercase mb-2 text-light"
               style={{ backgroundColor: "#fabe00" }}
               type="submit"
+              disabled={loading}
             >
+              {error ? null : loading ? (
+                <Spinner size="sm" className="me-2">
+                  {" "}
+                  Loading...{" "}
+                </Spinner>
+              ) : null}
               SIGN IN
             </Button>
 
