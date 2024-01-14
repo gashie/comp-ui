@@ -19,6 +19,7 @@ import Select from "react-select";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addNewPermissions,
+  addNewRolePermissions,
   addNewRoles,
   getPermissionsAction,
   getRolePermissionsAction,
@@ -54,50 +55,46 @@ const Index = () => {
 
     initialValues: {
       // img: (contact && contact.img) || '',
-      permission_name: "",
-      description: "",
+      role_id: "",
+      permission_id: "",
     },
     validationSchema: Yup.object({
-      permission_name: Yup.string().required(
-        "Please provide route name eg. Add New Users to Workspace"
-      ),
+      permission_id: Yup.string().required("Please select a permission"),
+      role_id: Yup.string().required("Please select a role"),
 
       //description: Yup.string().required("Please provide description"),
     }),
     onSubmit: (values) => {
-      if (isEdit) {
-        validation.resetForm();
-      } else {
-        // save new Contact
-        dispatch(
-          addNewPermissions({
-            ...values,
-            permission_name: transformPermissionName(values.permission_name),
-          })
-        );
-        validation.resetForm();
-      }
-      toggleRightCanvas();
+      dispatch(addNewRolePermissions({
+        role_id: values.role_id, 
+        permission_id: values.permission_id
+      }));
+      validation.resetForm()
+      toggleRightCanvas()
+
     },
   });
+
+  console.log(validation.errors);
 
   useEffect(() => {
     dispatch(getPermissionsAction());
     dispatch(getRolesAction());
   }, [dispatch]);
 
-  const { loading, error, permissions, rolesLoading , roles} = useSelector(
+  const { loading, error, permissions, rolesLoading, roles } = useSelector(
     (state) => ({
       loading: state.RolesPermissionsReducer.loading,
       rolesLoading: state.RolesReducer.loadingrolePermissions,
       roles: state.RolesReducer.roles,
       error: state.RolesPermissionsReducer.permissionserror,
       permissions: state.RolesPermissionsReducer.rolePermissions,
-      
     })
   );
 
-  console.log(permissions, 'per')
+  const { perm } = useSelector((state) => ({
+    perm: state.PermissionsReducer.permissions,
+  }));
 
   const columns = [
     {
@@ -124,6 +121,10 @@ const Index = () => {
 
   let roleOptions = roles.map(function (item) {
     return { value: item?.role_id, label: item?.role_name };
+  });
+
+  let permOptions = perm.map(function (item) {
+    return { value: item?.permission_id, label: item?.permission_name };
   });
 
   return (
@@ -211,7 +212,7 @@ const Index = () => {
                   toggle={toggleRightCanvas}
                   id="offcanvasRightLabel"
                 >
-                  <h3>Create Permission</h3>
+                  <h3>Assign Role to Permission</h3>
                 </OffcanvasHeader>
                 <OffcanvasBody>
                   <div>
@@ -236,67 +237,63 @@ const Index = () => {
                     >
                       <div className="row">
                         <div className="mb-3 col-md-12 col-12">
-                          <label className="col-form-label">
-                            Permission Name
-                          </label>
+                          <label className="col-form-label">Role</label>
                           <fieldset className="form-icon-group left-icon position-relative">
-                            <Input
-                              type="text"
-                              name="permission_name"
-                              id="permission_name"
-                              className="form-control p-3"
-                              placeholder="eg.  Add New Users to Workspace"
-                              validate={{
-                                required: { value: true },
-                              }}
-                              onChange={validation.handleChange}
-                              onBlur={validation.handleBlur}
-                              value={validation.values.permission_name || ""}
-                              invalid={
-                                validation.touched.permission_name &&
-                                validation.errors.permission_name
-                                  ? true
-                                  : false
+                            <Select
+                              name="role_id"
+                              id="role_id"
+                              //   isLoading={onlyalertgrouploading}
+                              value={roleOptions.find(function (e) {
+                                return e.value === validation.values.role_id;
+                              })}
+                              onChange={(e) =>
+                                validation.setFieldValue("role_id", e.value)
                               }
-                            />
-                            {validation.touched.permission_name &&
-                            validation.errors.permission_name ? (
-                              <FormFeedback type="invalid">
-                                {validation.errors.permission_name}
-                              </FormFeedback>
+                              className="mb-0"
+                              options={roleOptions}
+                              key={validation.values.role_id}
+                            ></Select>
+                          
+                            {validation.touched.role_id &&
+                            validation.errors.role_id ? (
+                              <p style={{ color: "red" }}>
+                              {validation.errors.role_id}
+                            </p>
                             ) : null}
                           </fieldset>
                         </div>
                         <div className="mb-3 col-md-12 col-12">
-                          <label className="col-form-label">Description</label>
+                          <label className="col-form-label">Permission</label>
                           <fieldset className="form-icon-group left-icon position-relative">
-                            <Input
-                              type="text"
-                              name="description"
-                              id="description"
-                              className="form-control p-3"
-                              placeholder=""
-                              validate={{
-                                required: { value: true },
-                              }}
-                              onChange={validation.handleChange}
-                              onBlur={validation.handleBlur}
-                              value={validation.values.description || ""}
-                              invalid={
-                                validation.touched.description &&
-                                validation.errors.description
-                                  ? true
-                                  : false
+                            <Select
+                              name="permission_id"
+                              id="permission_id"
+                              //   isLoading={onlyalertgrouploading}
+                              value={permOptions.find(function (e) {
+                                return (
+                                  e.value === validation.values.permission_id
+                                );
+                              })}
+                              onChange={(e) =>
+                                validation.setFieldValue(
+                                  "permission_id",
+                                  e.value
+                                )
                               }
-                            />
-                            {validation.touched.description &&
-                            validation.errors.description ? (
-                              <FormFeedback type="invalid">
-                                {validation.errors.description}
-                              </FormFeedback>
+                              className="mb-0"
+                              options={permOptions}
+                              key={validation.values.permission_id}
+                            ></Select>
+                            
+                            {validation.touched.permission_id &&
+                            validation.errors.permission_id ? (
+                              <p style={{ color: "red" }}>
+                              {validation.errors.permission_id}
+                            </p>
                             ) : null}
                           </fieldset>
                         </div>
+
                         {/* 
                         <div className="mb-3 col-md-12 col-12">
                           <label className="col-form-label">
@@ -449,84 +446,7 @@ const Index = () => {
       </div>
 
       {/* Permission */}
-      <Offcanvas
-        isOpen={isPermission}
-        toggle={togglePermissionCanvas}
-        id="offcanvasRight"
-        direction="end"
-        style={{ color: "black", backgroundColor: "white" }}
-        className="py-5"
-      >
-        <OffcanvasHeader toggle={toggleRightCanvas} id="offcanvasRightLabel">
-          <h3>Add Permission</h3>
-        </OffcanvasHeader>
-        <OffcanvasBody>
-          <div>
-            <p className="fw-lighter text-muted" style={{ fontSize: "0.8em" }}>
-              Agent policies are used to manage settings acroos a group of
-              agents You can dd integrations to your agent policy to sepcify
-              what your agents collect. When you edit an agent policy, you can
-              use Fleet to deploy updates to be a specified group of agents.
-            </p>
-            <hr />
-
-            <form>
-              <div className="row">
-                <div className="mb-3 col-md-12 col-12">
-                  <label className="col-form-label">Permission</label>
-                  <fieldset className="form-icon-group left-icon position-relative">
-                    <input type="text" className="form-control" />
-                    <div className="form-icon position-absolute">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        className="bi bi-person"
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-                      </svg>
-                    </div>
-                  </fieldset>
-                </div>
-                <div className="mb-3 col-md-12 col-12">
-                  <label className="col-form-label">Description</label>
-                  <fieldset className="form-icon-group left-icon position-relative">
-                    <input type="text" className="form-control" />
-                    <div className="form-icon position-absolute">
-                      <i className="bi-list"></i>
-                    </div>
-                  </fieldset>
-                </div>
-
-                <div className="col-12">
-                  <button
-                    type="button"
-                    className="me-1 btn text-light"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
-                      border: "none",
-                    }}
-                  >
-                    <i className="bi-plus"></i> Add
-                  </button>
-                  <button
-                    className="btn btn-outline-secondary"
-                    type="button"
-                    onClick={() => {
-                      setIsPermission(false);
-                    }}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </OffcanvasBody>
-      </Offcanvas>
+    
     </div>
   );
 };

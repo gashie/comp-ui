@@ -1,7 +1,9 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import AdminLayout from './Layout/AdminLayout';
 import AuthLayout from './Layout/AuthLayout';
+import { useEffect } from 'react';
+import { getMe } from './store/actions';
 
 const App = () => {
 
@@ -30,6 +32,13 @@ const App = () => {
   };
 
   const isAuthRoute = authTitleMapping[pathname];
+
+  const dispatch = useDispatch();
+
+
+  useEffect(()=>{
+dispatch(getMe())
+  }, [dispatch])
   
   return (
     <>

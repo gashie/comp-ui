@@ -1,5 +1,5 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom';
+import React, {useEffect} from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import Signin from '../Partials/Pages/Authentication/Signin/Signin';
 import Signup from '../Partials/Pages/Authentication/Signup/Signup';
@@ -11,6 +11,7 @@ import NoPageFound from '../Partials/Pages/Authentication/NoPageFound/NoPageFoun
 
 import loginImg from '../assets/images/login-img.png';
 import img from '../Common/CommonBrand/brand.png'
+import {useSelector} from 'react-redux'
 
 const AuthLayout = () => {
 
@@ -38,6 +39,29 @@ const AuthLayout = () => {
         Maintenance: <Maintenance />,
         NoPage: <NoPageFound />,
     };
+
+    
+  const navigate = useNavigate();
+
+  const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
+    (state) => ({
+      isloggedIn: state.Login.isloggedIn,
+      loadingUserinfo: state.Login.loadingUserinfo,
+      errorUserinfo: state.Login.errorUserinfo,
+    })
+  );
+
+  useEffect(() => {
+
+    console.log("eyy")
+    if (isloggedIn) {
+      console.log("eynn")
+      navigate("/");
+      
+    }
+
+    
+  }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
 
   return (
         <body data-bvite="theme-Applegreen" className="layout-border svgstroke-a layout-default auth">
