@@ -65,8 +65,6 @@ const Index = () => {
     },
   });
 
-  
-
   const columns = [
     {
       Header: "ROUTE PATH",
@@ -146,9 +144,7 @@ const Index = () => {
   ];
 
   // Sample data
-  const data = [
-  
-  ];
+  const data = [];
 
   return (
     <div className="px-4 py-3 page-body">
@@ -193,7 +189,6 @@ const Index = () => {
                     onClick={() => {
                       setIsRight(true);
                     }}
-                    
                   >
                     <i className="bi-plus"></i>Create Route
                   </Button>
@@ -295,8 +290,8 @@ const Index = () => {
                           <fieldset className="form-icon-group left-icon position-relative">
                             <Input
                               type="text"
-                              name='controller_function'
-                              id='controller_function'
+                              name="controller_function"
+                              id="controller_function"
                               className="form-control p-3"
                               placeholder="eg. protect,CreateUser"
                               validate={{
@@ -304,7 +299,9 @@ const Index = () => {
                               }}
                               onChange={validation.handleChange}
                               onBlur={validation.handleBlur}
-                              value={validation.values.controller_function || ""}
+                              value={
+                                validation.values.controller_function || ""
+                              }
                               invalid={
                                 validation.touched.controller_function &&
                                 validation.errors.controller_function
@@ -377,7 +374,12 @@ const Index = () => {
         <div className="card-body">
           <div className="row g-4 li_animate">
             <div className="col-xl-12 col-lg-12">
-              <DataTable columns={columns} data={data} useGlobalFilter={true} length={data?.length} />
+              <DataTable
+                columns={columns}
+                data={data}
+                useGlobalFilter={true}
+                length={data?.length}
+              />
             </div>
           </div>
         </div>

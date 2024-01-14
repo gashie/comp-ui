@@ -21,6 +21,7 @@ import {
   addNewPermissions,
   addNewRoles,
   getPermissionsAction,
+  getRolePermissionsAction,
   getRolesAction,
 } from "../../../store/actions";
 import {
@@ -85,122 +86,32 @@ const Index = () => {
     dispatch(getRolesAction());
   }, [dispatch]);
 
-  const { loading, error, permissions, rolesLoading, roles } = useSelector((state) => ({
-    loading: state.PermissionsReducer.loading,
-    rolesLoading: state.RolesReducer.loading,
-    error: state.PermissionsReducer.permissionserror,
-    permissions: state.PermissionsReducer.permissions,
-    roles: state.RolesReducer.roles,
-  }));
+  const { loading, error, permissions, rolesLoading , roles} = useSelector(
+    (state) => ({
+      loading: state.RolesPermissionsReducer.loading,
+      rolesLoading: state.RolesReducer.loadingrolePermissions,
+      roles: state.RolesReducer.roles,
+      error: state.RolesPermissionsReducer.permissionserror,
+      permissions: state.RolesPermissionsReducer.rolePermissions,
+      
+    })
+  );
+
+  console.log(permissions, 'per')
 
   const columns = [
     {
-      Header: "Roles",
-      accessor: "role_name", // Replace with the actual accessor for your data
+      Header: "Assinged Permissions",
+      accessor: "permission_name", // Replace with the actual accessor for your data
       Cell: ({ value }) => <span style={{ color: "black" }}>{value}</span>,
     },
-    {
-      Header: "Application Deployments",
-      accessor: "namse",
-      Cell: ({ value }) => (
-        <span style={{ backgroundColor: "white", color: "black" }}>
-          {" "}
-          <div className="form-check form-switch card-toggle-two">
-            <input
-              className="form-check-input toggles"
-              type="checkbox"
-              role="switch"
-              id="card-toggle-two"
-            />
-          </div>
-        </span>
-      ),
-    },
-    {
-      Header: "Setup Monitoring",
-      accessor: "",
-      Cell: ({ value }) => (
-        <span style={{ backgroundColor: "white", color: "black" }}>
-          {" "}
-          <div className="form-check form-switch card-toggle-two">
-            <input
-              className="form-check-input toggles"
-              type="checkbox"
-              role="switch"
-              id="card-toggle-two"
-            />
-          </div>
-        </span>
-      ),
-    },
-    {
-      Header: "Change Passwords",
-      accessor: "2",
-      Cell: ({ value }) => (
-        <span style={{ backgroundColor: "white", color: "black" }}>
-          {" "}
-          <div className="form-check form-switch card-toggle-two">
-            <input
-              className="form-check-input toggles"
-              type="checkbox"
-              role="switch"
-              id="card-toggle-two"
-            />
-          </div>
-        </span>
-      ),
-    },
-    {
-      Header: "Setup Databases",
-      accessor: "3",
-      Cell: ({ value }) => (
-        <span style={{ backgroundColor: "white", color: "black" }}>
-          {" "}
-          <div className="form-check form-switch card-toggle-two">
-            <input
-              className="form-check-input toggles"
-              type="checkbox"
-              role="switch"
-              id="card-toggle-two"
-            />
-          </div>
-        </span>
-      ),
-    },
-    {
-      Header: "Manage Users",
-      accessor: "5",
-      Cell: ({ value }) => (
-        <span style={{ backgroundColor: "white", color: "black" }}>
-          {" "}
-          <div className="form-check form-switch card-toggle-two">
-            <input
-              className="form-check-input toggles"
-              type="checkbox"
-              role="switch"
-              id="card-toggle-two"
-            />
-          </div>
-        </span>
-      ),
-    },
+
     // Add more columns as needed
   ];
 
-  // Sample data
-
-
-  const data = [
-    { name: "System Admin", age: 30 },
-    { name: "General User", age: 25 },
-    { name: "Foreign User", age: 25 },
-    { name: "Unsubscribed User", age: 25 },
-    { name: "Gold Users", age: 25 },
-    { name: "Silver Users", age: 25 },
-    { name: "Bronze Users", age: 25 },
-    { name: "Platimun Users", age: 25 },
-    // Add more data as needed
-  ];
+  useEffect(() => {
+    dispatch(getRolesAction());
+  }, [dispatch]);
 
   const options = [
     { label: "No", value: false },
@@ -209,6 +120,10 @@ const Index = () => {
 
   let adminOptions = options.map(function (item) {
     return { value: item.value, label: item.label };
+  });
+
+  let roleOptions = roles.map(function (item) {
+    return { value: item?.role_id, label: item?.role_name };
   });
 
   return (
@@ -257,7 +172,7 @@ const Index = () => {
                       setIsRight(true);
                     }}
                   >
-                    <i className="bi-plus"></i>Add Permission
+                    <i className="bi-plus"></i>Assign Role
                   </Button>
                   {/* <Button
                     style={{
@@ -451,17 +366,84 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="card mb-3">
-        <div className="card-body">
-          <div className="row g-4 li_animate">
-            <div className="col-xl-12 col-lg-12">
-              <DataTable
-                columns={columns}
-                data={roles}
-                useGlobalFilter={true}
-                loading={loading}
+      {/* <div className="row g-4 li_animate">
+        <div className="card mb-3 col-xl-4 col-lg-4">
+          <div className="card-body">
+            <div className="row g-4 li_animate">
+              <div className="col-xl-6 col-lg-6">
+                <h4>View List of Assigned ROles</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card mb-3 col-xl-6 col-lg-6">
+          <div className="card-body">
+            <div className="row g-4 li_animate">
+              <div className="col-xl-6 col-lg-6">
+                <h4>View List of Assigned ROles</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="row g-3">
+        <div className="col-lg-6 col-md-6 col-sm-6">
+          <div className="card p-3 px-4">
+            <div className="text-center">
+              <h6 className="fw-bolder ">List of Assigned Roles</h6>
+            </div>
+            <div className="mt-3">
+              <p className="text-muted">
+                Select a specific role from the list below to view the specific
+                permissions assigned to it.
+              </p>
+            </div>
+
+            <div className="mt-3">
+              <Select
+                name="is_system"
+                value={roleOptions.find(function (e) {
+                  return e.value === validation.values.is_system;
+                })}
+                onChange={(selectedOption) => {
+                  const { value, label } = selectedOption;
+
+                  console.log("Selected Value:", value);
+                  console.log("Selected Label:", label);
+
+                  const selectedItem = roleOptions.find(
+                    (option) => option.value === value
+                  );
+
+                  const selectedItemId = selectedItem ? selectedItem.id : null;
+                  console.log("Selected Item ID:", selectedItemId);
+
+                  // Update the form field
+
+                  dispatch(
+                    getRolePermissionsAction({
+                      role_id: value,
+                    })
+                  );
+                  validation.setFieldValue("is_system", value);
+                }}
+                className="mb-0"
+                options={roleOptions}
+                id="taginput-choices"
+                key={validation.values.is_system}
               />
             </div>
+          </div>
+        </div>
+        <div className="col-lg-6 col-md-6 col-sm-6">
+          <div className="card p-3 px-4">
+            <DataTable
+              columns={columns}
+              data={permissions}
+              useGlobalFilter={true}
+              loading={loading}
+            />
           </div>
         </div>
       </div>

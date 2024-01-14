@@ -92,6 +92,7 @@ import DeployedApplicationDetails from './Partials/BirdsEye/Applications/User/De
 import HostUptime from './Partials/BirdsEye/Monitoring/Dashboard'
 import DeployProcess from './Partials/BirdsEye/Applications/User/DeployProcess'
 import CreateRoutes from './Partials/BirdsEye/Routes/'
+import RolesToPermissions from './Partials/BirdsEye/RolesPermissions/RolesPermissions'
 
 const Routes = () => {
   return (
@@ -197,6 +198,7 @@ const Routes = () => {
       <Route exact path="/app/monitor/hostuptime" element={<HostUptime/>} />
       <Route exact path="/app/deploy-process" element={<DeployProcess/>} />
       <Route exact path="/app/create-routes" element={<CreateRoutes/>} />
+      <Route exact path="/app/assign-roles-to-permissions" element={<RolePermissions/>} />
     </ReactRoutes>
   );
 };

@@ -12,3 +12,5 @@ export * from './defaultStates/actions/themeActions'
 export * from './routes/action'
 export * from './role/action'
 export * from './permissions/action'
+
+export * from  './rolepermissions/action'

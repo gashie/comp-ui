@@ -20,6 +20,7 @@ import {
 import RoutesReducer from './routes/reducer'
 import RolesReducer from './role/reducer'
 import PermissionsReducer from './permissions/reducer'
+import RolesPermissionsReducer from './rolepermissions/reducer'
 
 const rootReducer = combineReducers({
   // public
@@ -39,7 +40,8 @@ const rootReducer = combineReducers({
   screenWidth: screenWidthReducer,
   RoutesReducer,
   RolesReducer,
-  PermissionsReducer
+  PermissionsReducer,
+  RolesPermissionsReducer
 });
 
 export default rootReducer;

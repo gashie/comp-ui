@@ -21,9 +21,10 @@ export const getRolePermissionsActionResponseError = (error) => ({
   payload: error,
 });
 
-export const getRolePermissionsAction = () => ({
+export const getRolePermissionsAction = (data) => ({
   
   type: GET_ROLE_PERMISSIONS_REQUEST,
+  payload: data,
 });
 
 

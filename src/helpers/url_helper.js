@@ -32,3 +32,8 @@ export const UPDATE_PERMISSION = `${version_one}${dormant}create_permission`;
 export const VIEW_PERMISSION = `${version_one}${dormant}view_permission`;
 
 
+//ROLES_TO_PERMISSIONS
+//export const UPDATE_ROLES_TO_PERMISSION =  `${version_one}${dormant}create_role`;
+export const VIEW_ROLES_TO_PERMISSION =  `${version_one}${dormant}view_role_permission`;
+export const ASSIGN_ROLES_TO_PERMISSION =  `${version_one}${dormant}create_role_permission`;
+

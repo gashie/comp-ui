@@ -7,6 +7,7 @@ import RegisterSaga from './auth/register/saga'
 import RoutesSaga from "./routes/saga";
 import RolesSaga from './role/saga'
 import PermissionsSaga from './permissions/saga'
+import RolesPermissionsSaga from "./rolepermissions/saga";
 
 
 export default function* rootSaga() {
@@ -19,6 +20,7 @@ export default function* rootSaga() {
     fork(RoutesSaga),
     fork(RolesSaga),
     fork(PermissionsSaga),
+    fork(RolesPermissionsSaga)
    
    
   ]);

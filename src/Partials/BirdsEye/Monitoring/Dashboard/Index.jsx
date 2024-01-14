@@ -163,7 +163,7 @@ const Index = () => {
 
       <div className="row g-3">
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{height: '205px'}}>
+          <div className="card p-3 px-4" style={{ height: "205px" }}>
             <div>Host Statistics</div>
             <div className="py-4 m-0 text-center h2">
               <table>
@@ -270,8 +270,8 @@ const Index = () => {
         </div>
 
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{height: '205px'}}>
-          <div>Cluster CPU Resources</div>
+          <div className="card p-3 px-4" style={{ height: "205px" }}>
+            <div>Cluster CPU Resources</div>
             <GaugeChart
               id="gauge-chart6"
               animate={false}
@@ -279,7 +279,7 @@ const Index = () => {
               percent={0.56}
               needleColor="#345243"
               textColor="orange"
-              hideText='true'
+              hideText="true"
             />
             <div className="d-flex">
               <small className="text-muted">{data.year}</small>
@@ -288,8 +288,8 @@ const Index = () => {
           </div>
         </div>
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{height: '205px'}}>
-          <div>Cluster Memory Resources</div>
+          <div className="card p-3 px-4" style={{ height: "205px" }}>
+            <div>Cluster Memory Resources</div>
             <GaugeChart
               id="gauge-chart6"
               animate={false}
@@ -297,7 +297,7 @@ const Index = () => {
               percent={0.56}
               needleColor="#345243"
               textColor="orange"
-              hideText='true'
+              hideText="true"
             />
             <div className="d-flex">
               <small className="text-muted">{data.year}</small>
@@ -305,7 +305,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-       
+
         <div className="col-xxl-5 col-xl-5 col-lg-6 col-md-6">
           <div className="card">
             <div className="card-header">

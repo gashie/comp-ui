@@ -25,7 +25,8 @@ import {
 
 import toast from "react-hot-toast";
 
-//import { useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -39,7 +40,7 @@ function* loginUser({ payload: { user,  } }) {
 
         yield put(getMeSuccess(verify?.data?.data));
 
-        // window.location.href = "/";
+         window.location.href = "/";
         yield put(resetLoginFlag());
       } catch (error) {
         yield put(getMeError(error.verify?.data?.message));

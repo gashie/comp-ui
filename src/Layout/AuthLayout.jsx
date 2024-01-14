@@ -61,7 +61,7 @@ const AuthLayout = () => {
 
                 {/* <!-- start: page footer --> */}
                 <footer className="px-xl-5 px-4">
-                    <p className="mb-0 text-muted">© 2023 <a href="https://Pixelwibes.com/" target="_blank" title="pixelwibes">pixelwibes</a>, All Rights Reserved.</p>
+                    <p className="mb-0 text-muted">© 2024 <a href="https://Pixelwibes.com/" target="_blank" title="pixelwibes">BE360</a>, All Rights Reserved.</p>
 		        </footer>
                 
             </main>

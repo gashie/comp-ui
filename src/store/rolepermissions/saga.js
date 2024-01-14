@@ -7,98 +7,93 @@ import toast from "react-hot-toast";
 
 // Ecoomerce Redux States
 import {
-GET_ROLES_PERMISSIONS_REQUEST,
-UPDATE_ROLES_PERMISSIONS,
-ADD_ROLES_PERMISSIONS_REQUEST
+  GET_ROLE_PERMISSIONS_REQUEST,
+  ADD_ROLE_PERMISSIONS_REQUEST,
 } from "./actionType";
 
 import {
-getRolesPermissionsActionResponseError,
-getRolesPermissionsActionResponseSuccess,
-updateRolesPermissionsFail,
-updateRolesPermissionsSuccess,
-addRolesPermissionsFail,
-addRolesPermissionsSuccess,
-getRolesPermissionsAction
+  addNewRolePermissions,
+  addRolePermissionsFail,
+  getRolePermissionsAction,
+  getRolePermissionsActionResponseError,
+  getRolePermissionsActionResponseSuccess,
 } from "./action";
 
 //Include Both Helper File with needed methods
 import {
- getRolesPermissionsPICALL,
- addRolesPermissionsPICALL,
- updateRolesPermissionsPICALL
+  viewRoletoPermissionAPICALL,
+  assignRoleToPermissionAPICALL,
+  //  updateRolesPermissionsPICALL
 } from "../../helpers/fakebackend_helper";
 
-function* getRolesPermissions() {
+function* getRolesPermissions({payload: data}) {
   try {
-    const response = yield call(getRolesPermissionsPICALL);
+    const response = yield call(viewRoletoPermissionAPICALL, data);
     if (response && response?.data?.status === 1) {
-      yield put(getRolesPermissionsActionResponseSuccess(response?.data?.data));
-    }else{
-      yield put(getRolesPermissionsActionResponseError(response?.data?.message));
+      yield put(getRolePermissionsActionResponseSuccess(response?.data?.data));
+    } else {
+      yield put(getRolePermissionsActionResponseError(response?.data?.message));
     }
   } catch (error) {
-    yield put(getRolesPermissionsActionResponseError(error));
+    getRolePermissionsActionResponseError;
+    yield put(getRolePermissionsActionResponseError(error));
   }
 }
 
-
 function* addRolesPermissions({ payload: reqbody }) {
   try {
-    const response = yield call(addRolesPermissionsPICALL, reqbody);
+    const response = yield call(assignRoleToPermissionAPICALL, reqbody);
     if (response && response?.data?.status === 1) {
-      yield put(addRolesPermissionsSuccess(response));
-      yield put(getRolesPermissionsAction())
+      yield put(addNewRolePermissions(response));
+      yield put(getRolePermissionsAction());
       toast.success("Saved Successfully", { autoClose: 3000 });
-    }else{
-      yield put(addRolesPermissionsFail(response?.data?.message));
-      yield put(getRolesPermissionsAction())
+    } else {
+      yield put(addRolePermissionsFail(response?.data?.message));
+      yield put(getRolePermissionsAction());
       toast.error(response?.data?.message, { autoClose: 3000 });
     }
   } catch (error) {
-    yield put(addRolesPermissionsFail(error)); yield put(getRolesPermissionsAction())
+    yield put(addRolePermissionsFail(error));
+    yield put(getRolePermissionsAction());
     toast.error("Failed to save record", { autoClose: 3000 });
   }
 }
 
-function* updateRolesPermissions({ payload: reqbody }) {
-  try {
-    const response = yield call(updateRolesPermissionsPICALL, reqbody);
-    if (response && response?.data?.status === 1) {
-      yield put(updateRolesPermissionsSuccess(response?.data?.data));
-      yield put(getRolesPermissionsAction())
-      toast.success("Updateded Successfully", { autoClose: 3000 });
-    }else{
-      yield put(updateRolesPermissionsFail(response?.data?.message));
-      yield put(getRolesPermissionsAction())
-      toast.error(response?.data?.message, { autoClose: 3000 });
-    }
-  } catch (error) {
-    yield put(updateRolesPermissionsFail(error));
-    yield put(getRolesPermissionsAction())
-    toast.error("Failed to update record", { autoClose: 3000 });
-  }
-}
-
-
+// function* updateRolesPermissions({ payload: reqbody }) {
+//   try {
+//     const response = yield call(updateRolesPermissionsPICALL, reqbody);
+//     if (response && response?.data?.status === 1) {
+//       yield put(updateRolesPermissionsSuccess(response?.data?.data));
+//       yield put(getRolesPermissionsAction())
+//       toast.success("Updateded Successfully", { autoClose: 3000 });
+//     }else{
+//       yield put(updateRolesPermissionsFail(response?.data?.message));
+//       yield put(getRolesPermissionsAction())
+//       toast.error(response?.data?.message, { autoClose: 3000 });
+//     }
+//   } catch (error) {
+//     yield put(updateRolesPermissionsFail(error));
+//     yield put(getRolesPermissionsAction())
+//     toast.error("Failed to update record", { autoClose: 3000 });
+//   }
+// }
 
 export function* watchGetRolesPermissions() {
-  yield takeEvery(GET_ROLES_PERMISSIONS_REQUEST, getRolesPermissions);
+  yield takeEvery(GET_ROLE_PERMISSIONS_REQUEST, getRolesPermissions);
 }
 
-
-export function* watchUpdateRolesPermissions() {
-  yield takeEvery(UPDATE_ROLES_PERMISSIONS, updateRolesPermissions);
-}
+// export function* watchUpdateRolesPermissions() {
+//   yield takeEvery(UPDATE_ROLES_PERMISSIONS, updateRolesPermissions);
+// }
 
 export function* watchAddNewRolesPermissions() {
-  yield takeEvery(ADD_ROLES_PERMISSIONS_REQUEST, addRolesPermissions);
+  yield takeEvery(ADD_ROLE_PERMISSIONS_REQUEST, addRolesPermissions);
 }
 
 function* rolesPermissionsSaga() {
   yield all([
     fork(watchGetRolesPermissions),
-    fork(watchUpdateRolesPermissions),
+    // fork(watchUpdateRolesPermissions),
     fork(watchAddNewRolesPermissions),
   ]);
 }
