@@ -47,7 +47,7 @@ const CommonHeader = () => {
     <>
       <header className="px-4" id="headerbarDark" data-bs-theme="none">
         <div className="d-flex justify-content-between align-items-center py-2 w-100">
-          <button
+          {/* <button
             type="button"
             className="btn text-accent btn-link p-0 me-3 d-none d-md-inline-flex"
             data-bs-toggle="modal"
@@ -75,7 +75,7 @@ const CommonHeader = () => {
               <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
               <path d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
             </svg>
-          </button>
+          </button> */}
           {/* <!--[ Start:: Full screen modal popup menu ]--> */}
           <FullScreenModal />
 

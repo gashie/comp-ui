@@ -37,12 +37,16 @@ const DataTable = ({ columns, data, colHight, length, loading }) => {
   // Filter data based on search text
   const { globalFilter } = state;
   const filteredData = globalFilter
-    ? data?.filter((row) =>
-        Object.values(row).some((cell) =>
-          cell.toString().toLowerCase().includes(globalFilter.toLowerCase())
-        )
+  ? data?.filter((row) =>
+      Object.values(row).some((cell) =>
+        cell !== null &&
+        cell.toString().toLowerCase().includes(globalFilter.toLowerCase())
       )
-    : data;
+    )
+  : data;
+
+
+    
 
   return (
     <>

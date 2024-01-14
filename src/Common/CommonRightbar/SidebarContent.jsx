@@ -37,9 +37,9 @@ function SidebarContent({ isOpen }) {
           md={12}
           sm={12}
           xl={12}
-          style={{ padding: "10px", margin: "0px", backgroundColor: "white", width: "250px",  height: "100svh", }}
+          style={{ padding: "10px", margin: "0px", backgroundColor: "transparent", width: "250px",  height: "100svh", }}
         >
-          <div style={{ backgroundColor: "white" }}>
+          <div style={{ backgroundColor: "transparent" }}>
             {/* Right Sidebar Content */}
           
          
