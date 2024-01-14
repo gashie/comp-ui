@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { Input, FormFeedback, Button } from "reactstrap";
+import { loginUser } from "../../../../store/actions";
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,9 @@ const Signin = () => {
       //description: Yup.string().required("Please provide description"),
     }),
     onSubmit: (values) => {
+      dispatch(
+        loginUser(values)
+      );
       validation.resetForm();
     },
   });

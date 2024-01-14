@@ -1,4 +1,5 @@
 export * from "./auth/register/actions";
+export * from './auth/login/actions';
 
 export * from './defaultStates/actions/borderLayoutActions'
 export * from './defaultStates/actions/layoutActions'
