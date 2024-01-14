@@ -76,7 +76,6 @@ const Index = () => {
     {
       Header: "Role",
       accessor: "role_name", // Replace with the actual accessor for your data
-      
     },
     {
       Header: "Role Description",

@@ -10,8 +10,8 @@ export default defineConfig({
     alias: {
       "~bootstrap": path.resolve(__dirname, "node_modules/bootstrap"),
       "@redux": path.resolve(__dirname, "redux"),
-      "@/": path.resolve(__dirname, "src"),
-      "./": path.resolve(__dirname, "src"),
+      // "@/": path.resolve(__dirname, "src"),
+      // "./": path.resolve(__dirname, "src"),
     },
   },
 
@@ -26,8 +26,8 @@ export default defineConfig({
   },
 
   // Customize Babel options
-  babel: {
-    presets: ["@babel/preset-react"],
-    plugins: ["@babel/plugin-transform-runtime"],
-  },
+  // babel: {
+  //   presets: ["@babel/preset-react"],
+  //   plugins: ["@babel/plugin-transform-runtime"],
+  // },
 });

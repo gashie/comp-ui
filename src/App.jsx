@@ -1,12 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import AdminLayout from './Layout/AdminLayout';
-import AuthLayout from './Layout/AuthLayout';
-import { useEffect } from 'react';
-import { getMe } from './store/actions';
+import { useSelector, useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import AdminLayout from "./Layout/AdminLayout";
+import AuthLayout from "./Layout/AuthLayout";
+import { useEffect } from "react";
+import { getMe } from "./store/actions";
+import CommonHeader from "./Common/CommonHeader/CommonHeader";
 
 const App = () => {
-
   const menuTitle = useSelector((state) => state.menu.menuTitle);
   const themeColor = useSelector((state) => state.theme.themeColor);
   const layout = useSelector((state) => state.layout.layout);
@@ -17,7 +17,7 @@ const App = () => {
   const borderRadius = useSelector((state) => state.borderRadius.borderRadius);
   const iconColor = useSelector((state) => state.iconColor.iconColor);
   const themeMode = useSelector((state) => state.themeMode.themeMode);
-  
+
   const location = useLocation();
   const pathname = location.pathname;
 
@@ -35,34 +35,31 @@ const App = () => {
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getMe());
+  }, [dispatch]);
 
-  useEffect(()=>{
-dispatch(getMe())
-  }, [dispatch])
-  
   return (
     <>
       {isAuthRoute ? (
         <AuthLayout />
       ) : (
-        <AdminLayout 
-          menuTitle={menuTitle} 
-          themeColor={themeColor} 
-          layout={layout} 
-          borderStroke={borderStroke} 
-          borderLayout={borderLayout} 
-          boxLayout={boxLayout} 
+        <AdminLayout
+          menuTitle={menuTitle}
+          themeColor={themeColor}
+          layout={layout}
+          borderStroke={borderStroke}
+          borderLayout={borderLayout}
+          boxLayout={boxLayout}
           monochrome={monochrome}
           borderRadius={borderRadius}
           iconColor={iconColor}
           themeMode={themeMode}
         />
       )}
-
-
-      
+   
     </>
   );
 };
 
-export default App
+export default App;

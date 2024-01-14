@@ -50,7 +50,7 @@ const Index = () => {
       ),
 
       controller_function: Yup.string().required(
-        "Please provide route path eg. protect,CreateUser"
+        "Please provide route path eg. CreateSystemUser"
       ),
     }),
     onSubmit: (values) => {
@@ -293,7 +293,7 @@ const Index = () => {
                               name="controller_function"
                               id="controller_function"
                               className="form-control p-3"
-                              placeholder="eg. protect,CreateUser"
+                              placeholder="eg. CreateSystemUser"
                               validate={{
                                 required: { value: true },
                               }}
