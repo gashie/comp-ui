@@ -9,6 +9,8 @@ import RolesSaga from './role/saga'
 import PermissionsSaga from './permissions/saga'
 import RolesPermissionsSaga from "./rolepermissions/saga";
 
+import UsersSaga from './users/saga'
+
 
 export default function* rootSaga() {
   yield all([
@@ -20,7 +22,8 @@ export default function* rootSaga() {
     fork(RoutesSaga),
     fork(RolesSaga),
     fork(PermissionsSaga),
-    fork(RolesPermissionsSaga)
+    fork(RolesPermissionsSaga),
+    fork(UsersSaga)
    
    
   ]);

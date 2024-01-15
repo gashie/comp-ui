@@ -51,3 +51,6 @@ export const createUserAPICALL = (data) => api.create(url.CREATE_USER_URL, data)
 //rolestopermission
 export const assignRoleToPermissionAPICALL = ( data) => api.create(url.ASSIGN_ROLES_TO_PERMISSION, data);
 export const viewRoletoPermissionAPICALL = ( data) => api.create(url.VIEW_ROLES_TO_PERMISSION, data);
+
+
+export const getusersPICALL = (data) => api.create(url.VIEW_USERS, data);

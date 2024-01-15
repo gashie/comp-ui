@@ -22,6 +22,8 @@ import RolesReducer from './role/reducer'
 import PermissionsReducer from './permissions/reducer'
 import RolesPermissionsReducer from './rolepermissions/reducer'
 
+import UsersReducer from "./users/reducer";
+
 const rootReducer = combineReducers({
   // public
 
@@ -41,7 +43,8 @@ const rootReducer = combineReducers({
   RoutesReducer,
   RolesReducer,
   PermissionsReducer,
-  RolesPermissionsReducer
+  RolesPermissionsReducer, 
+  UsersReducer
 });
 
 export default rootReducer;

@@ -37,3 +37,7 @@ export const VIEW_PERMISSION = `${version_one}${dormant}view_permission`;
 export const VIEW_ROLES_TO_PERMISSION =  `${version_one}${dormant}view_role_permission`;
 export const ASSIGN_ROLES_TO_PERMISSION =  `${version_one}${dormant}create_role_permission`;
 
+
+//users
+export const VIEW_USERS = `${version_one}${dynamo}viewallusers`;
+

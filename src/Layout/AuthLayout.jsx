@@ -41,27 +41,27 @@ const AuthLayout = () => {
     };
 
     
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
-  //   (state) => ({
-  //     isloggedIn: state.Login.isloggedIn,
-  //     loadingUserinfo: state.Login.loadingUserinfo,
-  //     errorUserinfo: state.Login.errorUserinfo,
-  //   })
-  // );
+//   const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
+//     (state) => ({
+//       isloggedIn: state.Login.isloggedIn,
+//       loadingUserinfo: state.Login.loadingUserinfo,
+//       errorUserinfo: state.Login.errorUserinfo,
+//     })
+//   );
 
-  // useEffect(() => {
+//   useEffect(() => {
 
-  //   console.log("eyy")
-  //   if (isloggedIn) {
-  //     console.log("eynn")
-  //     navigate("/");
+//     console.log("eyy")
+//     if (isloggedIn) {
+//       console.log("eynn")
+//       navigate("/");
       
-  //   }
+//     }
 
     
-  // }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
+//   }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
 
   return (
         <body data-bvite="theme-Applegreen" className="layout-border svgstroke-a layout-default auth">

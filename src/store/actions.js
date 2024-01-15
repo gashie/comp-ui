@@ -14,3 +14,5 @@ export * from './role/action'
 export * from './permissions/action'
 
 export * from  './rolepermissions/action'
+
+export * from './users/action'
