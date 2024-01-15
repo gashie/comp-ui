@@ -320,6 +320,90 @@ const CommonSidebar = ({ iconColor }) => {
                         </svg>} 
                         menuItems={[]} /> */}
               </ul>
+              <h6
+                className="fl-title title-font ps-2 small text-uppercase text-muted"
+                style={{ "--text-color": "var(--theme-color2)" }}
+              >
+                Manage Users
+              </h6>
+              <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
+                <MenuItem
+                  title="Users"
+                  link="/app/users"
+                  icon={
+                    <svg
+                      className="svg-stroke"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                      <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                      <path d="M6 5.3a9 9 0 0 1 0 13.4"></path>
+                      <path d="M18 5.3a9 9 0 0 0 0 13.4"></path>
+                    </svg>
+                  }
+                  // menuItems={projectMenuItems}
+                  menuItems={[]}
+                />
+                {/* <MenuItem 
+                        title="My Calendar" 
+                        link="/app/calendar"
+                        icon={
+                            <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                            <path d="M16 3l0 4"></path>
+                            <path d="M8 3l0 4"></path>
+                            <path d="M4 11l16 0"></path>
+                            <path d="M8 15h2v2h-2z"></path>
+                        </svg>} 
+                        menuItems={[]} /> */}
+                {/* <MenuItem 
+                        title="Inbox"
+                        link="/app/inbox" 
+                        icon={
+                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
+                            <path d="M4 13h3l3 3h4l3 -3h3"></path>
+                        </svg>} 
+                        menuItems={[]} /> */}
+                {/* <MenuItem 
+                        title="Chat" 
+                        link="/app/chat"
+                        icon={
+                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1"></path>
+                        </svg>} 
+                        menuItems={[]} /> */}
+                {/* <MenuItem 
+                        title="Blog Article" 
+                        link="/app/blog"
+                        icon={
+                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M8 21h8a5 5 0 0 0 5 -5v-3a3 3 0 0 0 -3 -3h-1v-2a5 5 0 0 0 -5 -5h-4a5 5 0 0 0 -5 5v8a5 5 0 0 0 5 5z"></path>
+                            <path d="M7 7m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h3a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-3a1.5 1.5 0 0 1 -1.5 -1.5z"></path>
+                            <path d="M7 14m0 1.5a1.5 1.5 0 0 1 1.5 -1.5h7a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-7a1.5 1.5 0 0 1 -1.5 -1.5z"></path>
+                        </svg>} 
+                        menuItems={[]} /> */}
+                {/* <MenuItem 
+                        title="File Manager" 
+                        link="/app/filemanager"
+                        icon={
+                        <svg className="svg-stroke" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M9 4h3l2 2h5a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2"></path>
+                            <path d="M17 17v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2h2"></path>
+                        </svg>} 
+                        menuItems={[]} /> */}
+              </ul>
               {/* <!-- start: Plugin --> */}
               <h6
                 className="fl-title title-font ps-2 small text-uppercase text-muted"
