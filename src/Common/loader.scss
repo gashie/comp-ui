@@ -24,6 +24,24 @@ body{
   align-items: center;
 }
 
+.custom-container{
+  
+
+
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+
+.regular-container{
+  padding-left: 15rem;
+  padding-right: 15rem;
+  padding: 5rem;
+}
+
 .tg{
    border-collapse:collapse;
    border-spacing:0;

@@ -95,6 +95,9 @@ import CreateRoutes from './Partials/BirdsEye/Routes/'
 import RolesToPermissions from './Partials/BirdsEye/RolesPermissions/RolesPermissions'
 import ManageUsers from './Partials/BirdsEye/Users/'
 
+//landings
+import MonitoringLanding from './Partials/BirdsEye/Landings/Monitoring/LandingPage'
+
 const Routes = () => {
   return (
     <ReactRoutes>
@@ -201,6 +204,7 @@ const Routes = () => {
       <Route exact path="/app/create-routes" element={<CreateRoutes/>} />
       <Route exact path="/app/assign-roles-to-permissions" element={<RolePermissions/>} />
       <Route exact path="/app/users" element={<ManageUsers />} />
+      <Route exact path="/monitoring/home" element={<MonitoringLanding />} />
     </ReactRoutes>
   );
 };

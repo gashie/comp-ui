@@ -29,6 +29,7 @@ const App = () => {
     "/lockscreen": "Lockscreen",
     "/maintenance": "Maintenance",
     "/404": "NoPage",
+    "/monitoring/home" : "MonitoringLanding"
   };
 
   const isAuthRoute = authTitleMapping[pathname];
