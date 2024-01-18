@@ -4,7 +4,7 @@ import './loader.scss'
 function SkeletonLoader() {
   return (
    <>
-   <table className="tg">
+   <table className="tg w-100">
   <tr>
     <th className="tg-cly1">  
         <div className="line"></div>

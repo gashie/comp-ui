@@ -49,11 +49,11 @@ import Index from "./Partials/Workspace/Dashboard/Index";
 // import Progressbar from "./Partials/Plugins/BootstrapUI/Progressbar/Progressbar";
 // import Spinners from "./Partials/Plugins/BootstrapUI/Spinners/Spinners";
 // import Toasts from "./Partials/Plugins/BootstrapUI/Toasts/Toasts";
-import BootstrapIcon from "./Partials/Plugins/FontIcon/BootstrapIcon/BootstrapIcon";
-import CountryFlagsIcon from "./Partials/Plugins/FontIcon/CountryFlagsIcon/CountryFlagsIcon";
-import FontawesomeIcon from "./Partials/Plugins/FontIcon/FontawesomeIcon/FontawesomeIcon";
-import LinearIcon from "./Partials/Plugins/FontIcon/LinearIcon/LinearIcon";
-import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
+// import BootstrapIcon from "./Partials/Plugins/FontIcon/BootstrapIcon/BootstrapIcon";
+// import CountryFlagsIcon from "./Partials/Plugins/FontIcon/CountryFlagsIcon/CountryFlagsIcon";
+// import FontawesomeIcon from "./Partials/Plugins/FontIcon/FontawesomeIcon/FontawesomeIcon";
+// import LinearIcon from "./Partials/Plugins/FontIcon/LinearIcon/LinearIcon";
+// import WeatherIcon from "./Partials/Plugins/FontIcon/WeatherIcon/WeatherIcon";
 // import ApexCharts from "./Partials/Plugins/Charts/ApexCharts/ApexCharts";
 // import PeityCharts from "./Partials/Plugins/Charts/PeityCharts/PeityCharts";
 // import Bootstrap5Tags from "./Partials/Plugins/Bootstrap5Tags/Bootstrap5Tags";
@@ -92,7 +92,7 @@ import DeployedApplicationDetails from './Partials/BirdsEye/Applications/User/De
 import HostUptime from './Partials/BirdsEye/Monitoring/Dashboard'
 import DeployProcess from './Partials/BirdsEye/Applications/User/DeployProcess'
 import CreateRoutes from './Partials/BirdsEye/Routes/'
-import RolesToPermissions from './Partials/BirdsEye/RolesPermissions/RolesPermissions'
+// import RolesToPermissions from './Partials/BirdsEye/RolesPermissions/RolesPermissions'
 import ManageUsers from './Partials/BirdsEye/Users/'
 
 //landings
@@ -185,15 +185,15 @@ const Routes = () => {
       <Route exact path="/role-permissions" element={<RolePermissions/>} />
       {/* <Route exact path="/pages/form" element={<Forms/>} /> */}
 
-      <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
+      {/* <Route exact path="/docs/bootstrap-icon" element={<BootstrapIcon/>} />
       <Route exact path="/docs/flag-icon" element={<CountryFlagsIcon/>} />
       <Route exact path="/docs/fontawesome-icon" element={<FontawesomeIcon/>} />
       <Route exact path="/docs/linear-icon" element={<LinearIcon/>} />
       <Route exact path="/docs/weather-icon" element={<WeatherIcon/>} />
 
-      {/* <Route exact path="/docs/cards" element={<Cards/>} />
+      {/* <Route exact path="/docs/cards" element={<Cards/>} /> */}
 
-      <Route exact path="/docs/datatables" element={<Datatables/>} /> */}
+   
       <Route exact path="/app/configure-applications" element={<Applications/>} />
       {/* monitoring module */}
       <Route exact path="/app/monitor" element={<Monitoring/>} />

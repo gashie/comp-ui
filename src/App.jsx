@@ -4,8 +4,7 @@ import AdminLayout from "./Layout/AdminLayout";
 import AuthLayout from "./Layout/AuthLayout";
 import { useEffect } from "react";
 import { getMe } from "./store/actions";
-import CommonHeader from "./Common/CommonHeader/CommonHeader";
-import AOS from "aos";
+
 
 const App = () => {
   const menuTitle = useSelector((state) => state.menu.menuTitle);
@@ -39,12 +38,11 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getMe());
-    AOS.init({
-      duration: 800, // Duration of animations in milliseconds
-      easing: "ease-in-out", // Easing type
-    });
+  
   }, [dispatch]);
 
+
+  
   return (
     <>
       {isAuthRoute ? (

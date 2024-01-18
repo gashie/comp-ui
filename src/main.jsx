@@ -9,7 +9,6 @@ import "weather-icons/css/weather-icons.css";
 import "prismjs/themes/prism.css";
 import "../src/assets/scss/styles.scss";
 import { configureStore } from "./store";
-import store from "./Redux/store";
 
 import App from "./App";
 

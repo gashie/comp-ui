@@ -10,8 +10,8 @@ export default defineConfig({
     alias: {
       "~bootstrap": path.resolve(__dirname, "node_modules/bootstrap"),
       "@redux": path.resolve(__dirname, "redux"),
-      // "@/": path.resolve(__dirname, "src"),
-      // "./": path.resolve(__dirname, "src"),
+      "@/": path.resolve(__dirname, "src"),
+      "./": path.resolve(__dirname, "src"),
     },
   },
 

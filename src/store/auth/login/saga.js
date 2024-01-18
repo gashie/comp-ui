@@ -77,6 +77,7 @@ function* loginUser({ payload: { user,  } }) {
 function* getLoggedUserSaga() {
   try {
     const response = yield call(getLoggedInUser);
+    console.log(response?.data)
     yield put(getMeSuccess(response?.data?.data));
   } catch (error) {
     yield put(getMeError(error.response?.data?.message));

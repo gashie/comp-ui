@@ -15,7 +15,7 @@ export const SOCIAL_LOGIN = "/social-login";
 
 //auth
 export const LOGIN_URL =`${version_one}${dynamo}adminsignin`;
-export const JWT_LOGIN_URL = `${version_one}${dynamo}auth`;
+export const JWT_LOGIN_URL = `${version_one}${"/static/"}auth`;
 export const CREATE_USER_URL = `${version_one}${dynamo}addsystemuser`;
 export const LOGOUT_URL = `${version_one}${dynamo}logout`;
 
