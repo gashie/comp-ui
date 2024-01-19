@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, FormFeedback, Input } from "reactstrap";
-import { useDispatch } from "react-redux";
+import { Button, FormFeedback, Input, Spinner } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { registerUser } from "../../../../store/actions";
@@ -10,6 +10,15 @@ const Signup = () => {
   const dispatch = useDispatch();
 
   const [passwordMatch, setPasswordMatch] = useState(true);
+
+  const { error, registrationError, success, loading } = useSelector(
+    (state) => ({
+      registrationError: state.Account.registrationError,
+      success: state.Account.success,
+      error: state.Account.error,
+      loading: state.Account.loading,
+    })
+  );
 
   const validation = useFormik({
     // enableReinitialize : use this flag when initial values needs to be changed
@@ -82,7 +91,6 @@ const Signup = () => {
             <h1 className="h2 title-font ">
               Welcome to <b>BE360</b>
             </h1>
-            
           </li>
           <li className="col-6">
             <label className="form-label">Full name</label>
@@ -321,21 +329,31 @@ const Signup = () => {
                 value=""
                 id="TermsConditions"
               />
-              <label className="form-check-label" htmlFor="TermsConditions">
+              {/* <label className="form-check-label" htmlFor="TermsConditions">
                 I accept the{" "}
                 <a href="#" title="" className="" style={{ color: "#fabe00" }}>
                   Terms and Conditions
                 </a>
-              </label>
+              </label> */}
             </div>
           </li>
           <li className="col-12 my-4">
             <Button
               className="btn btn-lg w-100 btn-primary text-uppercase mb-2 text-light"
-              style={{ backgroundColor: "#fabe00" }}
               type="submit"
+              disabled={error ? null : loading}
+              style={{
+                backgroundColor: "#fabe00",
+                color: "white",
+              }}
             >
-              SIGN UP
+              
+              {error ? null : loading ? (
+                <Spinner size="sm" className="me-2">
+                  {" "}
+                </Spinner>
+              ) : null}
+            SIGN UP
             </Button>
             {/* <a className="btn btn-lg btn-secondary w-100" href="#">
               <i className="fa fa-google me-2"></i>
