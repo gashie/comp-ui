@@ -26,7 +26,7 @@ const AuthLayout = () => {
     "/lockscreen": "Lockscreen",
     "/maintenance": "Maintenance",
     "/404": "NoPage",
-    "/monitoring/home": "MonitoringLanding",
+    "/": "MonitoringLanding",
   };
   const authTitle = authTitleMapping[pathname] || "";
 
@@ -43,24 +43,24 @@ const AuthLayout = () => {
 
   const navigate = useNavigate();
 
-  //   const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
-  //     (state) => ({
-  //       isloggedIn: state.Login.isloggedIn,
-  //       loadingUserinfo: state.Login.loadingUserinfo,
-  //       errorUserinfo: state.Login.errorUserinfo,
-  //     })
-  //   );
+    const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
+      (state) => ({
+        isloggedIn: state.Login.isloggedIn,
+        loadingUserinfo: state.Login.loadingUserinfo,
+        errorUserinfo: state.Login.errorUserinfo,
+      })
+    );
 
-  //   useEffect(() => {
+    useEffect(() => {
 
-  //     console.log("eyy")
-  //     if (isloggedIn) {
-  //       console.log("eynn")
-  //       navigate("/");
+      // console.log("eyy")
+      // if (isloggedIn) {
+      
+      //   navigate("/");
 
-  //     }
+      // }
 
-  //   }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
+    }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
 
   console.log(location.pathname);
 
@@ -69,7 +69,7 @@ const AuthLayout = () => {
       data-bvite="theme-Applegreen"
       className="layout-border svgstroke-a layout-default auth"
     >
-      {location.pathname !== "/monitoring/home" ? (
+      {location.pathname !== "/" ? (
         <main className="container-fluid px-0">
           {/* <!-- start: project logo --> */}
           <div className="px-xl-5 px-4 auth-header" data-bs-theme="none">

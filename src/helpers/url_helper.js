@@ -1,6 +1,6 @@
 //REGISTER
 let version_one = '/api/v1/comp/'
-let dormant = '/static/system/'
+let dormant = 'static/system/'
 let dynamo = 'dynamo/'
 
 export const POST_FAKE_REGISTER = "/auth/signup";
@@ -20,7 +20,7 @@ export const CREATE_USER_URL = `${version_one}${dynamo}addsystemuser`;
 export const LOGOUT_URL = `${version_one}${dynamo}logout`;
 
 //creating routes
-export const CREATE_ROUTES = `${version_one}/create_routes`;
+export const CREATE_ROUTES = `${version_one}${dormant}create_routes`;
 
 //roles
 export const CREATE_ROLES = `${version_one}${dormant}create_role`;

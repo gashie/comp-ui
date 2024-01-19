@@ -109,7 +109,7 @@ const Routes = () => {
       <Route exact path="/maintenance" element={<Maintenance/>} />
       <Route exact path="/404" element={<NoPageFound/>} /> */}
 
-      <Route exact path="/" element={<Index/>} />
+      <Route exact path="/home" element={<Index/>} />
       {/* <Route exact path="/index" element={<Index/>} />
       <Route exact path="/my-wallet" element={<MyWallet/>} /> */}
       {/* <Route exact path="/app" element={<AppIndex/>} /> */}
@@ -204,7 +204,7 @@ const Routes = () => {
       <Route exact path="/app/create-routes" element={<CreateRoutes/>} />
       <Route exact path="/app/assign-roles-to-permissions" element={<RolePermissions/>} />
       <Route exact path="/app/users" element={<ManageUsers />} />
-      <Route exact path="/monitoring/home" element={<MonitoringLanding />} />
+      <Route exact path="/" element={<MonitoringLanding />} />
     </ReactRoutes>
   );
 };

@@ -57,7 +57,7 @@ function* addRoles({ payload: reqbody }) {
     }
   } catch (error) {
     yield put(addRolesFail(error)); yield put(getRolesAction())
-    toast.error("Failed to save record", { autoClose: 3000 });
+    toast.error("Failed to add role", { autoClose: 3000 });
   }
 }
 

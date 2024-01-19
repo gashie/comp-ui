@@ -10,12 +10,14 @@ import Row3 from "./Row3";
 import Row4 from "./Row4";
 import Row5 from "./Row5";
 import Navbar from './Navbar'
+import Footer from "./Footer";
 // import CommonFooter from '../../../../Common/CommonFooter/CommonFooter'
 
 
 function LandingPage() {
   return (
     <>
+    <div style={{overflow: 'hidden'}}>
     <Navbar />
      <Row1 />
      <Row2 />
@@ -23,6 +25,9 @@ function LandingPage() {
      <Row4 />
      <Row5 />
      {/* <CommonFooter /> */}
+     <Footer />
+    </div>
+   
     </>
   );
 }

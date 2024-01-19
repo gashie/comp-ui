@@ -2,19 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CountingAnimation from "../../Common/CommonCounting/CountingAnimation";
 import { Dropdown } from "react-bootstrap";
-import img from '../CommonBrand/brand.png'
+import img from "../CommonBrand/brand.png";
+
+import { useSelector } from "react-redux";
 
 const UserDropdown = () => {
+  const { userInfo } = useSelector((state) => ({
+    userInfo: state.Login.userInfo,
+  }));
+
   return (
     <Dropdown.Menu className="dropdown-menu-end shadow p-2 p-xl-3 rounded-4">
       <div className="bg-body p-3 rounded-3">
-        <h4 className="mb-1 title-font text-gradient">Michelle Glover</h4>
-        <p className="small text-muted">michelle.glover@gmail.com</p>
-        <input
+        <h4 className="mb-1 title-font text-gradient">
+          {userInfo?.first_name} {userInfo?.last_name}
+        </h4>
+        <p className="small text-muted">{userInfo?.email}</p>
+        {/* <input
           type="text"
           className="form-control form-control-sm"
           placeholder="Update my status"
-        />
+        /> */}
       </div>
       <ul className="list-unstyled mt-3">
         <li>
@@ -24,7 +32,7 @@ const UserDropdown = () => {
             aria-label="my wallet"
             to="/my-wallet"
           >
-            <div className="d-flex align-items-center">
+            {/* <div className="d-flex align-items-center">
               <span className="align-middle me-2">Balance:</span>
               <span className="fw-bold text-success">
                 <CountingAnimation
@@ -35,7 +43,7 @@ const UserDropdown = () => {
                   duration={5000}
                 />
               </span>
-            </div>
+            </div> */}
           </Link>
         </li>
         <li>
@@ -53,12 +61,12 @@ const UserDropdown = () => {
             as="a"
             className="dropdown-item rounded-pill"
             aria-label="my task"
-            to="/app/my-task"
+            to="/home"
           >
-            My Taskboard
+            My Dashboard
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             as="a"
             className="dropdown-item rounded-pill"
@@ -67,7 +75,7 @@ const UserDropdown = () => {
           >
             Settings
           </Link>
-        </li>
+        </li> */}
         <li className="dropdown-divider"></li>
         <li>
           <Link
@@ -106,6 +114,9 @@ const UserDropdown = () => {
 };
 
 const UserTrigger = () => {
+  const { userInfo } = useSelector((state) => ({
+    userInfo: state.Login.userInfo,
+  }));
   return (
     <li className="nav-item user ms-3">
       <Dropdown align="end">
@@ -123,7 +134,9 @@ const UserTrigger = () => {
             src={img}
             alt="avatar"
           />
-          <span className="ms-2 fs-6 d-none d-sm-inline-flex">Michelle</span>
+          <span className="ms-2 fs-6 d-none d-sm-inline-flex">
+            {userInfo?.username}
+          </span>
         </Dropdown.Toggle>
         <UserDropdown />
       </Dropdown>

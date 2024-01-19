@@ -57,7 +57,7 @@ function* addRoutes({ payload: reqbody }) {
     }
   } catch (error) {
     yield put(addRoutesFail(error)); yield put(getRoutesAction())
-    toast.error("Failed to save record", { autoClose: 3000 });
+    toast.error("Failed to create route", { autoClose: 3000 });
   }
 }
 

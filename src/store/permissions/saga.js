@@ -57,7 +57,7 @@ function* addPermissions({ payload: reqbody }) {
     }
   } catch (error) {
     yield put(addPermissionsFail(error)); yield put(getPermissionsAction())
-    toast.error("Failed to save record", { autoClose: 3000 });
+    toast.error("Failed to add permission", { autoClose: 3000 });
   }
 }
 

@@ -8,7 +8,7 @@ const TwoStep = () => {
                 <ul className="row g-3 list-unstyled li_animate">
                     <li className="col-12">
                         <h1 className="h2 title-font">Welcome to BVite</h1>
-                        <p>Your Admin Dashboard</p>
+                        
                     </li>
                     <li className="col-3">
                         <input type="text" className="form-control form-control-lg text-center" placeholder="-" maxlength="1"/>

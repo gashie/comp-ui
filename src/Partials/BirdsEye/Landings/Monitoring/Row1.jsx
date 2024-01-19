@@ -7,52 +7,38 @@ function Row1() {
   return (
     <>
       <section
-        style={{ backgroundColor: "white" }}
-        className="custom-container bg-img"
-        data-aos="fade-up"
-        data-aos-offset="200"
-        data-aos-delay="50"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="true"
-        data-aos-once="false"
-        data-aos-anchor-placement="top-center"
+        style={{ backgroundColor: "white", overflow: "hidden" }}
+        className=" bg-img"
       >
-        <div
-          className="container"
-          data-aos="fade-up"
-          data-aos-offset="200"
-          data-aos-delay="50"
-          data-aos-duration="1000"
-          data-aos-easing="ease-in-out"
-          data-aos-mirror="true"
-          data-aos-once="false"
-          data-aos-anchor-placement="top-center"
-        >
+        <div className="" style={{ overflow: "hidden" }}>
           <Row className="align-items-center">
-            <Col xs={12} xl={6}>
-              <div data-aos="fade-up">
+            <Col xs={12} xl={6} className="">
+              <div data-aos="fade-up" className="container">
                 <h1
-                  className="fw-bolder"
+                  className="fw-bolder fs-1"
                   style={{
-                    fontSize: "5em",
                     wordSpacing: "2px",
                     color: "",
                   }}
                 >
                   Website Uptime And Performance Monitoring
                 </h1>
+                <p className="text-muted fs-5 fw-lighter " style={{width: '85%'}}>
+                  Empower Your Online Presence: Real-time Web Host Uptime
+                  Monitoring for Uninterrupted Performance and Reliability
+                </p>
               </div>
             </Col>
-            <Col xs={12} xl={6}>
-              <div className="mt-3 mt-xl-0">
+            <Col xs={12} xl={6} className="mt-5" style={{ overflow: "hidden" }}>
+              <div className="mt-5">
                 <img
                   src={sc}
-                  className="img-fluid"
+                  // className="img-fluid"
+                  width="1400px"
                   style={{
                     borderRadius: "10px",
-                    width: "100%",
-                    boxShadow: "0 0 50px #cbcbcb", // White box shadow
+                    // width: "100%",
+                    boxShadow: "0 0 10px black", // White box shadow
                   }}
                   alt="Your Image Alt Text"
                 />
@@ -69,7 +55,7 @@ function Row1() {
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
-            className="mt-5 card p-4 text-light"
+            className="mt-5 card p-4 text-light m-5"
             style={{
               background:
                 "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",

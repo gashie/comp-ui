@@ -7,18 +7,30 @@ import {
   NavItem,
   NavLink,
   NavbarText,
+  Spinner,
   Button,
   NavbarToggler,
   Input,
 } from "reactstrap";
 import img from "../../../../Common/CommonBrand/brand.png";
+import { useSelector } from "react-redux";
 // import "./style.css";
 
 import { Modal } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Navs(args) {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+
+  const { isloggedIn, loadingUserinfo, errorUserinfo, userInfo } = useSelector(
+    (state) => ({
+      isloggedIn: state.Login.isloggedIn,
+      loadingUserinfo: state.Login.loadingUserinfo,
+      errorUserinfo: state.Login.errorUserinfo,
+      userInfo: state.Login.userInfo,
+    })
+  );
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -60,7 +72,7 @@ function Navs(args) {
           zIndex: 1000,
           backgroundColor: "white",
           borderRadius: "30px",
-          border: "1px solid #ed8c00",
+          border: "1px solid #e0e0e0",
         }}
         className="w-50 mt-3"
       >
@@ -71,9 +83,8 @@ function Navs(args) {
 
         <NavbarToggler
           onClick={toggle}
-          style={{ border: "1px solid black", color: 'black' }}
+          style={{ border: "1px solid black", color: "black" }}
           className="menu-toggler text-dark"
-          
         >
           <i className="bx bx-menu-alt-right"></i>
         </NavbarToggler>
@@ -83,19 +94,13 @@ function Navs(args) {
               <NavLink href="#">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">
-                Pricing
-              </NavLink>
+              <NavLink href="#">Pricing</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">
-                Services
-              </NavLink>
+              <NavLink href="#">Services</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="#">
-                Applications
-              </NavLink>
+              <NavLink href="#">Applications</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
@@ -104,13 +109,23 @@ function Navs(args) {
           {/* <Input  type="text"
   placeholder="Your Placeholder"
   className="custom-input" /> */}
-          {/* <Button
-            color="primary"
-            onClick={toggleModal}
-            style={{ backgroundColor: "white", color: "black", border: "none" }}
-          >
-            <i className="bx bx-search "></i>Search
-          </Button> */}
+          <Link to={isloggedIn ? "/home": "/signin"}>
+            <Button
+              color="primary"
+              // onClick={toggleModal}
+              className=""
+              style={{
+                backgroundColor: "orange",
+                color: "white",
+                border: "none",
+                borderRadius: "30px",
+              }}
+              disabled = {loadingUserinfo}
+            >
+              <i className="bi-person mx-2"></i>
+              {isloggedIn ? userInfo?.username : loadingUserinfo ? <Spinner size={'sm'}/> : "Account"}
+            </Button>
+          </Link>
         </div>
       </Navbar>
 

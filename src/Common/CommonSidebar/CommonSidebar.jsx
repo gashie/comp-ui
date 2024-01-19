@@ -74,7 +74,7 @@ const CommonSidebar = ({ iconColor }) => {
               <ul className={`list-unstyled mb-4 menu-list ${iconColor}`}>
                 <MenuItem
                   title="Dashboard"
-                  link="/"
+                  link="/home"
                   icon={
                     <svg
                       className="svg-stroke"

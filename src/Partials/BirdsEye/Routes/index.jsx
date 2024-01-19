@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { useSelector } from "react-redux";
 //import { Form } from "reactstrap";
 import {
@@ -15,8 +15,9 @@ import "./index.css";
 import img from "../../../assets/images/img.png";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { addNewRoutes } from "../../../store/actions";
+import { addNewRoutes, getPermissionsAction, getRolesAction } from "../../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
+import Select from "react-select";
 
 const Index = () => {
   const [isRight, setIsRight] = useState(false);
@@ -145,6 +146,21 @@ const Index = () => {
 
   // Sample data
   const data = [];
+
+  useEffect(() => {
+    dispatch(getPermissionsAction());
+    dispatch(getRolesAction());
+  }, [dispatch]);
+
+
+  const { perm } = useSelector((state) => ({
+    perm: state.PermissionsReducer.permissions,
+  }));
+
+
+  let permissionOptions = perm.map(function (item) {
+    return { value: item?.permission_id, label: item?.permission_name };
+  });
 
   return (
     <div className="px-4 py-3 page-body">
@@ -318,14 +334,71 @@ const Index = () => {
                           </fieldset>
                         </div>
                         <div className="mb-3 col-md-12 col-12">
+                          <label className="col-form-label">Middleware</label>
+                          <fieldset className="form-icon-group left-icon position-relative">
+                            <Input
+                              type="text"
+                              name="middleware"
+                              id="middleware"
+                              className="form-control p-3"
+                              placeholder="eg. protect,CreateUser"
+                              validate={{
+                                required: { value: true },
+                              }}
+                              onChange={validation.handleChange}
+                              onBlur={validation.handleBlur}
+                              value={validation.values.middleware || ""}
+                              invalid={
+                                validation.touched.middleware &&
+                                validation.errors.middleware
+                                  ? true
+                                  : false
+                              }
+                            />
+                            {validation.touched.middleware &&
+                            validation.errors.middleware ? (
+                              <FormFeedback type="invalid">
+                                {validation.errors.middleware}
+                              </FormFeedback>
+                            ) : null}
+                          </fieldset>
+                        </div>
+                        <div className="mb-3 col-md-12 col-12">
                           <label className="col-form-label">
                             Permission ID
                           </label>
                           <fieldset className="form-icon-group left-icon position-relative">
-                            <input
-                              type="text"
-                              className="form-control p-3"
-                              placeholder="eg. protect,CreateUser"
+                            <Select
+                              name="permission_id"
+                              value={permissionOptions.find(function (e) {
+                                return e.value === validation.values.permission_id;
+                              })}
+                              onChange={(selectedOption) => {
+                                const { value, label } = selectedOption;
+
+                                console.log("Selected Value:", value);
+                                console.log("Selected Label:", label);
+
+                                const selectedItem = permissionOptions.find(
+                                  (option) => option.value === value
+                                );
+
+                                const selectedItemId = selectedItem
+                                  ? selectedItem.id
+                                  : null;
+                                console.log(
+                                  "Selected Item ID:",
+                                  selectedItemId
+                                );
+
+                                // Update the form field
+
+                                validation.setFieldValue("permission_id", value);
+                              }}
+                              className="mb-0"
+                              options={permissionOptions}
+                              id="taginput-choices"
+                              key={validation.values.permission_id}
                             />
                           </fieldset>
                         </div>

@@ -44,9 +44,9 @@ function* addRolesPermissions({ payload: reqbody }) {
   try {
     const response = yield call(assignRoleToPermissionAPICALL, reqbody);
     if (response && response?.data?.status === 1) {
-      yield put(addNewRolePermissions(response));
+      // yield put(addNewRolePermissions(response));
       yield put(getRolePermissionsAction());
-      toast.success("Saved Successfully", { autoClose: 3000 });
+      toast.success("Role Assigned to Permission", { autoClose: 3000 });
     } else {
       yield put(addRolePermissionsFail(response?.data?.message));
       yield put(getRolePermissionsAction());
@@ -55,7 +55,7 @@ function* addRolesPermissions({ payload: reqbody }) {
   } catch (error) {
     yield put(addRolePermissionsFail(error));
     yield put(getRolePermissionsAction());
-    toast.error("Failed to save record", { autoClose: 3000 });
+    toast.error("Failed to assign role to permission", { autoClose: 3000 });
   }
 }
 

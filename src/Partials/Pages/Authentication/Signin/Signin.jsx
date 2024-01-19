@@ -49,7 +49,7 @@ const Signin = () => {
             <h1 className="h2 title-font">
               Welcome to <b>BE360</b>
             </h1>
-            <p>Your Admin Dashboard</p>
+            
           </li>
           <li className="col-12">
             <label className="form-label">Username</label>

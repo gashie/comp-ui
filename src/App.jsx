@@ -4,6 +4,7 @@ import AdminLayout from "./Layout/AdminLayout";
 import AuthLayout from "./Layout/AuthLayout";
 import { useEffect } from "react";
 import { getMe } from "./store/actions";
+import { Toaster } from "react-hot-toast";
 
 
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
     "/lockscreen": "Lockscreen",
     "/maintenance": "Maintenance",
     "/404": "NoPage",
-    "/monitoring/home": "MonitoringLanding",
+    "/": "MonitoringLanding",
   };
 
   const isAuthRoute = authTitleMapping[pathname];
@@ -45,6 +46,7 @@ const App = () => {
   
   return (
     <>
+      <Toaster />
       {isAuthRoute ? (
         <AuthLayout />
       ) : (

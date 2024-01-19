@@ -40,7 +40,7 @@ function* loginUser({ payload: { user,  } }) {
 
         yield put(getMeSuccess(verify?.data?.data));
 
-         window.location.href = "/";
+          window.location.href = "/";
         yield put(resetLoginFlag());
       } catch (error) {
         yield put(getMeError(error.verify?.data?.message));
@@ -77,7 +77,7 @@ function* loginUser({ payload: { user,  } }) {
 function* getLoggedUserSaga() {
   try {
     const response = yield call(getLoggedInUser);
-    console.log(response?.data)
+
     yield put(getMeSuccess(response?.data?.data));
   } catch (error) {
     yield put(getMeError(error.response?.data?.message));
@@ -91,7 +91,7 @@ function* logoutUser() {
   try {
     const response = yield call(logoutuserAPICALL);
     yield put(logoutUserSuccess(response?.data?.data));
-    window.location.href = "/welcome";
+    window.location.href = "/";
   } catch (error) {
     yield put(getMeError(error.response?.data?.message));
     // toast.error(`${error.response.data.message}`, {

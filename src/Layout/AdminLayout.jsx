@@ -79,27 +79,27 @@ const AdminLayout = ({
 
   const navigate = useNavigate();
 
-  // const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
-  //   (state) => ({
-  //     isloggedIn: state.Login.isloggedIn,
-  //     loadingUserinfo: state.Login.loadingUserinfo,
-  //     errorUserinfo: state.Login.errorUserinfo,
-  //   })
-  // );
+  const { isloggedIn, loadingUserinfo, errorUserinfo } = useSelector(
+    (state) => ({
+      isloggedIn: state.Login.isloggedIn,
+      loadingUserinfo: state.Login.loadingUserinfo,
+      errorUserinfo: state.Login.errorUserinfo,
+    })
+  );
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   console.log("eyy")
-  //   if (!isloggedIn) {
-  //     console.log("eynn")
-  //     navigate("/signin");
+    console.log("eyy")
+    if (!isloggedIn) {
+   
+      navigate("/");
       
-  //   }
+    }
 
-  //   if (errorUserinfo) {
-  //     navigate("/signin");
-  //   }
-  // }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
+    if (errorUserinfo) {
+      navigate("/");
+    }
+  }, [loadingUserinfo, isloggedIn, errorUserinfo, navigate]);
 
 
   return (
