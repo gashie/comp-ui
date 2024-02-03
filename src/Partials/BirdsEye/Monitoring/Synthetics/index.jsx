@@ -18,7 +18,7 @@ import Locations from "./Locations";
 import Monitors from './Monitors'
 
 function Index() {
-  const [activeTab, setActiveTab] = useState("tab1");
+  const [activeTab, setActiveTab] = useState("locations");
 
   const toggleTab = (tab) => {
     if (activeTab !== tab) {
@@ -125,7 +125,7 @@ function Index() {
                   </Col>
                 </Row>
               </TabPane>
-              <TabPane tabId="tab2">
+              <TabPane tabId="monitors">
                 <Row>
                   <Col sm="12">
                     <Monitors />

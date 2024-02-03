@@ -2,7 +2,13 @@
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap/dist/css/bootstrap.css";
 
-import { Button, Offcanvas, OffcanvasBody, OffcanvasHeader } from "reactstrap";
+import {
+  Button,
+  Offcanvas,
+  OffcanvasBody,
+  OffcanvasHeader,
+  Card,
+} from "reactstrap";
 import TableComponent from "../../../../../Common/DataTable/TableComponent2";
 import { useState } from "react";
 // import AddAgent from "./AddAgent";
@@ -133,10 +139,15 @@ function Monitors() {
           borderRadius: "10px",
         }}
       >
-        Private locations allows you to monitors from your own premisese. They
-        require an Elastic agent and Agent policy which you can control and
-        maintain via Fleet.
+        <h4 className="fw-lighter">Alerts are not being sent</h4>
+        You have monitors with alerting enabled, but there is no default
+        connector configured to send those alerts
+        <div className="d-flex align-items-center mt-4">
+          <Button className="btn btn-light">Configure Now</Button>
+          <Button className="btn btn-light mx-2">Configure Now</Button>
+        </div>
       </div>
+
       <div
         className="card mt-2"
         style={{
@@ -195,7 +206,21 @@ function Monitors() {
                   toggleRightCanvas();
                 }}
               >
-                Create Location
+                Create Monitor
+              </Button>
+              <Button
+                className="btn mx-2"
+                style={{
+                  border: "1px solid #Ed8b00",
+
+                  backgroundColor: "white",
+                  color: "#Ed8b00",
+                }}
+                onClick={() => {
+                  toggleRightCanvas();
+                }}
+              >
+                Refresh
               </Button>
             </div>
           </div>
@@ -220,47 +245,308 @@ function Monitors() {
           }}
         >
           <div>Showing {data?.length} locations</div>
-          {/* <div className="d-flex gap-3">
-            <div>
-              <i
-                className="bi bi-bullseye mx-2"
-                style={{
-                  color: "#Ed8b00",
-                  position: "relative",
-                  top: "0.08rem",
-                }}
-              ></i>
-              Healthy
-            </div>
-            <div>
-              <i
-                className="bi bi-bullseye mx-2"
-                style={{ color: "gold", position: "relative", top: "0.08rem" }}
-              ></i>
-              Unhealthy
-            </div>
-            <div>
-              <i
-                className="bi bi-bullseye mx-2"
-                style={{
-                  color: "#00d084",
-                  position: "relative",
-                  top: "0.08rem",
-                }}
-              ></i>
-              Updating
-            </div>
-            <div>
-              <i
-                className="bi bi-bullseye mx-2"
-                style={{ color: "gray", position: "relative", top: "0.08rem" }}
-              ></i>
-              Offline
-            </div>
-          </div> */}
         </div>
 
-        <TableComponent data={data} columns={columns} />
+        {/* dashboard */}
+        {/* First ROw */}
+        <div className="row g-3">
+          <div className="col-xl-3">
+            <Card className="p-3">
+              {/* container */}
+              <div>
+                {/* content */}
+                <div className="px-4 py-3">
+                  <h4 className="fw-bolder fs-5">Current status</h4>
+                </div>
+                <div className="d-flex justify-content-between align-items-center p-3">
+                  <div>
+                    <div
+                      className="fs-1 fw-bolder text-center"
+                      style={{ color: "#00d084 " }}
+                    >
+                      0
+                    </div>
+                    <div className="text-center fs-5 fw-lighter">Up</div>
+                  </div>
+                  <div>
+                    <div
+                      className="fs-1 fw-bolder text-center"
+                      style={{ color: "#ec255a" }}
+                    >
+                      0
+                    </div>
+                    <div className="text-center fs-5 fw-lighter">Down</div>
+                  </div>
+                  <div>
+                    <div
+                      className="fs-1 fw-bolder text-center"
+                      style={{ color: "gray" }}
+                    >
+                      0
+                    </div>
+                    <div className="text-center fs-5 fw-lighter">Disabled</div>
+                  </div>
+                  <div>
+                    <div
+                      className="fs-1 fw-bolder text-center"
+                      style={{ color: "gray" }}
+                    >
+                      0
+                    </div>
+                    <div className="text-center fs-5 fw-lighter">Pending</div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="col-xl-4">
+            <Card className="p-3">
+              {/* container */}
+              <div>
+                {/* content */}
+                <div className="px-4 py-3">
+                  <h4 className="fw-bolder fs-5">Current status</h4>
+                </div>
+
+                <div
+                  className="d-flex justify-content-center align-items-center mt-4"
+                  style={{ fontSize: "0.8rem", color: "gray" }}
+                >
+                  No results found
+                </div>
+
+                <div
+                  className="mt-5  d-flex justify-content "
+                  style={{ width: "max-content" }}
+                >
+                  <div
+                    className="px-4 py-1 text-dark mx-2 mt-2"
+                    style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
+                  >
+                    Caution
+                  </div>
+                  <div
+                    className="px-4 py-1 text-dark mx-2 mt-2"
+                    style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
+                  >
+                    Caution
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div className="col-xl-5">
+            <Card className="p-3">
+              {/* container */}
+              <div>
+                {/* content */}
+                <div className="px-4 py-3">
+                  <h4 className="fw-bolder fs-5">Current status</h4>
+                </div>
+
+                <div
+                  className="d-flex justify-content-center align-items-center mt-4"
+                  style={{ fontSize: "0.8rem", color: "gray" }}
+                >
+                  No results found
+                </div>
+
+                <div
+                  className="mt-5 d-flex justify-content "
+                  style={{ width: "max-content" }}
+                >
+                  <div
+                    className="px-4 py-1 text-dark mx-2 mt-2"
+                    style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
+                  >
+                    Caution
+                  </div>
+                  <div
+                    className="px-4 py-1 text-dark mx-2 mt-2"
+                    style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
+                  >
+                    Caution
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </div>
+
+      <div className="p-3">Showing</div>
+
+      {/* second row */}
+      <div className="row g-3">
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
+        <div className="col-xl-3">
+          <Card className="p-3">
+            {/* container */}
+            <div>
+              <div className="fw-bolder">Transflow Bill Payment Live</div>
+              <div>BIRDSEYE-HQ-MAIN</div>
+            </div>
+
+            <div className="text-end">
+              <div style={{ fontSize: "0.7rem" }}>Duration</div>
+              <div className="fs-1 fw-bolder">0 ms</div>
+            </div>
+          </Card>
+        </div>
       </div>
 
       {/* Off Canvas */}
