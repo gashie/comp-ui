@@ -30,11 +30,12 @@ function Index() {
     <>
       <Col md={12} xl={12} style={{}} className="mt-5">
         <div
-          className="card mb-3"
+          className="card mb-3 mx-2"
           style={{
             background:
               "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
             color: "white",
+            border: 'none'
           }}
         >
           <div className="card-body">
@@ -43,7 +44,7 @@ function Index() {
                 <h2 className="fw-bold mb-xl-2">Synthetics</h2>
                 <p
                   className="fw-lighter text-light w-100"
-                  style={{ fontSize: "0.8em" }}
+                  style={{ fontSize: "1rem",border: 'none' }}
                 >
                   Agent policies are used to manage settings across a group of
                   agents. You can add integrations to your agent policy to

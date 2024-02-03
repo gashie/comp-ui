@@ -12,8 +12,10 @@ import {
 import TableComponent from "../../../../../Common/DataTable/TableComponent2";
 import { useState } from "react";
 // import AddAgent from "./AddAgent";
+import { FiAlertTriangle } from "react-icons/fi";
 
 import { BsTrash3 } from "react-icons/bs";
+import { MdRefresh } from "react-icons/md";
 
 const data = [
   {
@@ -134,17 +136,22 @@ function Monitors() {
       <div
         className="mt-3 mb-3  text-light  fw-lighter p-3"
         style={{
-          backgroundColor: "#ffb23a",
+          background:
+            "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
           fontWeight: "lighter",
           borderRadius: "10px",
         }}
       >
-        <h4 className="fw-lighter">Alerts are not being sent</h4>
+        <h4 className="fw-lighter">
+          {" "}
+          <FiAlertTriangle style={{ fontSize: "1.2rem" }} className="mx-2" />
+          Alerts are not being sent
+        </h4>
         You have monitors with alerting enabled, but there is no default
         connector configured to send those alerts
         <div className="d-flex align-items-center mt-4">
           <Button className="btn btn-light">Configure Now</Button>
-          <Button className="btn btn-light mx-2">Configure Now</Button>
+          <Button className="btn btn-light mx-2">Remind me later</Button>
         </div>
       </div>
 
@@ -220,7 +227,7 @@ function Monitors() {
                   toggleRightCanvas();
                 }}
               >
-                Refresh
+                <MdRefresh /> Refresh
               </Button>
             </div>
           </div>
@@ -324,13 +331,13 @@ function Monitors() {
                     className="px-4 py-1 text-dark mx-2 mt-2"
                     style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
                   >
-                    Caution
+                    <FiAlertTriangle />
                   </div>
                   <div
                     className="px-4 py-1 text-dark mx-2 mt-2"
                     style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
                   >
-                    Caution
+                    <FiAlertTriangle />
                   </div>
                 </div>
               </div>
@@ -360,13 +367,13 @@ function Monitors() {
                     className="px-4 py-1 text-dark mx-2 mt-2"
                     style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
                   >
-                    Caution
+                    <FiAlertTriangle />
                   </div>
                   <div
                     className="px-4 py-1 text-dark mx-2 mt-2"
                     style={{ backgroundColor: "#ffb23a", borderRadius: "4px" }}
                   >
-                    Caution
+                    <FiAlertTriangle />
                   </div>
                 </div>
               </div>

@@ -128,7 +128,8 @@ function Agents() {
       <div
         className="mt-3 mb-3  text-light  fw-lighter p-3"
         style={{
-          backgroundColor: "#ffb23a",
+          background:
+            "linear-gradient(90deg, rgba(237,139,0,1) 0%, rgba(237,139,0,1) 0%, rgba(255,209,0,1) 100%)",
           fontWeight: "lighter",
           borderRadius: "10px",
         }}
