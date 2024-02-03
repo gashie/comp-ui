@@ -152,7 +152,7 @@ const Index = () => {
                 agents. You can add integrations to your agent policy to specify
                 what your agents collect. When you edit an agent policy, you can
                 use Fleet to deploy updates to a specified group of agents.
-              </p>
+              </p>div
             </div>
             <div className="col-xl-4 col-lg-4 d-flex justify-content-end">
               <img
@@ -292,6 +292,9 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+
+        
         <div className="col-lg-3 col-md-6 col-sm-6">
           <div className="card p-3 px-4" style={{ height: "205px" }}>
             <div>Cluster Memory Resources</div>

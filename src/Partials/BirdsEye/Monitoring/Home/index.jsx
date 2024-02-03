@@ -15,6 +15,7 @@ import { useState } from "react";
 import HomePage from "../HomePage";
 import Fleet from "../Fleet";
 import Functions from "../Functions";
+import Synthetics from "../Synthetics";
 
 function Index() {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -194,6 +195,17 @@ function Index() {
                             Fleet
                           </NavLink>
                         </NavItem>
+                        <NavItem>
+                          <NavLink
+                            className={classnames({
+                              active: activeTab === "synthetics",
+                            })}
+                            onClick={() => toggleTab("synthetics")}
+                          >
+                            <i className="bx bx-message-square-detail mx-1"></i>
+                            Synthetics
+                          </NavLink>
+                        </NavItem>
                       </Nav>
                       <TabContent activeTab={activeTab}>
                         <TabPane tabId="tab1">
@@ -264,6 +276,13 @@ function Index() {
                           <Row>
                             <Col sm="12">
                               <Fleet />
+                            </Col>
+                          </Row>
+                        </TabPane>
+                        <TabPane tabId="synthetics">
+                          <Row>
+                            <Col sm="12">
+                              <Synthetics />
                             </Col>
                           </Row>
                         </TabPane>
