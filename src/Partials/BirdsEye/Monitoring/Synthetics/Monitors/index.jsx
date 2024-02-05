@@ -17,6 +17,7 @@ import { BsTrash3 } from "react-icons/bs";
 import { MdRefresh } from "react-icons/md";
 import Overview from "./Overview";
 import Management from "./Management";
+import CreateMonitor from "./CreateMonitor";
 
 const data = [
   {
@@ -164,6 +165,7 @@ function Monitors() {
           border: "none ",
           borderRadius: "0px",
           backgroundColor: "white",
+          // overflow: 'scroll'
         }}
       >
         <div
@@ -243,18 +245,31 @@ function Monitors() {
           </div>
         </div>
 
-        {/* <div
-          className="d-flex p-2 mt-5"
-          style={{
-            justifyContent: "space-between",
-            color: "gray",
-            backgroundColor: "white",
-          }}
-        >
-          <div>Showing {data?.length} locations</div>
-        </div> */}
         {overview === true ? <Overview /> : <Management />}
       </div>
+
+      <Offcanvas
+        isOpen={isRight}
+        toggle={toggleRightCanvas}
+        id="offcanvasRight"
+        direction="end"
+        style={{ color: "black", backgroundColor: "white" }}
+        className="w-50"
+      >
+        <OffcanvasHeader toggle={toggleRightCanvas} id="offcanvasRightLabel">
+          <h3>Create Monitor</h3>
+        </OffcanvasHeader>
+        <OffcanvasBody>
+          <div>
+            {/* <p className="fw-light">
+              Add Elastic Agents to your hosts to collect data ans send it to
+              the Elastic Stack.
+            </p> */}
+            <hr />
+          <CreateMonitor />
+          </div>
+        </OffcanvasBody>
+      </Offcanvas>
     </div>
   );
 }

@@ -1,0 +1,40 @@
+
+.accordion {
+    width: 100%;
+  }
+  
+  .accordion-item {
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    padding: 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .accordion-item.active {
+    border-color: #2196F3;
+  }
+  
+  .accordion-item h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .accordion-item p {
+    margin: 10px 0;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .feather {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }

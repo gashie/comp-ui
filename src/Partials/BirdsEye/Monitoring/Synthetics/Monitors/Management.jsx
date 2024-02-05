@@ -179,7 +179,7 @@ function Management() {
 
   return (
     <>
-      <div className="row g-3 mt-5">
+      <div className="row g-3 mt-5" >
         <div className="col-xl-3">
           <Card className="p-3">
             {/* container */}

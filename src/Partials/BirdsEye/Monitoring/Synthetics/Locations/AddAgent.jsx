@@ -196,7 +196,7 @@ function AddAgent() {
               backgroundColor: "#414141",
               border: "1px solid #Ed8b00",
               borderRadius: "8px",
-              color: 'white'
+              color: "white",
             }}
           >
             <p>
@@ -229,13 +229,16 @@ function AddAgent() {
           <UncontrolledAlert color="success" className="alert-top-border">
             <i className="ri-notification-off-line me-3 align-middle fs-16 text-success"></i>
             <strong>
-              <Spinner size={"sm"}/>
+              <Spinner size={"sm"} />
             </strong>{" "}
             Listening for agent ..
           </UncontrolledAlert>
 
           <p>
-           After tha agent start up, the Elastic Stack listens for the agent and confirm the enrollment in Fleet. If you're having trouble connecting, check out the <span style={{color: "#Ed8b00"}}>troubleshooting guide.</span>
+            After tha agent start up, the Elastic Stack listens for the agent
+            and confirm the enrollment in Fleet. If you're having trouble
+            connecting, check out the{" "}
+            <span style={{ color: "#Ed8b00" }}>troubleshooting guide.</span>
           </p>
         </VerticalTimelineElement>
       </VerticalTimeline>

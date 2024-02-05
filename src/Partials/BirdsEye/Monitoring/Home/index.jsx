@@ -80,8 +80,8 @@ function Index() {
         <div className=" " >
           <div className="card-body">
             <div className="row li_animate">
-              <div className="col-xl-12 col-lg-12" style={{ backgroundColor: "#1d2222", overflow: "hidden"}}>
-                <Col style={{ backgroundColor: "#1d2222" }}>
+              <div className="col-xl-12 col-lg-12" style={{ backgroundColor: "white", overflow: "auto"}}>
+                <Col style={{ backgroundColor: "white" }}>
                   <div className="">
                     <div>
                       <Nav tabs style={{ borderBottom: "white" }}>
@@ -216,48 +216,7 @@ function Index() {
                             </Col>
                           </Row>
                         </TabPane>
-                        <TabPane tabId="tab2">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Over view</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="tab3">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Nodes</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="tab4">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Kubernetes</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="tab5">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Dashboards</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="tab6">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Alerts</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
-                        <TabPane tabId="tab7">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Anomalies</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
+                       
                         <TabPane tabId="tab8">
                           <Row>
                             <Col sm="12">
@@ -265,13 +224,7 @@ function Index() {
                             </Col>
                           </Row>
                         </TabPane>
-                        <TabPane tabId="tab9">
-                          <Row>
-                            <Col sm="12">
-                              <h4>Events</h4>
-                            </Col>
-                          </Row>
-                        </TabPane>
+                       
                         <TabPane tabId="tab10">
                           <Row>
                             <Col sm="12">
