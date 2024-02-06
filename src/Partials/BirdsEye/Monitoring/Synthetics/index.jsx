@@ -17,6 +17,7 @@ import img from "../../../../assets/images/img.png";
 import Locations from "./Locations";
 import Monitors from './Monitors'
 import Alerts from './Alerts'
+import TLS from './TLSCerts'
 
 function Index() {
   const [activeTab, setActiveTab] = useState("locations");
@@ -150,8 +151,7 @@ function Index() {
               <TabPane tabId="tls">
                 <Row>
                   <Col sm="12">
-                    <h4>Dashboards</h4>
-                    {/* Add your content for Tab 3 here */}
+                  <TLS />
                   </Col>
                 </Row>
               </TabPane>
