@@ -31,8 +31,9 @@ function AdvancedOptions() {
                 <h6 className="text-muted">{item.title}</h6>
                 {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
               </div>
-              {activeIndex === index && <div><AdvancedOptionsContent /></div>}
+          
             </div>
+            {activeIndex === index && <div style={{border: '1px solid #e0e0e0', borderRadius: '10px'}} className="mt-2 p-2" ><AdvancedOptionsContent /></div>}
           </React.Fragment>
         ))}
       </div>
