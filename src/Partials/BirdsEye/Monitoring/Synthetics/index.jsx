@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import img from "../../../../assets/images/img.png";
 import Locations from "./Locations";
 import Monitors from './Monitors'
+import Alerts from './Alerts'
 
 function Index() {
   const [activeTab, setActiveTab] = useState("locations");
@@ -101,8 +102,8 @@ function Index() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  className={classnames({ active: activeTab === "alerts" })}
-                  onClick={() => toggleTab("alerts")}
+                  className={classnames({ active: activeTab === "tls" })}
+                  onClick={() => toggleTab("tls")}
                 >
                   <i className="bx bx-server mx-1"></i>
                   TLS Certificates
@@ -138,15 +139,15 @@ function Index() {
                   <Col sm="12">{/* <EnrollmentTokens /> */}</Col>
                 </Row>
               </TabPane>
-              <TabPane tabId="tab4">
+              <TabPane tabId="alerts">
                 <Row>
                   <Col sm="12">
-                    <h4>Data streams</h4>
+                   <Alerts />
                     {/* Add your content for Tab 3 here */}
                   </Col>
                 </Row>
               </TabPane>
-              <TabPane tabId="tab5">
+              <TabPane tabId="tls">
                 <Row>
                   <Col sm="12">
                     <h4>Dashboards</h4>
