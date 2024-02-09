@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import EasyPieChart from "../../plugin/easypiechart"; // Update the import path as needed
 import { Card, CardBody, Col, Row } from "reactstrap";
 
-function ChartComponent({ data, color }) {
+function ChartComponent({ data, color, show, thickness, scaleColor, lineCap, trackColor, size }) {
   const chartRef = useRef(null);
   const chartInstance = useRef(null);
   const contentRef = useRef(null);
@@ -11,11 +11,12 @@ function ChartComponent({ data, color }) {
     if (!chartInstance.current) {
       // Initialize the chart only if it hasn't been created yet
       chartInstance.current = new EasyPieChart(chartRef.current, {
-        barColor: data ===  "0" ? "transparent" : color,
-        trackColor: "black",
-        size: "150",
-        lineWidth: "10",
-        scaleColor: "black"
+        barColor: data === "0" ? "transparent" : color,
+        trackColor: trackColor !== "black" ? trackColor : "black",
+        size: size === "small" ? "150" : size,
+        lineWidth: thickness === 'thick' ? '40' : '10',
+        scaleColor: scaleColor === "white" ? "white" : "black",
+        lineCap: lineCap === 'flat' ? 'butt' : 'round',
       });
     }
 
@@ -40,10 +41,10 @@ function ChartComponent({ data, color }) {
       style={{
         position: "",
         backgroundColor: "transparent",
-        border: '1px solid transparent',
+        border: "1px solid transparent",
         borderRadius: "3px",
         width: "max-content",
-        height: '25svh'
+        height: "25svh",
       }}
     >
       <CardBody>
@@ -63,8 +64,23 @@ function ChartComponent({ data, color }) {
                 style={{ position: "absolute", color: "gray" }}
                 className="mt-2 fw-bolder"
               >
-                <p className="text-center mt-5" style={{color: data ===  "0" ? "transparent" : ""}}>{data}</p>
-                <p style={{ color: data ===  "0" ? "transparent" : "white"}}>mb/s</p>
+                <p
+                  className="text-center mt-5"
+                  style={{
+                    color: data === "0" ? "transparent" : "",
+                    display: show === false ? "none" : "",
+                  }}
+                >
+                  {data}
+                </p>
+                <p
+                  style={{
+                    color: data === "0" ? "transparent" : "white",
+                    display: show === false ? "none" : "",
+                  }}
+                >
+                  mb/s
+                </p>
               </div>
             </div>
           </Col>

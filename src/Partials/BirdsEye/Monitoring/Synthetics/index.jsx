@@ -18,6 +18,7 @@ import Locations from "./Locations";
 import Monitors from './Monitors'
 import Alerts from './Alerts'
 import TLS from './TLSCerts'
+import Dashboard from './Dashboard'
 
 function Index() {
   const [activeTab, setActiveTab] = useState("locations");
@@ -76,6 +77,15 @@ function Index() {
             <Nav tabs style={{ borderBottom: "black" }}>
               <NavItem>
                 <NavLink
+                  className={classnames({ active: activeTab === "dashboard" })}
+                  onClick={() => toggleTab("dashboard")}
+                >
+                  <i className="bx bx-home mx-1"></i>
+                  Dashboard
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
                   className={classnames({ active: activeTab === "locations" })}
                   onClick={() => toggleTab("locations")}
                 >
@@ -121,6 +131,13 @@ function Index() {
               </NavItem> */}
             </Nav>
             <TabContent activeTab={activeTab}>
+              <TabPane tabId="dashboard">
+                <Row>
+                  <Col sm="12">
+                    <Dashboard />
+                  </Col>
+                </Row>
+              </TabPane>
               <TabPane tabId="locations">
                 <Row>
                   <Col sm="12">
