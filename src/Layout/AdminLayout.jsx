@@ -75,6 +75,13 @@ const AdminLayout = ({
     setRightbarHidden((prevState) => !prevState);
   };
 
+  useEffect(()=>{
+    console.log(location.pathname)
+   if(location.pathname !== '/app/monitor'){
+    toggleRightbar()
+   } 
+  }, [location.pathname])
+
   
 
   const navigate = useNavigate();

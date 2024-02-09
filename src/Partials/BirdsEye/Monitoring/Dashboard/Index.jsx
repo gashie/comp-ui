@@ -168,7 +168,7 @@ const Index = () => {
 
       <div className="row g-3">
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{ height: "205px" }}>
+          <div className="card p-3 px-4" style={{ height: "265px" }}>
             <div>Host Statistics</div>
             <div className="py-4 m-0 text-center h2">
               <table>
@@ -213,7 +213,7 @@ const Index = () => {
           </div>
         </div>
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4">
+          <div className="card p-3 px-4" style={{ height: "265px" }}>
             <div>Server Statistics</div>
             <div className="py-4 m-0 text-center h2">
               <table>
@@ -275,7 +275,7 @@ const Index = () => {
         </div>
 
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{ height: "205px" }}>
+          <div className="card p-3 px-4" style={{ height: "auto" }}>
             <div>Cluster CPU Resources</div>
             <GaugeChart
               id="gauge-chart6"
@@ -285,6 +285,7 @@ const Index = () => {
               needleColor="#345243"
               textColor="orange"
               hideText="true"
+              
             />
             <div className="d-flex">
               <small className="text-muted">{data.year}</small>
@@ -296,7 +297,7 @@ const Index = () => {
 
         
         <div className="col-lg-3 col-md-6 col-sm-6">
-          <div className="card p-3 px-4" style={{ height: "205px" }}>
+          <div className="card p-3 px-4" style={{ height: "auto" }}>
             <div>Cluster Memory Resources</div>
             <GaugeChart
               id="gauge-chart6"
@@ -314,7 +315,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="col-xxl-5 col-xl-5 col-lg-6 col-md-6">
+        <div className="col-xxl-5 col-xl-5 col-lg-12 col-md-12">
           <div className="card">
             <div className="card-header">
               <h6 className="card-title mb-0">Kubernetes Pods</h6>
@@ -904,7 +905,7 @@ const Index = () => {
             </div>
           </div>
         </div> */}
-        <div className="col-xxl-7 col-xl-8 col-lg-8 col-md-8">
+        <div className="col-xxl-7 col-xl-8 col-lg-12 col-md-8">
           <div className="card">
             <div className="card-header">
               <h6 className="card-title mb-0">Pod Overview</h6>

@@ -20,9 +20,10 @@ const CommonBrand = () => {
                             <path d="M4 12l16 0"></path>
                             <path d="M4 18l16 0"></path>
                         </svg>
+                        
                     </button>
                     {/* < />!--[ Start:: Brand Logo icon ]--> */}
-                    <Link as='a' to="/" className="brand-icon text-decoration-none d-flex align-items-center" title="BVITE Admin Template">
+                    <Link as='a' to="/" className="brand-icon text-decoration-none d-flex align-items-center" title="BE360">
                         <img src={img} className='img-fluid' width='30'></img>
                         <span className="fw-bold ps-2 fs-5 d-none d-xl-inline-flex fw-bolder" style={{color: 'white'}}>BE360</span>
                     </Link>

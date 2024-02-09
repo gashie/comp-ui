@@ -8,7 +8,7 @@ function SpeedometerComponent() {
   return (
     <>
       <GaugeComponent
-        value={50}
+        value={20}
         type="radial"
         // labels={{
         //   tickLabels: {
