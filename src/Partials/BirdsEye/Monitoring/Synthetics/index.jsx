@@ -21,7 +21,7 @@ import TLS from './TLSCerts'
 import Dashboard from './Dashboard'
 
 function Index() {
-  const [activeTab, setActiveTab] = useState("locations");
+  const [activeTab, setActiveTab] = useState("dashboard");
 
   const toggleTab = (tab) => {
     if (activeTab !== tab) {

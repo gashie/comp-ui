@@ -279,16 +279,15 @@ function Agents() {
         id="offcanvasRight"
         direction="end"
         style={{ color: "black", backgroundColor: "white" }}
-        className="w-50"
+        className="w-0"
       >
         <OffcanvasHeader toggle={toggleRightCanvas} id="offcanvasRightLabel">
-          <h3>Add agent</h3>
+          <h3>Add Location</h3>
         </OffcanvasHeader>
         <OffcanvasBody>
           <div>
             <p className="fw-light">
-              Add Elastic Agents to your hosts to collect data ans send it to
-              the Elastic Stack.
+             
             </p>
             <hr />
             <AddAgent />
