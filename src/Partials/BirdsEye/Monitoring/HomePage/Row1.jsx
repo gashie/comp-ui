@@ -124,7 +124,7 @@ function Row1() {
               </div>
             </div>
             <div>
-              <ChartComponent data={"0"} color={"#fe3912"} />
+              <ChartComponent data={"0"} color={"#fe3912"} trackColor={'#0f0f0f'} />
             </div>
           </div>
         </div>
@@ -198,7 +198,7 @@ function Row1() {
               </div>
             </div>
             <div>
-              <ChartComponent data={"0"} color={"#fe3912"} />
+              <ChartComponent data={"0"} color={"#fe3912"} trackColor={'#0f0f0f'} />
             </div>
             <div className="mt-5 fw-bolder">No data</div>
             <div className="mt-5 fw-bolder">No data</div>

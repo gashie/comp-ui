@@ -91,7 +91,7 @@ function MetricChart() {
           </div>
 
           <div>
-            <ChartComponent data={"0"} color={"#fe3912"} />
+            <ChartComponent data={"0"} color={"#fe3912"} trackColor={'#0f0f0f'} />
           </div>
         </div>
       </div>
